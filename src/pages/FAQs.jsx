@@ -181,11 +181,6 @@ function FAQs() {
                       line.trim() && <p key={i}>{line}</p>
                     ))}
                   </div>
-                  <div className="faq-helpful">
-                    <p>Was this helpful?</p>
-                    <button className="helpful-btn">👍 Yes</button>
-                    <button className="helpful-btn">👎 No</button>
-                  </div>
                 </div>
               )}
             </div>
