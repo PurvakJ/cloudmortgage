@@ -1105,3 +1105,7 @@
     margin-top: 20px;
     color: #1e3c72;
   }
+
+  .sticky-background{
+    height: 600px;
+  }
