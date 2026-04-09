@@ -1,0 +1,917 @@
+/* Calculator.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .calculator-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  /* Header Styles */
+  .calculator-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    border-radius: 15px;
+    color: white;
+  }
+  
+  .calculator-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .calculator-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+  
+  /* Tabs */
+  .calculator-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tab-btn {
+    padding: 0.8rem 1.5rem;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .tab-btn:hover {
+    border-color: #64b5f6;
+    color: #64b5f6;
+  }
+  
+  .tab-btn.active {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    border-color: transparent;
+  }
+  
+  /* Calculator Content */
+  .calculator-content {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Section Styles */
+  .calculator-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    color: #1e3c72;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #64b5f6;
+  }
+  
+  .section-note {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  /* Input Groups */
+  .input-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .input-group input[type="range"] {
+    width: 100%;
+    margin: 0.5rem 0;
+    height: 5px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  
+  .input-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #64b5f6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .input-group input[type="range"]::-webkit-slider-thumb:hover {
+    background: #2196f3;
+    transform: scale(1.2);
+  }
+  
+  .input-group input[type="number"],
+  .input-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+  }
+  
+  .input-group input[type="number"]:focus,
+  .input-group select:focus {
+    outline: none;
+    border-color: #64b5f6;
+  }
+  
+  .input-with-value {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .input-with-value input {
+    flex: 1;
+  }
+  
+  .input-symbol {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+  }
+  
+  .input-note {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.3rem;
+    display: block;
+  }
+  
+  .input-tip {
+    font-size: 0.85rem;
+    color: #64b5f6;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+  
+  /* Results Section */
+  .results-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+  }
+  
+  .estimated-payment {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .estimated-label {
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .estimated-amount {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1e3c72;
+    margin-top: 0.5rem;
+  }
+  
+  .payment-summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .summary-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .summary-item span {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .summary-item strong {
+    font-size: 1.2rem;
+    color: #1e3c72;
+  }
+  
+  /* Payment Breakdown */
+  .payment-breakdown {
+    margin-bottom: 1.5rem;
+  }
+  
+  .payment-breakdown h3 {
+    margin-bottom: 1rem;
+    color: #1e3c72;
+  }
+  
+  .breakdown-bars {
+    display: flex;
+    height: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  
+  .breakdown-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .breakdown-bar.principal {
+    background: #64b5f6;
+  }
+  
+  .breakdown-bar.interest {
+    background: #ffc107;
+  }
+  
+  .breakdown-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  /* Amortization Schedule */
+  .amortization-schedule {
+    margin-top: 1.5rem;
+  }
+  
+  .amortization-schedule h3 {
+    margin-bottom: 1rem;
+    color: #1e3c72;
+  }
+  
+  .amortization-chart {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    min-height: 300px;
+    align-items: flex-end;
+  }
+  
+  .amortization-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 40px;
+  }
+  
+  .amortization-bar {
+    width: 30px;
+    background: #e0e0e0;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+  
+  .principal-paid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #64b5f6;
+    transition: height 0.3s ease;
+  }
+  
+  .amortization-year {
+    font-size: 0.7rem;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+  
+  .amortization-note {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  /* Two Columns Layout */
+  .two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  /* Results Cards */
+  .results-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+  }
+  
+  .results-card h3 {
+    color: #1e3c72;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .result-amount {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #64b5f6;
+    margin: 0.5rem 0;
+  }
+  
+  .result-sub {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Ratio Items */
+  .ratio-item {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .ratio-item span {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+  }
+  
+  .ratio-item strong {
+    font-size: 1.2rem;
+  }
+  
+  .ratio-item strong.good {
+    color: #4caf50;
+  }
+  
+  .ratio-item strong.bad {
+    color: #f44336;
+  }
+  
+  .ratio-note {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 0.3rem;
+  }
+  
+  .ratio-explanation {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Frequency Cards */
+  .frequency-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .frequency-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .frequency-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .frequency-card.recommended {
+    border: 2px solid #64b5f6;
+    background: linear-gradient(135deg, white, #f0f8ff);
+  }
+  
+  .recommended-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #64b5f6, #2196f3);
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  
+  .frequency-card h3 {
+    color: #1e3c72;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .payment-amount {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #64b5f6;
+    margin: 0.5rem 0;
+  }
+  
+  .payment-detail {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .interest-total {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 0.5rem 0;
+  }
+  
+  .time-info {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0.5rem 0;
+  }
+  
+  .savings {
+    font-size: 0.85rem;
+    color: #4caf50;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  
+  /* Interest Comparison Chart */
+  .chart-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+  }
+  
+  .chart-section h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1e3c72;
+  }
+  
+  .interest-comparison-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 1rem;
+    min-height: 250px;
+    padding: 1rem;
+  }
+  
+  .interest-bar-container {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .interest-bar {
+    background: linear-gradient(180deg, #64b5f6, #2196f3);
+    border-radius: 10px 10px 0 0;
+    transition: height 0.3s ease;
+    position: relative;
+    min-height: 10px;
+  }
+  
+  .interest-value {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1e3c72;
+    white-space: nowrap;
+  }
+  
+  .interest-bar-container p {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  .chart-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 1rem;
+  }
+  
+  /* Frequency Explanation */
+  .frequency-explanation {
+    padding: 1.5rem;
+    background: #e3f2fd;
+    border-radius: 15px;
+    margin: 1.5rem 0;
+  }
+  
+  .frequency-explanation h3 {
+    color: #1e3c72;
+    margin-bottom: 1rem;
+  }
+  
+  .frequency-explanation ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .frequency-explanation li {
+    padding: 0.5rem 0;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .frequency-explanation .tip {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: white;
+    border-radius: 8px;
+    color: #64b5f6;
+    font-weight: 500;
+  }
+  
+  /* Compare Calculator */
+  .scenarios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .scenario-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 15px;
+    position: relative;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .scenario-card h3 {
+    color: #1e3c72;
+    margin-bottom: 1rem;
+  }
+  
+  .remove-scenario {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #f44336;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .remove-scenario:hover {
+    background: #d32f2f;
+    transform: scale(1.1);
+  }
+  
+  .scenario-results {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .scenario-results p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .scenario-results strong {
+    color: #64b5f6;
+  }
+  
+  .add-scenario-btn {
+    width: 100%;
+    padding: 1rem;
+    background: white;
+    border: 2px dashed #64b5f6;
+    border-radius: 10px;
+    color: #64b5f6;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+  }
+  
+  .add-scenario-btn:hover {
+    background: #64b5f6;
+    color: white;
+    border-color: transparent;
+  }
+  
+  /* Comparison Table */
+  .comparison-table {
+    margin: 2rem 0;
+    overflow-x: auto;
+  }
+  
+  .comparison-table h3 {
+    margin-bottom: 1rem;
+    color: #1e3c72;
+  }
+  
+  .comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .comparison-table th {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    font-weight: 600;
+  }
+  
+  .comparison-table tr:hover {
+    background: #f8f9fa;
+  }
+  
+  .export-pdf {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .export-pdf:hover {
+    background: #d32f2f;
+    transform: translateY(-2px);
+  }
+  
+  /* Rent vs Buy */
+  .net-position {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .positive {
+    color: #4caf50;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .negative {
+    color: #f44336;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #e3f2fd, #bbdef5);
+    border-radius: 15px;
+    text-align: center;
+  }
+  
+  .cta-section h3 {
+    color: #1e3c72;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cta-section p {
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn-contact,
+  .btn-appointment {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-contact {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+  }
+  
+  .btn-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+  }
+  
+  .btn-appointment {
+    background: white;
+    color: #1e3c72;
+    border: 2px solid #1e3c72;
+  }
+  
+  .btn-appointment:hover {
+    background: #1e3c72;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .calculator-page {
+      padding: 1rem;
+    }
+    
+    .two-columns {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .frequency-results {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .calculator-title {
+      font-size: 1.8rem;
+    }
+    
+    .calculator-tabs {
+      gap: 0.3rem;
+    }
+    
+    .tab-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+    }
+    
+    .calculator-content {
+      padding: 1rem;
+    }
+    
+    .estimated-amount {
+      font-size: 2rem;
+    }
+    
+    .payment-summary {
+      grid-template-columns: 1fr;
+    }
+    
+    .scenarios-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .interest-comparison-chart {
+      flex-direction: column;
+      align-items: stretch;
+      min-height: auto;
+    }
+    
+    .interest-bar-container {
+      margin-bottom: 1rem;
+    }
+    
+    .interest-bar {
+      height: 40px !important;
+      border-radius: 5px;
+    }
+    
+    .interest-value {
+      top: 50%;
+      transform: translateY(-50%);
+      left: 10px;
+    }
+    
+    .comparison-table {
+      font-size: 0.85rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.5rem;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+    }
+    
+    .btn-contact,
+    .btn-appointment {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .calculator-page {
+      padding: 0.5rem;
+    }
+    
+    .calculator-header {
+      padding: 1rem;
+    }
+    
+    .calculator-title {
+      font-size: 1.5rem;
+    }
+    
+    .calculator-subtitle {
+      font-size: 0.85rem;
+    }
+    
+    .section-title {
+      font-size: 1.2rem;
+    }
+    
+    .estimated-amount {
+      font-size: 1.5rem;
+    }
+    
+    .frequency-card {
+      padding: 1rem;
+    }
+    
+    .payment-amount {
+      font-size: 1.3rem;
+    }
+    
+    .result-amount {
+      font-size: 1.5rem;
+    }
+  }
