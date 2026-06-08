@@ -1,485 +1,750 @@
-/* Admin.css */
+/* Admin.css - Oakmont Capital - Optimized for Performance */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.admin-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+/* ==================== HERO SECTION - FULL WIDTH IMAGE ==================== */
+.admin-hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.admin-hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-hero-image {
+  background-image: url('https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1920');
+}
+
+/* Parallax effect only on desktop */
+@media (min-width: 1024px) {
+  .admin-hero-image {
+    background-attachment: fixed;
+  }
+}
+
+.admin-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.88) 0%, rgba(42, 82, 152, 0.88) 100%);
+  z-index: 1;
+}
+
+.admin-hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1500px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 2rem;
+}
+
+.admin-hero-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.admin-hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  font-family: 'Rasputin', 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.admin-hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  font-family: 'Rasputin', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Hero Stats */
+.hero-stats {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  text-align: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  min-width: 140px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-stat:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.hero-stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #64b5f6;
+  margin-bottom: 0.3rem;
+  font-family: 'Rasputin', serif;
+}
+
+.hero-stat-label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  font-family: 'Rasputin', sans-serif;
+}
+
+/* ==================== ANIMATIONS - OPTIMIZED ==================== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  will-change: opacity, transform;
+}
+
+.fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==================== LOGIN PAGE STYLES ==================== */
+.admin-login-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.admin-login {
+  min-height: calc(100vh - 80vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.login-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-card:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.login-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.login-card h2 {
+  color: #1e3c72;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: 'Rasputin', serif;
+}
+
+.login-subtitle {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 40px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: #64b5f6;
+  box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.1);
+}
+
+.login-card button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 0.5rem;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.login-card button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+.login-card button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.login-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #f44336;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  padding: 0.5rem;
+  background: #ffebee;
+  border-radius: 10px;
+  font-family: 'Rasputin', sans-serif;
+}
+
+/* ==================== DASHBOARD STYLES ==================== */
+.admin-dashboard-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.admin-dashboard {
+  padding: 2rem 0;
+}
+
+/* Section Styles */
+.section {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.section:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.section-header h2 {
+  color: #1e3c72;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Rasputin', serif;
+}
+
+/* Load Button */
+.load-btn {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.load-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+.load-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.load-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Table Container */
+.table-container {
+  overflow-x: auto;
+  border-radius: 15px;
+}
+
+/* Admin Table */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.admin-table thead {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.admin-table th {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.admin-table td {
+  color: #495057;
+  font-size: 0.9rem;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.admin-table tbody tr {
+  transition: background 0.2s ease;
+  animation: fadeInRow 0.3s ease forwards;
+  opacity: 0;
+}
+
+.admin-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+/* Table row animations */
+.admin-table tbody tr:nth-child(1) { animation-delay: 0.03s; }
+.admin-table tbody tr:nth-child(2) { animation-delay: 0.06s; }
+.admin-table tbody tr:nth-child(3) { animation-delay: 0.09s; }
+.admin-table tbody tr:nth-child(4) { animation-delay: 0.12s; }
+.admin-table tbody tr:nth-child(5) { animation-delay: 0.15s; }
+.admin-table tbody tr:nth-child(6) { animation-delay: 0.18s; }
+.admin-table tbody tr:nth-child(7) { animation-delay: 0.21s; }
+.admin-table tbody tr:nth-child(8) { animation-delay: 0.24s; }
+.admin-table tbody tr:nth-child(9) { animation-delay: 0.27s; }
+.admin-table tbody tr:nth-child(10) { animation-delay: 0.3s; }
+
+@keyframes fadeInRow {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.message-cell {
+  max-width: 300px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Update Password Section */
+.update-box {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.update-box input {
+  flex: 1;
+  padding: 0.9rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 40px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  min-width: 200px;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.update-box input:focus {
+  outline: none;
+  border-color: #64b5f6;
+  box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.1);
+}
+
+.update-box button {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.update-box button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+.update-box button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.update-box button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.success {
+  color: #4caf50;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #e8f5e9;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.security-note {
+  font-size: 0.8rem;
+  color: #adb5bd;
+  margin-top: 0.8rem;
+  font-family: 'Rasputin', sans-serif;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Empty State */
+.no-data {
+  text-align: center;
+  padding: 3rem;
+  color: #adb5bd;
+  font-style: italic;
+  font-family: 'Rasputin', sans-serif;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 1024px) {
+  .admin-hero-container {
+    padding: 0 1.5rem;
   }
   
-  /* Login Page Styles */
-  .admin-login {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    padding: 2rem;
+  .admin-dashboard-container {
+    padding: 0 1.5rem;
   }
   
-  .login-card {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
-    animation: fadeInUp 0.5s ease;
+  .admin-hero {
+    height: 70vh;
+    min-height: 450px;
   }
   
-  .login-card h2 {
-    color: #1e3c72;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-  }
-  
-  .login-card input {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    margin-bottom: 1rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-  }
-  
-  .login-card input:focus {
-    outline: none;
-    border-color: #64b5f6;
-    box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.1);
-  }
-  
-  .login-card button {
-    width: 100%;
-    padding: 0.8rem;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 0.5rem;
-  }
-  
-  .login-card button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
-  }
-  
-  .error {
-    color: #f44336;
-    text-align: center;
-    margin-top: 0.5rem;
-    font-size: 0.85rem;
-    padding: 0.5rem;
-    background: #ffebee;
-    border-radius: 8px;
-  }
-  
-  /* Dashboard Styles */
-  .admin-dashboard {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: #f8f9fa;
-    min-height: 100vh;
-  }
-  
-  .admin-dashboard h1 {
-    color: #1e3c72;
-    margin-bottom: 2rem;
-    font-size: 2.2rem;
-    font-weight: 700;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid #64b5f6;
-    display: inline-block;
-  }
-  
-  /* Section Styles */
-  .section {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-  }
-  
-  .section:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  }
-  
-  .section h2 {
-    color: #1e3c72;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e0e0e0;
-  }
-  
-  /* Load Button */
-  .load-btn {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-bottom: 1rem;
-  }
-  
-  .load-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
-  }
-  
-  /* Admin Table */
-  .admin-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-    overflow-x: auto;
-    display: block;
-  }
-  
-  .admin-table thead {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
+  .admin-hero-content h1 {
+    font-size: 2.5rem;
   }
   
   .admin-table th,
   .admin-table td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #e0e0e0;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-hero-container {
+    padding: 0 1rem;
   }
   
-  .admin-table th {
-    font-weight: 600;
+  .admin-dashboard-container {
+    padding: 0 1rem;
+  }
+  
+  .admin-login {
+    padding: 2rem 1rem;
+  }
+  
+  .admin-hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .admin-hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .admin-hero-content p {
     font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
   }
   
-  .admin-table td {
-    color: #555;
-    font-size: 0.9rem;
-  }
-  
-  .admin-table tbody tr:hover {
-    background: #f8f9fa;
-    transition: background 0.3s ease;
-  }
-  
-  /* Update Password Section */
-  .update-box {
-    display: flex;
+  .hero-stats {
     gap: 1rem;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 1rem 0;
   }
   
-  .update-box input {
-    flex: 1;
-    padding: 0.8rem 1rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    min-width: 200px;
+  .hero-stat {
+    padding: 0.6rem 1.2rem;
+    min-width: 100px;
   }
   
-  .update-box input:focus {
-    outline: none;
-    border-color: #64b5f6;
-    box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.1);
+  .hero-stat-number {
+    font-size: 1.3rem;
   }
   
-  .update-box button {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 10px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  .hero-stat-label {
+    font-size: 0.7rem;
   }
   
-  .update-box button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+  .admin-dashboard {
+    padding: 1rem 0;
   }
   
-  .success {
-    color: #4caf50;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    background: #e8f5e9;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    text-align: center;
-    animation: slideIn 0.3s ease;
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
   
-  /* Empty State */
-  .no-data {
-    text-align: center;
-    padding: 2rem;
-    color: #999;
-    font-style: italic;
+  .section-header h2 {
+    font-size: 1.3rem;
   }
   
-  /* Animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  /* Table Responsive */
-  @media (max-width: 1024px) {
-    .admin-table {
-      font-size: 0.85rem;
-    }
-    
-    .admin-table th,
-    .admin-table td {
-      padding: 0.8rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .admin-dashboard {
-      padding: 1rem;
-    }
-    
-    .admin-dashboard h1 {
-      font-size: 1.8rem;
-    }
-    
-    .section {
-      padding: 1rem;
-    }
-    
-    .section h2 {
-      font-size: 1.3rem;
-    }
-    
-    .admin-table {
-      display: block;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    
-    .admin-table th,
-    .admin-table td {
-      padding: 0.6rem;
-      font-size: 0.8rem;
-    }
-    
-    .update-box {
-      flex-direction: column;
-    }
-    
-    .update-box input,
-    .update-box button {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .login-card {
-      padding: 1.5rem;
-      margin: 1rem;
-    }
-    
-    .login-card h2 {
-      font-size: 1.5rem;
-    }
-    
-    .admin-dashboard h1 {
-      font-size: 1.5rem;
-    }
-    
-    .section h2 {
-      font-size: 1.2rem;
-    }
-    
-    .load-btn {
-      width: 100%;
-    }
-    
-    .admin-table th,
-    .admin-table td {
-      padding: 0.5rem;
-      font-size: 0.75rem;
-    }
-  }
-  
-  /* Scrollbar Styling */
-  .admin-table::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  .admin-table::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-  }
-  
-  .admin-table::-webkit-scrollbar-thumb {
-    background: #64b5f6;
-    border-radius: 10px;
-  }
-  
-  .admin-table::-webkit-scrollbar-thumb:hover {
-    background: #2196f3;
-  }
-  
-  /* Loading State */
-  .loading {
-    text-align: center;
-    padding: 2rem;
-    color: #64b5f6;
-  }
-  
-  .loading::after {
-    content: '...';
-    animation: dots 1.5s steps(4, end) infinite;
-  }
-  
-  @keyframes dots {
-    0%, 20% {
-      content: '.';
-    }
-    40% {
-      content: '..';
-    }
-    60%, 100% {
-      content: '...';
-    }
-  }
-  
-  /* Status Badges (Optional) */
-  .status-badge {
-    display: inline-block;
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-  }
-  
-  .status-pending {
-    background: #fff3cd;
-    color: #856404;
-  }
-  
-  .status-read {
-    background: #d1ecf1;
-    color: #0c5460;
-  }
-  
-  .status-contacted {
-    background: #d4edda;
-    color: #155724;
-  }
-  
-  .status-closed {
-    background: #e2e3e5;
-    color: #383d41;
-  }
-  
-  /* Print Styles */
-  @media print {
-    .admin-login,
-    .load-btn,
-    .update-box,
-    .success {
-      display: none;
-    }
-    
-    .admin-dashboard {
-      padding: 0;
-      background: white;
-    }
-    
-    .section {
-      box-shadow: none;
-      break-inside: avoid;
-    }
-    
-    .admin-table {
-      overflow: visible;
-    }
-  }
-  
-  /* Focus States for Accessibility */
-  .login-card input:focus,
-  .update-box input:focus,
-  .load-btn:focus,
-  .update-box button:focus {
-    outline: 3px solid #64b5f6;
-    outline-offset: 2px;
-  }
-  
-  /* Card Hover Effects */
-  .section {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
+  .load-btn {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(100, 181, 246, 0.05), transparent);
-    transition: left 0.5s ease;
   }
   
-  .section:hover::before {
-    left: 100%;
+  .admin-table {
+    font-size: 0.85rem;
   }
   
-  /* Table Row Animation */
+  .admin-table th,
+  .admin-table td {
+    padding: 0.6rem;
+  }
+  
+  .update-box {
+    flex-direction: column;
+  }
+  
+  .update-box input,
+  .update-box button {
+    width: 100%;
+  }
+  
+  .message-cell {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-hero {
+    height: 50vh;
+    min-height: 350px;
+  }
+  
+  .admin-hero-content h1 {
+    font-size: 1.5rem;
+  }
+  
+  .admin-login {
+    padding: 1.5rem 1rem;
+  }
+  
+  .login-card {
+    padding: 1.5rem;
+    margin: 0;
+  }
+  
+  .login-card h2 {
+    font-size: 1.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .hero-stat {
+    padding: 0.5rem 1rem;
+    min-width: 80px;
+  }
+  
+  .hero-stat-number {
+    font-size: 1.1rem;
+  }
+  
+  .message-cell {
+    max-width: 150px;
+  }
+}
+
+/* ==================== REDUCED MOTION PREFERENCE ==================== */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .login-card,
+  .load-btn,
+  .update-box button,
   .admin-table tbody tr {
-    animation: fadeInUp 0.3s ease forwards;
-    opacity: 0;
+    transition: none !important;
+    animation: none !important;
   }
   
-  .admin-table tbody tr:nth-child(1) { animation-delay: 0.05s; }
-  .admin-table tbody tr:nth-child(2) { animation-delay: 0.1s; }
-  .admin-table tbody tr:nth-child(3) { animation-delay: 0.15s; }
-  .admin-table tbody tr:nth-child(4) { animation-delay: 0.2s; }
-  .admin-table tbody tr:nth-child(5) { animation-delay: 0.25s; }
-  .admin-table tbody tr:nth-child(6) { animation-delay: 0.3s; }
-  .admin-table tbody tr:nth-child(7) { animation-delay: 0.35s; }
-  .admin-table tbody tr:nth-child(8) { animation-delay: 0.4s; }
-  .admin-table tbody tr:nth-child(9) { animation-delay: 0.45s; }
-  .admin-table tbody tr:nth-child(10) { animation-delay: 0.5s; }
+  .fade-up {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .admin-table tbody tr {
+    opacity: 1;
+  }
+}
+
+/* ==================== FOCUS STATES ==================== */
+.login-card input:focus-visible,
+.update-box input:focus-visible,
+.load-btn:focus-visible,
+.update-box button:focus-visible,
+.login-card button:focus-visible {
+  outline: 3px solid #64b5f6;
+  outline-offset: 2px;
+}
+
+/* ==================== SCROLLBAR ==================== */
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #64b5f6, #2196f3);
+  border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #2196f3, #0d47a1);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #64b5f6, #2196f3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #2196f3, #0d47a1);
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+  .admin-hero,
+  .load-btn,
+  .update-box,
+  .success,
+  .security-note {
+    display: none;
+  }
+  
+  .admin-dashboard-container {
+    padding: 0;
+  }
+  
+  .admin-dashboard {
+    padding: 0;
+    background: white;
+  }
+  
+  .section {
+    box-shadow: none;
+    break-inside: avoid;
+    border: 1px solid #ddd;
+  }
+  
+  .table-container {
+    overflow: visible;
+  }
+  
+  .admin-table {
+    border: 1px solid #ddd;
+  }
+}

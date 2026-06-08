@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './FAQs.css';
 
 function FAQs() {
   const [openIndex, setOpenIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
+  const observerRef = useRef(null);
 
   const faqs = [
     {
@@ -102,6 +103,35 @@ function FAQs() {
     { id: 'rates', name: 'Interest Rates', icon: '📈' }
   ];
 
+  // Optimized Intersection Observer for scroll animations
+  useEffect(() => {
+    const options = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -30px 0px'
+    };
+
+    const handleIntersect = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          requestAnimationFrame(() => {
+            entry.target.classList.add('animate');
+          });
+        }
+      });
+    };
+
+    observerRef.current = new IntersectionObserver(handleIntersect, options);
+
+    const elements = document.querySelectorAll('.fade-up');
+    elements.forEach(el => observerRef.current.observe(el));
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
+
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -113,101 +143,133 @@ function FAQs() {
     return matchesSearch && matchesCategory;
   });
 
+  const handleContactClick = () => {
+    window.location.href = '/contact';
+  };
+
+  const handleScheduleClick = () => {
+    window.location.href = '/contact';
+  };
+
   return (
     <div className="faqs-page">
-      <div className="faqs-header">
-        <h1 className="faqs-title">Frequently Asked Questions</h1>
-        <p className="faqs-subtitle">
-          Find answers to common questions about mortgages and home buying
-        </p>
-      </div>
-
-      <div className="faqs-search-section">
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search your question..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="search-input"
-          />
-          <span className="search-icon">🔍</span>
-          {searchTerm && (
-            <button className="clear-search" onClick={() => setSearchTerm('')}>×</button>
-          )}
+      {/* Hero Section - Full width image with 1500px content constraint */}
+      <div className="faqs-hero">
+        <div className="faqs-hero-overlay"></div>
+        <div className="faqs-hero-image" aria-label="FAQs hero background"></div>
+        <div className="faqs-hero-container">
+          <div className="faqs-hero-content">
+            <h1 className="fade-up">Frequently Asked Questions</h1>
+            <p className="fade-up">Find answers to common questions about mortgages and home buying with Oakmont Capital</p>
+            <div className="hero-stats fade-up">
+              <div className="hero-stat">
+                <span className="hero-stat-number">500+</span>
+                <span className="hero-stat-label">Questions Answered</span>
+              </div>
+              <div className="hero-stat">
+                <span className="hero-stat-number">98%</span>
+                <span className="hero-stat-label">Customer Satisfaction</span>
+              </div>
+              <div className="hero-stat">
+                <span className="hero-stat-number">24/7</span>
+                <span className="hero-stat-label">Expert Support</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="faqs-categories">
-        {categories.map(category => (
-          <button
-            key={category.id}
-            className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
-            onClick={() => setActiveCategory(category.id)}
-          >
-            <span className="category-icon">{category.icon}</span>
-            <span className="category-name">{category.name}</span>
-          </button>
-        ))}
-      </div>
+      {/* Search and Categories - Contained at 1500px */}
+      <div className="faqs-container-wrapper">
+        <div className="faqs-search-section fade-up">
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Search your question..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input"
+            />
+            <span className="search-icon">🔍</span>
+            {searchTerm && (
+              <button className="clear-search" onClick={() => setSearchTerm('')} aria-label="Clear search">×</button>
+            )}
+          </div>
+        </div>
 
-      <div className="faqs-container">
-        {filteredFaqs.length === 0 ? (
-          <div className="no-results">
-            <p>No questions found matching "{searchTerm}"</p>
-            <button className="reset-search" onClick={() => { setSearchTerm(''); setActiveCategory('all'); }}>
-              Clear Search
+        <div className="faqs-categories fade-up">
+          {categories.map(category => (
+            <button
+              key={category.id}
+              className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
+              onClick={() => setActiveCategory(category.id)}
+              aria-label={`Filter by ${category.name}`}
+            >
+              <span className="category-icon">{category.icon}</span>
+              <span className="category-name">{category.name}</span>
             </button>
-          </div>
-        ) : (
-          filteredFaqs.map((faq, index) => (
-            <div key={faq.id} className="faq-item">
-              <div
-                className={`faq-question ${openIndex === index ? 'active' : ''}`}
-                onClick={() => toggleFAQ(index)}
-              >
-                <div className="faq-question-content">
-                  <span className="faq-icon">{openIndex === index ? '▼' : '▶'}</span>
-                  <h3>{faq.question}</h3>
-                </div>
-                <span className="faq-category-badge">{categories.find(c => c.id === faq.category)?.name}</span>
-              </div>
-              {openIndex === index && (
-                <div className="faq-answer">
-                  <p>{faq.answer}</p>
-                  <div className="faq-detailed-answer">
-                    <h4>More Details:</h4>
-                    {faq.detailedAnswer.split('\n').map((line, i) => (
-                      line.trim() && <p key={i}>{line}</p>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          ))
-        )}
-      </div>
+          ))}
+        </div>
 
-      <div className="faqs-cta">
-        <div className="cta-content">
-          <h3>Still have questions?</h3>
-          <p>Our mortgage experts are here to help you every step of the way.</p>
-          <div className="cta-buttons">
-            <button className="btn-contact">Contact Our Team</button>
-            <button className="btn-schedule">Schedule Consultation</button>
-          </div>
-          <div className="cta-stats">
-            <div className="stat">
-              <span className="stat-number">24/7</span>
-              <span className="stat-label">Support Available</span>
+        <div className="faqs-list">
+          {filteredFaqs.length === 0 ? (
+            <div className="no-results fade-up">
+              <p>No questions found matching "{searchTerm}"</p>
+              <button className="reset-search" onClick={() => { setSearchTerm(''); setActiveCategory('all'); }}>
+                Clear Search
+              </button>
             </div>
-            <div className="stat">
-              <span className="stat-number">&lt; 24h</span>
-              <span className="stat-label">Response Time</span>
+          ) : (
+            filteredFaqs.map((faq, index) => (
+              <div key={faq.id} className="faq-item fade-up" style={{ animationDelay: `${Math.min(index * 0.02, 0.4)}s` }}>
+                <div
+                  className={`faq-question ${openIndex === index ? 'active' : ''}`}
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <div className="faq-question-content">
+                    <span className="faq-icon">{openIndex === index ? '▼' : '▶'}</span>
+                    <h3>{faq.question}</h3>
+                  </div>
+                  <span className="faq-category-badge">{categories.find(c => c.id === faq.category)?.name}</span>
+                </div>
+                {openIndex === index && (
+                  <div className="faq-answer">
+                    <p>{faq.answer}</p>
+                    <div className="faq-detailed-answer">
+                      <h4>More Details:</h4>
+                      {faq.detailedAnswer.split('\n').map((line, i) => (
+                        line.trim() && <p key={i}>{line}</p>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))
+          )}
+        </div>
+
+        {/* CTA Section */}
+        <div className="faqs-cta fade-up">
+          <div className="cta-content">
+            <h3>Still have questions?</h3>
+            <p>Oakmont Capital's mortgage experts are here to help you every step of the way.</p>
+            <div className="cta-buttons">
+              <button className="btn-contact" onClick={handleContactClick}>Contact Our Team</button>
+              <button className="btn-schedule" onClick={handleScheduleClick}>Schedule Consultation</button>
             </div>
-            <div className="stat">
-              <span className="stat-number">98%</span>
-              <span className="stat-label">Satisfaction Rate</span>
+            <div className="cta-stats">
+              <div className="stat">
+                <span className="stat-number">24/7</span>
+                <span className="stat-label">Support Available</span>
+              </div>
+              <div className="stat">
+                <span className="stat-number">&lt; 24h</span>
+                <span className="stat-label">Response Time</span>
+              </div>
+              <div className="stat">
+                <span className="stat-number">98%</span>
+                <span className="stat-label">Satisfaction Rate</span>
+              </div>
             </div>
           </div>
         </div>

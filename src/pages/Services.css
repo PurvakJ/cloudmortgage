@@ -1,608 +1,837 @@
-/* Services.css */
+/* Services.css - Oakmont Capital - Optimized for Performance */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.services-page {
+  width: 100%;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* ==================== HERO SECTION - FULL WIDTH IMAGE ==================== */
+.services-hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.services-hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+/* Parallax effect only on desktop */
+@media (min-width: 1024px) {
+  .services-hero-image {
+    background-attachment: fixed;
+  }
+}
+
+.services-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.88) 0%, rgba(42, 82, 152, 0.88) 100%);
+  z-index: 1;
+}
+
+.services-hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1500px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 2rem;
+}
+
+.services-hero-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.services-hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  font-family: 'Rasputin', 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.services-hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  font-family: 'Rasputin', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Hero Stats */
+.hero-stats {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  text-align: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  min-width: 140px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-stat:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.hero-stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #64b5f6;
+  margin-bottom: 0.3rem;
+  font-family: 'Rasputin', serif;
+}
+
+.hero-stat-label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  font-family: 'Rasputin', sans-serif;
+}
+
+/* ==================== SERVICES CONTAINER - MAX 1500px ==================== */
+.services-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ==================== ANIMATIONS - OPTIMIZED ==================== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  will-change: opacity, transform;
+}
+
+.fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.fade-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.fade-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  will-change: opacity, transform;
+}
+
+.scale-in.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ==================== SERVICES GRID ==================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+/* ==================== SERVICE CARD - OPTIMIZED ==================== */
+.service-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1), 
+              box-shadow 0.4s ease,
+              border-color 0.2s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect without pseudo-element animation to reduce lag */
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: #64b5f6;
+}
+
+.service-icon {
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.05);
+}
+
+.service-title {
+  font-size: 1.3rem;
+  color: #1e3c72;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  min-height: 60px;
+  font-family: 'Rasputin', serif;
+}
+
+.service-description {
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  font-size: 0.95rem;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.service-button {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  font-size: 0.95rem;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.service-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+.service-button:active {
+  transform: translateY(0);
+}
+
+/* ==================== MODAL OVERLAY ==================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* ==================== MODAL CONTENT ==================== */
+.modal-content {
+  background: white;
+  border-radius: 25px;
+  max-width: 850px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalSlideIn 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: sticky;
+  top: 1rem;
+  right: 1rem;
+  float: right;
+  background: #f44336;
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  margin: 1rem 1rem 0 0;
+}
+
+.modal-close:hover {
+  background: #d32f2f;
+  transform: scale(1.05);
+}
+
+.modal-close:active {
+  transform: scale(0.95);
+}
+
+/* ==================== MODAL HEADER ==================== */
+.modal-header {
+  padding: 2rem 2rem 0 2rem;
+  text-align: center;
+  clear: both;
+}
+
+.modal-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  color: #1e3c72;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-family: 'Rasputin', serif;
+}
+
+.modal-subtitle {
+  font-size: 0.85rem;
+  color: #64b5f6;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* ==================== MODAL BODY ==================== */
+.modal-body {
+  padding: 1.5rem 2rem 2rem 2rem;
+}
+
+.service-detailed-description {
+  color: #495057;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  background: #f8f9fa;
+  padding: 1.2rem;
+  border-radius: 15px;
+  border-left: 4px solid #64b5f6;
+  font-family: 'Rasputin', sans-serif;
+}
+
+/* ==================== SERVICE SECTIONS ==================== */
+.service-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  color: #1e3c72;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #64b5f6;
+  display: inline-block;
+  font-family: 'Rasputin', serif;
+}
+
+/* ==================== BENEFITS LIST ==================== */
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.8rem;
+}
+
+.benefits-list li {
+  padding: 0.5rem 0 0.5rem 1.8rem;
+  position: relative;
+  color: #495057;
+  font-size: 0.95rem;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.benefits-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* ==================== PROCESS STEPS ==================== */
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.8rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.process-step:hover {
+  background: #e3f2fd;
+  transform: translateX(5px);
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #64b5f6, #2196f3);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+  font-family: 'Rasputin', serif;
+}
+
+.step-text {
+  flex: 1;
+  color: #495057;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  font-family: 'Rasputin', sans-serif;
+}
+
+/* ==================== WHO CAN APPLY ==================== */
+.who-can-apply {
+  background: #e3f2fd;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  color: #1e3c72;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  font-family: 'Rasputin', sans-serif;
+}
+
+/* ==================== CONTACT SECTION ==================== */
+.contact-section {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 1.5rem;
+  border-radius: 20px;
+  margin-top: 1rem;
+}
+
+.contact-message {
+  color: #495057;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-family: 'Rasputin', sans-serif;
+}
+
+/* ==================== ACTION BUTTONS ==================== */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-appointment,
+.btn-calculator {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 0.95rem;
+  font-family: 'Rasputin', sans-serif;
+}
+
+.btn-appointment {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+}
+
+.btn-appointment:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+.btn-calculator {
+  background: white;
+  color: #1e3c72;
+  border: 2px solid #1e3c72;
+}
+
+.btn-calculator:hover {
+  background: #1e3c72;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-appointment:active,
+.btn-calculator:active {
+  transform: translateY(0);
+}
+
+/* ==================== CONTACT INFO ==================== */
+.contact-info {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.contact-item {
+  padding: 0.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.contact-label {
+  font-weight: 600;
+  color: #1e3c72;
+  min-width: 100px;
+  font-family: 'Rasputin', serif;
+}
+
+.contact-value {
+  color: #495057;
+  font-family: 'Rasputin', sans-serif;
+}
+
+/* ==================== DISCLAIMER ==================== */
+.disclaimer-note {
+  font-size: 0.75rem;
+  color: #adb5bd;
+  line-height: 1.5;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+  font-style: italic;
+  font-family: 'Rasputin', sans-serif;
+}
+
+/* ==================== SCROLLBAR - OPTIMIZED ==================== */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #64b5f6;
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #2196f3;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 1024px) {
+  .services-container {
+    padding: 0 1.5rem;
   }
   
-  .services-page {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: #f8f9fa;
-    min-height: 100vh;
-  }
-  
-  /* Header Styles */
-  .services-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    border-radius: 20px;
-    color: white;
-  }
-  
-  .services-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: 1px;
-  }
-  
-  .services-subtitle {
-    font-size: 1rem;
-    opacity: 0.9;
-  }
-  
-  /* Services Grid */
   .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
   }
   
-  /* Service Card */
+  .services-hero {
+    height: 70vh;
+    min-height: 450px;
+  }
+  
+  .services-hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    padding: 0 1rem;
+  }
+  
+  .services-hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .services-hero-container {
+    padding: 0 1rem;
+  }
+  
+  .services-hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .services-hero-content p {
+    font-size: 0.9rem;
+  }
+  
+  .hero-stats {
+    gap: 1rem;
+  }
+  
+  .hero-stat {
+    padding: 0.6rem 1.2rem;
+    min-width: 100px;
+  }
+  
+  .hero-stat-number {
+    font-size: 1.3rem;
+  }
+  
+  .hero-stat-label {
+    font-size: 0.7rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin: 2rem 0;
+  }
+  
   .service-card {
-    background: white;
-    border-radius: 15px;
-    padding: 1.8rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e0e0e0;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    border-color: #64b5f6;
+    padding: 1.5rem;
   }
   
   .service-title {
-    font-size: 1.3rem;
-    color: #1e3c72;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    line-height: 1.4;
-    min-height: 60px;
+    font-size: 1.1rem;
+    min-height: auto;
   }
   
-  .service-description {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-    font-size: 0.95rem;
-  }
-  
-  .service-button {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    font-size: 0.95rem;
-  }
-  
-  .service-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
-    background: linear-gradient(135deg, #2a5298, #1e3c72);
-  }
-  
-  /* Modal Overlay */
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    padding: 1rem;
-    overflow-y: auto;
-  }
-  
-  /* Modal Content */
   .modal-content {
-    background: white;
-    border-radius: 20px;
-    max-width: 800px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    animation: modalSlideIn 0.3s ease;
+    max-height: 85vh;
   }
   
-  @keyframes modalSlideIn {
-    from {
-      transform: translateY(-50px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  /* Modal Close Button */
-  .modal-close {
-    position: sticky;
-    top: 1rem;
-    right: 1rem;
-    float: right;
-    background: #f44336;
-    color: white;
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-  }
-  
-  .modal-close:hover {
-    background: #d32f2f;
-    transform: scale(1.1);
-  }
-  
-  /* Modal Header */
   .modal-header {
-    padding: 2rem 2rem 0 2rem;
+    padding: 1.5rem 1.5rem 0 1.5rem;
   }
   
   .modal-title {
-    font-size: 1.8rem;
-    color: #1e3c72;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-    padding-right: 50px;
+    font-size: 1.4rem;
   }
   
-  .modal-subtitle {
-    font-size: 0.9rem;
-    color: #64b5f6;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-  }
-  
-  /* Modal Body */
   .modal-body {
-    padding: 1.5rem 2rem 2rem 2rem;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
   }
   
-  .service-detailed-description {
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    background: #f8f9fa;
-    padding: 1.2rem;
-    border-radius: 10px;
-    border-left: 3px solid #64b5f6;
-  }
-  
-  /* Service Sections */
-  .service-section {
-    margin-bottom: 2rem;
-  }
-  
-  .section-title {
-    font-size: 1.3rem;
-    color: #1e3c72;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #64b5f6;
-    display: inline-block;
-  }
-  
-  /* Benefits List */
   .benefits-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 0.8rem;
+    grid-template-columns: 1fr;
   }
   
-  .benefits-list li {
-    padding: 0.5rem 0 0.5rem 1.5rem;
-    position: relative;
-    color: #555;
-    font-size: 0.95rem;
-  }
-  
-  .benefits-list li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #4caf50;
-    font-weight: bold;
-    font-size: 1rem;
-  }
-  
-  /* Process Steps */
-  .process-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .process-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 0.8rem;
-    background: #f8f9fa;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-  }
-  
-  .process-step:hover {
-    background: #e3f2fd;
-    transform: translateX(5px);
-  }
-  
-  .step-number {
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(135deg, #64b5f6, #2196f3);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    flex-shrink: 0;
-  }
-  
-  .step-text {
-    flex: 1;
-    color: #555;
-    line-height: 1.5;
-    font-size: 0.95rem;
-  }
-  
-  /* Who Can Apply */
-  .who-can-apply {
-    background: #e3f2fd;
-    padding: 1rem;
-    border-radius: 10px;
-    color: #1e3c72;
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-  
-  /* Contact Section */
-  .contact-section {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    padding: 1.5rem;
-    border-radius: 15px;
-    margin-top: 1rem;
-  }
-  
-  .contact-message {
-    color: #555;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-  }
-  
-  /* Action Buttons */
   .action-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
   
   .btn-appointment,
   .btn-calculator {
-    flex: 1;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
+    width: 100%;
   }
   
-  .btn-appointment {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
+  .process-step {
+    padding: 0.6rem;
   }
   
-  .btn-appointment:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
   }
   
-  .btn-calculator {
-    background: white;
-    color: #1e3c72;
-    border: 2px solid #1e3c72;
-  }
-  
-  .btn-calculator:hover {
-    background: #1e3c72;
-    color: white;
-    transform: translateY(-2px);
-  }
-  
-  /* Contact Info */
-  .contact-info {
-    background: white;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+  .step-text {
+    font-size: 0.85rem;
   }
   
   .contact-item {
-    padding: 0.5rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 0.2rem;
   }
   
   .contact-label {
-    font-weight: 600;
-    color: #1e3c72;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-hero {
+    height: 50vh;
+    min-height: 350px;
+  }
+  
+  .services-hero-content h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-stat {
+    padding: 0.5rem 0.8rem;
     min-width: 80px;
   }
   
-  .contact-value {
-    color: #555;
+  .hero-stat-number {
+    font-size: 1rem;
   }
   
-  /* Disclaimer Note */
-  .disclaimer-note {
-    font-size: 0.8rem;
-    color: #999;
-    line-height: 1.5;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e0e0e0;
-    font-style: italic;
+  .hero-stat-label {
+    font-size: 0.6rem;
   }
   
-  /* Scrollbar Styling */
-  .modal-content::-webkit-scrollbar {
-    width: 8px;
+  .modal-title {
+    font-size: 1.2rem;
   }
   
-  .modal-content::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
+  .section-title {
+    font-size: 1.1rem;
   }
   
-  .modal-content::-webkit-scrollbar-thumb {
-    background: #64b5f6;
-    border-radius: 10px;
+  .service-detailed-description {
+    font-size: 0.85rem;
+    padding: 1rem;
   }
   
-  .modal-content::-webkit-scrollbar-thumb:hover {
-    background: #2196f3;
+  .benefits-list li {
+    font-size: 0.85rem;
   }
   
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .services-grid {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
+  .who-can-apply {
+    font-size: 0.85rem;
   }
   
-  @media (max-width: 768px) {
-    .services-page {
-      padding: 1rem;
-    }
-    
-    .services-header {
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    
-    .services-title {
-      font-size: 1.8rem;
-    }
-    
-    .services-subtitle {
-      font-size: 0.9rem;
-    }
-    
-    .services-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    
-    .service-card {
-      padding: 1.2rem;
-    }
-    
-    .service-title {
-      font-size: 1.1rem;
-      min-height: auto;
-    }
-    
-    .modal-content {
-      max-height: 85vh;
-    }
-    
-    .modal-header {
-      padding: 1.5rem 1.5rem 0 1.5rem;
-    }
-    
-    .modal-title {
-      font-size: 1.4rem;
-    }
-    
-    .modal-body {
-      padding: 1rem 1.5rem 1.5rem 1.5rem;
-    }
-    
-    .benefits-list {
-      grid-template-columns: 1fr;
-    }
-    
-    .action-buttons {
-      flex-direction: column;
-    }
-    
-    .btn-appointment,
-    .btn-calculator {
-      width: 100%;
-    }
-    
-    .process-step {
-      padding: 0.6rem;
-    }
-    
-    .step-number {
-      width: 30px;
-      height: 30px;
-      font-size: 0.9rem;
-    }
-    
-    .step-text {
-      font-size: 0.9rem;
-    }
+  .modal-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+}
+
+/* ==================== REDUCED MOTION PREFERENCE ==================== */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .fade-left,
+  .fade-right,
+  .scale-in,
+  .service-card,
+  .service-button,
+  .modal-content,
+  .process-step,
+  .hero-stat {
+    transition: none !important;
+    animation: none !important;
   }
   
-  @media (max-width: 480px) {
-    .services-title {
-      font-size: 1.5rem;
-    }
-    
-    .modal-title {
-      font-size: 1.2rem;
-    }
-    
-    .section-title {
-      font-size: 1.1rem;
-    }
-    
-    .service-detailed-description {
-      font-size: 0.9rem;
-      padding: 1rem;
-    }
-    
-    .benefits-list li {
-      font-size: 0.85rem;
-    }
-    
-    .who-can-apply {
-      font-size: 0.85rem;
-    }
-    
-    .contact-item {
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-    
-    .contact-label {
-      min-width: auto;
-    }
-    
-    .modal-close {
-      top: 0.5rem;
-      right: 0.5rem;
-      width: 30px;
-      height: 30px;
-      font-size: 1.2rem;
-    }
+  .fade-up,
+  .fade-left,
+  .fade-right,
+  .scale-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+  .services-hero,
+  .modal-overlay {
+    position: static;
+    background: none;
+    height: auto;
   }
   
-  /* Print Styles */
-  @media print {
-    .modal-overlay {
-      position: static;
-      background: none;
-    }
-    
-    .modal-content {
-      max-height: none;
-      overflow: visible;
-    }
-    
-    .modal-close,
-    .action-buttons {
-      display: none;
-    }
+  .services-hero-image {
+    display: none;
   }
   
-  /* Loading Animation for Cards */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .modal-content {
+    max-height: none;
+    overflow: visible;
+    box-shadow: none;
+  }
+  
+  .modal-close,
+  .action-buttons,
+  .service-button {
+    display: none;
   }
   
   .service-card {
-    animation: fadeInUp 0.5s ease forwards;
-    opacity: 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
   }
-  
-  .service-card:nth-child(1) { animation-delay: 0.05s; }
-  .service-card:nth-child(2) { animation-delay: 0.1s; }
-  .service-card:nth-child(3) { animation-delay: 0.15s; }
-  .service-card:nth-child(4) { animation-delay: 0.2s; }
-  .service-card:nth-child(5) { animation-delay: 0.25s; }
-  .service-card:nth-child(6) { animation-delay: 0.3s; }
-  .service-card:nth-child(7) { animation-delay: 0.35s; }
-  .service-card:nth-child(8) { animation-delay: 0.4s; }
-  .service-card:nth-child(9) { animation-delay: 0.45s; }
-  .service-card:nth-child(10) { animation-delay: 0.5s; }
-  
-  /* Hover Effects */
-  .service-card {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(100, 181, 246, 0.1), transparent);
-    transition: left 0.5s ease;
-  }
-  
-  .service-card:hover::before {
-    left: 100%;
-  }
-  
-  /* Focus States for Accessibility */
-  .service-button:focus,
-  .modal-close:focus,
-  .btn-appointment:focus,
-  .btn-calculator:focus {
-    outline: 3px solid #64b5f6;
-    outline-offset: 2px;
-  }
+}

@@ -1,10 +1,11 @@
 // components/Navbar.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -14,22 +15,49 @@ function Navbar() {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+    return () => {
+      document.body.classList.remove('menu-open');
+    };
+  }, [isOpen]);
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-      <Link to="/" className="navbar-logo" onClick={closeMenu}>
-  <img
-    src="https://i.postimg.cc/nzjRT8BG/Screenshot-2026-04-09-at-15-47-07-removebg-preview.png"
-    alt="MortgageCloud Logo"
-    className="logo-img"
-  />
-</Link>
-        
-        {/* Hamburger Icon */}
-        <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
+        <div className="navbar-header">
+          <Link to="/" className="navbar-logo" onClick={closeMenu}>
+            <img
+              src="https://i.postimg.cc/8cFhHwDJ/Whats-App-Image-2026-06-08-at-07-21-52-removebg-preview.png"
+              alt="MortgageCloud Logo"
+              className="logo-img"
+            />
+          </Link>
+          
+          {/* Hamburger Icon */}
+          <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </div>
         </div>
         
         {/* Navigation Menu */}

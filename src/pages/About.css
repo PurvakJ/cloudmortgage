@@ -18,7 +18,8 @@
   /* Hero Section */
   .about-hero {
     position: relative;
-    height: 400px;
+    height: 80vh;
+    max-height: 700px;
     background-image: linear-gradient(135deg, rgba(30, 60, 114, 0.9), rgba(42, 82, 152, 0.9)), 
                       url('https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1600');
     background-size: cover;

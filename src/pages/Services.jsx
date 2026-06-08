@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Services.css';
 
 function Services() {
   const navigate = useNavigate();
   const [selectedService, setSelectedService] = useState(null);
+  const observerRef = useRef(null);
 
   const services = [
     {
@@ -271,6 +272,36 @@ function Services() {
     }
   ];
 
+  // Optimized Intersection Observer for scroll animations with requestAnimationFrame
+  useEffect(() => {
+    const options = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -30px 0px'
+    };
+
+    const handleIntersect = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Use requestAnimationFrame for smoother animation
+          requestAnimationFrame(() => {
+            entry.target.classList.add('animate');
+          });
+        }
+      });
+    };
+
+    observerRef.current = new IntersectionObserver(handleIntersect, options);
+
+    const elements = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .scale-in');
+    elements.forEach(el => observerRef.current.observe(el));
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
+
   const handleBookAppointment = () => {
     navigate('/contact');
     closeModal();
@@ -283,39 +314,84 @@ function Services() {
 
   const closeModal = () => {
     setSelectedService(null);
+    // Prevent body scroll when modal is closed
+    document.body.style.overflow = '';
+  };
+
+  const openModal = (service) => {
+    setSelectedService(service);
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Get service icon
+  const getServiceIcon = (id) => {
+    const icons = {
+      1: "🏠", 2: "🔄", 3: "📋", 4: "✅", 5: "💰",
+      6: "💼", 7: "📅", 8: "🏘️", 9: "💳", 10: "🔒"
+    };
+    return icons[id] || "🏦";
   };
 
   return (
     <div className="services-page">
-      <div className="services-header">
-        <h1 className="services-title">Our Services</h1>
-        <p className="services-subtitle">
-          Comprehensive mortgage solutions tailored to your unique needs
-        </p>
+      {/* Hero Section - Full width image with 1500px content constraint */}
+      <div className="services-hero">
+        <div className="services-hero-overlay"></div>
+        <div className="services-hero-image" aria-label="Mortgage services hero background"></div>
+        <div className="services-hero-container">
+          <div className="services-hero-content">
+            <h1 className="fade-up">Oakmont Capital Services</h1>
+            <p className="fade-up">Comprehensive mortgage solutions tailored to your unique needs</p>
+            <div className="hero-stats fade-up">
+              <div className="hero-stat">
+                <span className="hero-stat-number">25+</span>
+                <span className="hero-stat-label">Years Experience</span>
+              </div>
+              <div className="hero-stat">
+                <span className="hero-stat-number">10k+</span>
+                <span className="hero-stat-label">Happy Clients</span>
+              </div>
+              <div className="hero-stat">
+                <span className="hero-stat-number">$5B+</span>
+                <span className="hero-stat-label">Loans Funded</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       
-      <div className="services-grid">
-        {services.map((service) => (
-          <div key={service.id} className="service-card">
-            <h3 className="service-title">{service.title}</h3>
-            <p className="service-description">{service.description}</p>
-            <button 
-              className="service-button"
-              onClick={() => setSelectedService(service)}
+      {/* Services Grid - Contained at 1500px */}
+      <div className="services-container">
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <div 
+              key={service.id} 
+              className="service-card fade-up" 
+              style={{ animationDelay: `${Math.min(index * 0.03, 0.5)}s` }}
             >
-              View Details
-            </button>
-          </div>
-        ))}
+              <div className="service-icon">{getServiceIcon(service.id)}</div>
+              <h3 className="service-title">{service.title}</h3>
+              <p className="service-description">{service.description}</p>
+              <button 
+                className="service-button"
+                onClick={() => openModal(service)}
+                aria-label={`View details for ${service.title}`}
+              >
+                View Details →
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Modal for Detailed Service View */}
       {selectedService && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>×</button>
+            <button className="modal-close" onClick={closeModal} aria-label="Close modal">×</button>
             
             <div className="modal-header">
+              <div className="modal-icon">{getServiceIcon(selectedService.id)}</div>
               <h2 className="modal-title">{selectedService.title}</h2>
               <p className="modal-subtitle">About This Service</p>
             </div>
