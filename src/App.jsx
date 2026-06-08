@@ -56,7 +56,7 @@ function Loader({ onLoadingComplete }) {
     <div className="loader-overlay">
       <div className="loader-container">
         <img 
-          src="https://i.postimg.cc/8cFhHwDJ/Whats-App-Image-2026-06-08-at-07-21-52-removebg-preview.png" 
+          src="https://i.postimg.cc/CKXPVZ1d/9b8900c0-6c5c-4d6e-b2ae-276f2602289b.png" 
           alt="Loading..." 
           className="loader-image"
           style={{
