@@ -10,8 +10,8 @@ const Home = () => {
   const carouselImages = [
     {
       url: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      title: "First Time Home Buyers",
-      subtitle: "Making Homeownership Accessible",
+      title: "Residential Mortgages",
+      subtitle: "⁠First time home buyers, Primary Residence & Investment Properties",
       description: "Get the best rates and flexible terms for your dream home"
     },
     {
