@@ -1,5 +1,5 @@
 /* Home.css - Enhanced CSS for Oakmont Capital Home Page */
-/* Premium Design with Brown Accents and Smooth Animations */
+/* Premium Design with Light Blue Accents and Smooth Animations */
 
 @import url('https://fonts.cdnfonts.com/css/rasputin');
 
@@ -45,7 +45,7 @@
   display: inline-block;
   letter-spacing: 1px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1a1a1a 0%, #8B5E3C 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c6e9e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -59,7 +59,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #c49a6c, #8B5E3C, #c49a6c);
+  background: linear-gradient(90deg, #5ba3d9, #2c6e9e, #5ba3d9);
   border-radius: 2px;
 }
 
@@ -175,7 +175,7 @@
   font-weight: 700;
   letter-spacing: 2px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #fff 0%, #c49a6c 100%);
+  background: linear-gradient(135deg, #fff 0%, #5ba3d9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -207,7 +207,7 @@
 }
 
 .carousel-btn:hover {
-  background: #c49a6c;
+  background: #5ba3d9;
   opacity: 1;
   transform: translateY(-50%) scale(1.1);
 }
@@ -246,7 +246,7 @@
 }
 
 .dot.active {
-  background: #c49a6c;
+  background: #5ba3d9;
   width: 30px;
   border-radius: 6px;
 }
@@ -303,7 +303,7 @@
    ============================================ */
 .btn-primary {
   display: inline-block;
-  background: linear-gradient(135deg, #c49a6c 0%, #8B5E3C 100%);
+  background: linear-gradient(135deg, #5ba3d9 0%, #2c6e9e 100%);
   color: #fff;
   border: none;
   padding: 14px 35px;
@@ -315,7 +315,7 @@
   letter-spacing: 1px;
   text-decoration: none;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-  box-shadow: 0 4px 15px rgba(139, 94, 60, 0.3);
+  box-shadow: 0 4px 15px rgba(44, 110, 158, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -336,9 +336,9 @@
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #8B5E3C 0%, #6B4226 100%);
+  background: linear-gradient(135deg, #2c6e9e 0%, #1e5a82 100%);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(139, 94, 60, 0.4);
+  box-shadow: 0 8px 25px rgba(44, 110, 158, 0.4);
 }
 
 .btn-primary-outline {
@@ -358,7 +358,7 @@
 
 .btn-primary-outline:hover {
   background: white;
-  color: #8B5E3C;
+  color: #2c6e9e;
   transform: translateY(-2px);
   box-shadow: 0 5px 20px rgba(255,255,255,0.3);
 }
@@ -366,7 +366,7 @@
 .btn-secondary {
   display: inline-block;
   padding: 12px 30px;
-  background: linear-gradient(135deg, #c49a6c 0%, #8B5E3C 100%);
+  background: linear-gradient(135deg, #5ba3d9 0%, #2c6e9e 100%);
   color: white;
   text-decoration: none;
   border-radius: 40px;
@@ -375,33 +375,33 @@
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(139, 94, 60, 0.3);
+  box-shadow: 0 4px 12px rgba(44, 110, 158, 0.3);
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, #8B5E3C 0%, #6B4226 100%);
+  background: linear-gradient(135deg, #2c6e9e 0%, #1e5a82 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(139, 94, 60, 0.4);
+  box-shadow: 0 6px 18px rgba(44, 110, 158, 0.4);
 }
 
 .btn-secondary-outline {
   display: inline-block;
   padding: 12px 30px;
   background: transparent;
-  color: #8B5E3C;
+  color: #2c6e9e;
   text-decoration: none;
   border-radius: 40px;
   font-weight: 600;
-  border: 2px solid #c49a6c;
+  border: 2px solid #5ba3d9;
   transition: all 0.3s ease;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .btn-secondary-outline:hover {
-  background: #c49a6c;
+  background: #5ba3d9;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(139, 94, 60, 0.3);
+  box-shadow: 0 5px 15px rgba(44, 110, 158, 0.3);
 }
 
 /* ============================================
@@ -423,7 +423,7 @@
   padding: 35px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(196, 154, 108, 0.1);
+  border: 1px solid rgba(91, 163, 217, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -435,7 +435,7 @@
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(90deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
@@ -447,7 +447,7 @@
 .service-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-  border-color: rgba(196, 154, 108, 0.3);
+  border-color: rgba(91, 163, 217, 0.3);
 }
 
 .service-icon {
@@ -495,12 +495,12 @@
 
 .service-features li:hover {
   transform: translateX(5px);
-  color: #8B5E3C;
+  color: #2c6e9e;
 }
 
 .service-features li:before {
   content: "✓";
-  color: #c49a6c;
+  color: #5ba3d9;
   position: absolute;
   left: 0;
   font-weight: bold;
@@ -509,7 +509,7 @@
 
 .service-link {
   display: inline-block;
-  color: #c49a6c;
+  color: #5ba3d9;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -524,7 +524,7 @@
   left: 0;
   width: 0%;
   height: 2px;
-  background: #c49a6c;
+  background: #5ba3d9;
   transition: width 0.3s ease;
 }
 
@@ -534,7 +534,7 @@
 
 .service-link:hover {
   transform: translateX(5px);
-  color: #8B5E3C;
+  color: #2c6e9e;
 }
 
 @media (max-width: 1024px) {
@@ -568,6 +568,7 @@
    ============================================ */
 .why-choose-us {
   padding: 100px 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
   position: relative;
   overflow: hidden;
 }
@@ -579,6 +580,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  background-image: url('https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1600');
   background-size: cover;
   background-position: center;
   opacity: 0.08;
@@ -586,13 +588,13 @@
 }
 
 .why-choose-us .section-header h2 {
-  color: black;
-  -webkit-text-fill-color: black;
+  color: white;
+  -webkit-text-fill-color: white;
   background: none;
 }
 
 .why-choose-us .section-header h2:after {
-  background: linear-gradient(90deg, #c49a6c, #8B5E3C, #c49a6c);
+  background: linear-gradient(90deg, #5ba3d9, #2c6e9e, #5ba3d9);
 }
 
 .why-choose-us .section-subtitle {
@@ -622,7 +624,7 @@
 .feature:hover {
   transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(196, 154, 108, 0.5);
+  border-color: rgba(91, 163, 217, 0.5);
   box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
 
@@ -641,14 +643,14 @@
   font-size: 22px;
   margin-bottom: 15px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-  color: black;
+  color: white;
 }
 
 .feature p {
   opacity: 0.85;
   line-height: 1.6;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-  color: black;
+  color: rgba(255,255,255,0.9);
 }
 
 @media (max-width: 1024px) {
@@ -819,7 +821,7 @@
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(196,154,108,0.03) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(91,163,217,0.03) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -859,15 +861,15 @@
   font-size: 14px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
   color: #333;
-  border: 1px solid rgba(196, 154, 108, 0.2);
+  border: 1px solid rgba(91, 163, 217, 0.2);
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .calc-feature:hover {
   transform: translateY(-2px);
-  border-color: #c49a6c;
-  box-shadow: 0 5px 15px rgba(196,154,108,0.2);
+  border-color: #5ba3d9;
+  box-shadow: 0 5px 15px rgba(91,163,217,0.2);
 }
 
 @media (max-width: 768px) {
@@ -993,7 +995,7 @@
   display: block;
   font-size: 48px;
   font-weight: bold;
-  color: #c49a6c;
+  color: #5ba3d9;
   margin-bottom: 10px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
@@ -1064,17 +1066,17 @@
   border-radius: 20px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(196, 154, 108, 0.1);
+  border: 1px solid rgba(91, 163, 217, 0.1);
 }
 
 .faq-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border-color: rgba(196, 154, 108, 0.3);
+  border-color: rgba(91, 163, 217, 0.3);
 }
 
 .faq-item h3 {
-  color: #8B5E3C;
+  color: #2c6e9e;
   margin-bottom: 15px;
   font-size: 18px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
@@ -1314,18 +1316,18 @@ button:focus-visible,
 .btn-secondary:focus-visible,
 .service-link:focus-visible,
 a:focus-visible {
-  outline: 3px solid #c49a6c;
+  outline: 3px solid #5ba3d9;
   outline-offset: 3px;
 }
 
 /* Selection Style */
 ::selection {
-  background: #c49a6c;
+  background: #5ba3d9;
   color: white;
 }
 
 ::-moz-selection {
-  background: #c49a6c;
+  background: #5ba3d9;
   color: white;
 }
 
@@ -1341,12 +1343,12 @@ a:focus-visible {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(135deg, #5ba3d9, #2c6e9e);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #8B5E3C, #6B4226);
+  background: linear-gradient(135deg, #2c6e9e, #1e5a82);
 }
 
 /* Loading animation for images */
@@ -1385,6 +1387,7 @@ a:focus-visible {
     font-size: 24px;
   }
 }
+
 /* Force FAQ button to be visible */
 .faq-button {
     display: flex !important;
@@ -1398,7 +1401,7 @@ a:focus-visible {
   
   .faq-button .btn-secondary {
     display: inline-block !important;
-    background: #c49a6c !important;
+    background: #5ba3d9 !important;
     color: white !important;
     padding: 12px 30px !important;
     border-radius: 40px !important;
@@ -1412,7 +1415,7 @@ a:focus-visible {
   }
   
   .faq-button .btn-secondary:hover {
-    background: #8B5E3C !important;
+    background: #2c6e9e !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 5px 15px rgba(139, 94, 60, 0.3) !important;
+    box-shadow: 0 5px 15px rgba(44, 110, 158, 0.3) !important;
   }

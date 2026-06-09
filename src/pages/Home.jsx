@@ -67,7 +67,7 @@ const Home = () => {
     },
     {
       icon: "🏘️",
-      title: "Jumbo Loans",
+      title: "Residential Financing",
       description: "Financing for high-value properties",
       features: ["Up to $3M loans", "Competitive rates", "Flexible terms"]
     },

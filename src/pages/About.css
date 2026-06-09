@@ -1,5 +1,5 @@
 /* About.css - Enhanced CSS for Oakmont Capital About Page */
-/* Premium Design with Brown Accents and Smooth Animations */
+/* Premium Design with Light Blue Accents and Smooth Animations */
 
 @import url('https://fonts.cdnfonts.com/css/rasputin');
 
@@ -81,7 +81,7 @@
   letter-spacing: 3px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  background: linear-gradient(135deg, #fff 0%, #c49a6c 100%);
+  background: linear-gradient(135deg, #fff 0%, #5ba3d9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -152,7 +152,7 @@
   left: 0;
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
   border-radius: 2px;
 }
 
@@ -167,13 +167,13 @@
 .story-signature {
   margin-top: 30px;
   padding-top: 20px;
-  border-top: 2px solid rgba(196, 154, 108, 0.3);
+  border-top: 2px solid rgba(91, 163, 217, 0.3);
 }
 
 .story-signature p {
   font-size: 18px;
   font-style: italic;
-  color: #8B5E3C;
+  color: #2c6e9e;
   font-weight: 500;
   margin-bottom: 0;
 }
@@ -284,7 +284,7 @@
 .vision-card:hover {
   transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(196, 154, 108, 0.5);
+  border-color: rgba(91, 163, 217, 0.5);
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
@@ -353,7 +353,7 @@
   margin-bottom: 15px;
   color: #1a1a1a;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1a1a1a 0%, #8B5E3C 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c6e9e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -396,7 +396,7 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(135deg, #5ba3d9, #2c6e9e);
   color: white;
   padding: 10px 20px;
   border-radius: 40px;
@@ -423,7 +423,7 @@
 
 .owner-position {
   font-size: 18px;
-  color: #c49a6c;
+  color: #5ba3d9;
   font-weight: 600;
   margin-bottom: 20px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
@@ -467,12 +467,12 @@
 
 .owner-expertise li:hover {
   transform: translateX(5px);
-  color: #8B5E3C;
+  color: #2c6e9e;
 }
 
 .owner-expertise li:before {
   content: "✓";
-  color: #c49a6c;
+  color: #5ba3d9;
   position: absolute;
   left: 0;
   font-weight: bold;
@@ -498,31 +498,31 @@
   align-items: center;
   gap: 10px;
   padding: 12px 25px;
-  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(135deg, #5ba3d9, #2c6e9e);
   color: white;
   text-decoration: none;
   border-radius: 40px;
   font-weight: 600;
   transition: all 0.3s ease;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-  box-shadow: 0 4px 12px rgba(139, 94, 60, 0.3);
+  box-shadow: 0 4px 12px rgba(44, 110, 158, 0.3);
 }
 
 .owner-contact-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(139, 94, 60, 0.4);
-  background: linear-gradient(135deg, #8B5E3C, #6B4226);
+  box-shadow: 0 6px 18px rgba(44, 110, 158, 0.4);
+  background: linear-gradient(135deg, #2c6e9e, #1e5a82);
 }
 
 .owner-contact-btn.email {
   background: transparent;
-  border: 2px solid #c49a6c;
-  color: #8B5E3C;
+  border: 2px solid #5ba3d9;
+  color: #2c6e9e;
   box-shadow: none;
 }
 
 .owner-contact-btn.email:hover {
-  background: #c49a6c;
+  background: #5ba3d9;
   color: white;
 }
 
@@ -618,7 +618,7 @@
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(196, 154, 108, 0.1);
+  border: 1px solid rgba(91, 163, 217, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -630,7 +630,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
@@ -642,7 +642,7 @@
 .value-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border-color: rgba(196, 154, 108, 0.3);
+  border-color: rgba(91, 163, 217, 0.3);
 }
 
 .value-icon {
@@ -750,7 +750,7 @@
   display: block;
   font-size: 48px;
   font-weight: 800;
-  color: #c49a6c;
+  color: #5ba3d9;
   margin-bottom: 10px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
@@ -814,7 +814,7 @@
   margin-bottom: 50px;
   color: #1a1a1a;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1a1a1a 0%, #8B5E3C 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c6e9e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -833,13 +833,13 @@
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(196, 154, 108, 0.1);
+  border: 1px solid rgba(91, 163, 217, 0.1);
 }
 
 .choose-item:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border-color: rgba(196, 154, 108, 0.3);
+  border-color: rgba(91, 163, 217, 0.3);
 }
 
 .choose-icon {
@@ -960,7 +960,7 @@
 
 .btn-primary {
   display: inline-block;
-  background: linear-gradient(135deg, #c49a6c 0%, #8B5E3C 100%);
+  background: linear-gradient(135deg, #5ba3d9 0%, #2c6e9e 100%);
   color: #fff;
   border: none;
   padding: 14px 35px;
@@ -972,13 +972,13 @@
   letter-spacing: 1px;
   text-decoration: none;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-  box-shadow: 0 4px 15px rgba(139, 94, 60, 0.3);
+  box-shadow: 0 4px 15px rgba(44, 110, 158, 0.3);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #8B5E3C 0%, #6B4226 100%);
+  background: linear-gradient(135deg, #2c6e9e 0%, #1e5a82 100%);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(139, 94, 60, 0.4);
+  box-shadow: 0 8px 25px rgba(44, 110, 158, 0.4);
 }
 
 .btn-secondary {
@@ -989,16 +989,16 @@
   text-decoration: none;
   border-radius: 40px;
   font-weight: 600;
-  border: 2px solid #c49a6c;
+  border: 2px solid #5ba3d9;
   transition: all 0.3s ease;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .btn-secondary:hover {
-  background: #c49a6c;
+  background: #5ba3d9;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(196,154,108,0.3);
+  box-shadow: 0 5px 15px rgba(91, 163, 217, 0.3);
 }
 
 .personal-note {
@@ -1140,18 +1140,18 @@ button:focus-visible,
 .btn-primary:focus-visible,
 .btn-secondary:focus-visible,
 a:focus-visible {
-  outline: 3px solid #c49a6c;
+  outline: 3px solid #5ba3d9;
   outline-offset: 3px;
 }
 
 /* Selection Style */
 ::selection {
-  background: #c49a6c;
+  background: #5ba3d9;
   color: white;
 }
 
 ::-moz-selection {
-  background: #c49a6c;
+  background: #5ba3d9;
   color: white;
 }
 
@@ -1167,10 +1167,10 @@ a:focus-visible {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(135deg, #5ba3d9, #2c6e9e);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #8B5E3C, #6B4226);
+  background: linear-gradient(135deg, #2c6e9e, #1e5a82);
 }

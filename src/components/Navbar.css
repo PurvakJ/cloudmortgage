@@ -1,5 +1,5 @@
 /* Navbar.css - Enhanced CSS for Oakmont Capital Navigation */
-/* Premium Design with Brown Accents and Smooth Animations */
+/* Premium Design with Light Blue Accents and Smooth Animations */
 
 @import url('https://fonts.cdnfonts.com/css/rasputin');
 
@@ -28,7 +28,7 @@
   backdrop-filter: blur(10px);
   padding: 12px 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid rgba(196, 154, 108, 0.2);
+  border-bottom: 1px solid rgba(91, 163, 217, 0.2);
 }
 
 .navbar-container {
@@ -48,7 +48,7 @@
 }
 
 /* ============================================
-   LOGO SECTION - UPDATED FOR TWO LOGOS
+   LOGO SECTION
    ============================================ */
 .navbar-header {
   display: flex;
@@ -208,13 +208,13 @@
   left: 0;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
   transition: width 0.3s ease;
 }
 
-/* Hover color - always brown regardless of scroll state */
+/* Hover color - always light blue regardless of scroll state */
 .nav-link:hover {
-  color: #c49a6c;
+  color: #5ba3d9;
   transform: translateY(-2px);
 }
 
@@ -224,7 +224,7 @@
 
 /* Active link styles */
 .nav-link.active {
-  color: #c49a6c;
+  color: #5ba3d9;
   position: relative;
 }
 
@@ -239,13 +239,13 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
   border-radius: 2px;
 }
 
-/* When scrolled, active link still shows brown */
+/* When scrolled, active link still shows light blue */
 .navbar.scrolled .nav-link.active {
-  color: #c49a6c;
+  color: #5ba3d9;
 }
 
 @media (max-width: 1024px) {
@@ -284,11 +284,11 @@
   }
   
   .nav-menu .nav-link:hover {
-    color: #c49a6c;
+    color: #5ba3d9;
   }
   
   .nav-menu .nav-link.active {
-    color: #c49a6c;
+    color: #5ba3d9;
   }
   
   /* Override scroll class on mobile menu */
@@ -321,7 +321,7 @@
 .line-big {
   width: 40px;
   height: 3px;
-  background: linear-gradient(90deg, #ffffff, #f0e6d2);
+  background: linear-gradient(90deg, #ffffff, #e8f4fd);
   border-radius: 3px;
   transition: width 0.3s ease;
 }
@@ -329,16 +329,16 @@
 .line-small {
   width: 20px;
   height: 3px;
-  background: linear-gradient(90deg, #ffffff, #f0e6d2);
+  background: linear-gradient(90deg, #ffffff, #e8f4fd);
   border-radius: 3px;
   opacity: 0.7;
   transition: width 0.3s ease;
 }
 
-/* When scrolled, footer lines become brown */
+/* When scrolled, footer lines become light blue */
 .navbar.scrolled .line-big,
 .navbar.scrolled .line-small {
-  background: linear-gradient(90deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
 }
 
 .navbar:hover .line-big,
@@ -430,7 +430,7 @@ body.menu-open::before {
    HOVER EFFECTS
    ============================================ */
 .navbar-logo:hover {
-  filter: drop-shadow(0 2px 4px rgba(196, 154, 108, 0.3));
+  filter: drop-shadow(0 2px 4px rgba(91, 163, 217, 0.3));
 }
 
 /* ============================================
@@ -442,14 +442,14 @@ body.menu-open::before {
 }
 
 .hamburger:focus-visible {
-  outline: 2px solid #c49a6c;
+  outline: 2px solid #5ba3d9;
   outline-offset: 4px;
   border-radius: 4px;
 }
 
 .nav-link:focus-visible {
   outline: none;
-  color: #c49a6c;
+  color: #5ba3d9;
 }
 
 .nav-link:focus-visible:before {
@@ -517,12 +517,12 @@ body.menu-open::before {
 }
 
 .nav-menu::-webkit-scrollbar-track {
-  background: rgba(196, 154, 108, 0.1);
+  background: rgba(91, 163, 217, 0.1);
   border-radius: 4px;
 }
 
 .nav-menu::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(135deg, #5ba3d9, #2c6e9e);
   border-radius: 4px;
 }
 
@@ -539,11 +539,11 @@ body.menu-open::before {
 
 /* Selection Style */
 ::selection {
-  background: #c49a6c;
+  background: #5ba3d9;
   color: white;
 }
 
 ::-moz-selection {
-  background: #c49a6c;
+  background: #5ba3d9;
   color: white;
 }

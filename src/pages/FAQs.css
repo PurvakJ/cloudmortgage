@@ -1,5 +1,5 @@
 /* FAQs.css - Enhanced CSS for Oakmont Capital FAQs Page */
-/* Premium Design with Brown Accents and Smooth Animations */
+/* Premium Design with Light Blue Accents and Smooth Animations */
 
 @import url('https://fonts.cdnfonts.com/css/rasputin');
 
@@ -89,7 +89,7 @@
   letter-spacing: 3px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  background: linear-gradient(135deg, #fff 0%, #c49a6c 100%);
+  background: linear-gradient(135deg, #fff 0%, #5ba3d9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -132,7 +132,7 @@
   display: block;
   font-size: 36px;
   font-weight: 800;
-  color: #c49a6c;
+  color: #5ba3d9;
   margin-bottom: 8px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
@@ -228,7 +228,7 @@
   width: 100%;
   padding: 16px 50px 16px 50px;
   font-size: 16px;
-  border: 2px solid rgba(196, 154, 108, 0.2);
+  border: 2px solid rgba(91, 163, 217, 0.2);
   border-radius: 50px;
   transition: all 0.3s ease;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
@@ -238,8 +238,8 @@
 
 .search-input:focus {
   outline: none;
-  border-color: #c49a6c;
-  box-shadow: 0 0 0 3px rgba(196, 154, 108, 0.1);
+  border-color: #5ba3d9;
+  box-shadow: 0 0 0 3px rgba(91, 163, 217, 0.1);
 }
 
 .search-icon {
@@ -272,7 +272,7 @@
 }
 
 .clear-search:hover {
-  color: #c49a6c;
+  color: #5ba3d9;
   background: rgba(0,0,0,0.05);
 }
 
@@ -293,7 +293,7 @@
   gap: 8px;
   padding: 10px 20px;
   background: #f8f8f8;
-  border: 1px solid rgba(196, 154, 108, 0.2);
+  border: 1px solid rgba(91, 163, 217, 0.2);
   border-radius: 40px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -304,16 +304,16 @@
 }
 
 .category-btn:hover {
-  background: rgba(196, 154, 108, 0.1);
-  border-color: #c49a6c;
+  background: rgba(91, 163, 217, 0.1);
+  border-color: #5ba3d9;
   transform: translateY(-2px);
 }
 
 .category-btn.active {
-  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(135deg, #5ba3d9, #2c6e9e);
   color: white;
   border-color: transparent;
-  box-shadow: 0 4px 12px rgba(139, 94, 60, 0.3);
+  box-shadow: 0 4px 12px rgba(44, 110, 158, 0.3);
 }
 
 .category-icon {
@@ -355,12 +355,12 @@
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(196, 154, 108, 0.1);
+  border: 1px solid rgba(91, 163, 217, 0.1);
 }
 
 .faq-item:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border-color: rgba(196, 154, 108, 0.3);
+  border-color: rgba(91, 163, 217, 0.3);
 }
 
 .faq-question {
@@ -374,12 +374,12 @@
 }
 
 .faq-question:hover {
-  background: rgba(196, 154, 108, 0.03);
+  background: rgba(91, 163, 217, 0.03);
 }
 
 .faq-question.active {
-  background: rgba(196, 154, 108, 0.05);
-  border-bottom: 1px solid rgba(196, 154, 108, 0.2);
+  background: rgba(91, 163, 217, 0.05);
+  border-bottom: 1px solid rgba(91, 163, 217, 0.2);
 }
 
 .faq-question-content {
@@ -391,7 +391,7 @@
 
 .faq-icon {
   font-size: 14px;
-  color: #c49a6c;
+  color: #5ba3d9;
   transition: transform 0.3s ease;
   width: 20px;
   display: inline-block;
@@ -411,12 +411,12 @@
 }
 
 .faq-category-badge {
-  background: rgba(196, 154, 108, 0.1);
+  background: rgba(91, 163, 217, 0.1);
   padding: 5px 12px;
   border-radius: 20px;
   font-size: 11px;
   font-weight: 600;
-  color: #8B5E3C;
+  color: #2c6e9e;
   letter-spacing: 0.5px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
   white-space: nowrap;
@@ -425,7 +425,7 @@
 .faq-answer {
   padding: 25px;
   background: #fafafa;
-  border-top: 1px solid rgba(196, 154, 108, 0.1);
+  border-top: 1px solid rgba(91, 163, 217, 0.1);
   animation: slideDown 0.3s ease;
 }
 
@@ -451,13 +451,13 @@
 .faq-detailed-answer {
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px dashed rgba(196, 154, 108, 0.3);
+  border-top: 1px dashed rgba(91, 163, 217, 0.3);
 }
 
 .faq-detailed-answer h4 {
   font-size: 16px;
   font-weight: 700;
-  color: #8B5E3C;
+  color: #2c6e9e;
   margin-bottom: 15px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
@@ -509,7 +509,7 @@
   padding: 60px 20px;
   background: #fafafa;
   border-radius: 20px;
-  border: 1px solid rgba(196, 154, 108, 0.1);
+  border: 1px solid rgba(91, 163, 217, 0.1);
 }
 
 .no-results p {
@@ -520,7 +520,7 @@
 }
 
 .reset-search {
-  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(135deg, #5ba3d9, #2c6e9e);
   color: white;
   border: none;
   padding: 10px 25px;
@@ -534,7 +534,7 @@
 
 .reset-search:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(139, 94, 60, 0.3);
+  box-shadow: 0 5px 15px rgba(44, 110, 158, 0.3);
 }
 
 /* ============================================
@@ -605,25 +605,25 @@
 }
 
 .btn-contact {
-  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(135deg, #5ba3d9, #2c6e9e);
   color: white;
-  box-shadow: 0 4px 12px rgba(139, 94, 60, 0.3);
+  box-shadow: 0 4px 12px rgba(44, 110, 158, 0.3);
 }
 
 .btn-contact:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(139, 94, 60, 0.4);
-  background: linear-gradient(135deg, #8B5E3C, #6B4226);
+  box-shadow: 0 6px 18px rgba(44, 110, 158, 0.4);
+  background: linear-gradient(135deg, #2c6e9e, #1e5a82);
 }
 
 .btn-schedule {
   background: transparent;
-  color: #c49a6c;
-  border: 2px solid #c49a6c;
+  color: #5ba3d9;
+  border: 2px solid #5ba3d9;
 }
 
 .btn-schedule:hover {
-  background: #c49a6c;
+  background: #5ba3d9;
   color: white;
   transform: translateY(-2px);
 }
@@ -643,7 +643,7 @@
   display: block;
   font-size: 24px;
   font-weight: 800;
-  color: #c49a6c;
+  color: #5ba3d9;
   margin-bottom: 5px;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
@@ -738,12 +738,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  background: linear-gradient(135deg, #5ba3d9, #2c6e9e);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #8B5E3C, #6B4226);
+  background: linear-gradient(135deg, #2c6e9e, #1e5a82);
 }
 
 /* ============================================
@@ -776,18 +776,18 @@ button:focus-visible,
 .reset-search:focus-visible,
 .btn-contact:focus-visible,
 .btn-schedule:focus-visible {
-  outline: 3px solid #c49a6c;
+  outline: 3px solid #5ba3d9;
   outline-offset: 3px;
 }
 
 /* Selection Style */
 ::selection {
-  background: #c49a6c;
+  background: #5ba3d9;
   color: white;
 }
 
 ::-moz-selection {
-  background: #c49a6c;
+  background: #5ba3d9;
   color: white;
 }
 
