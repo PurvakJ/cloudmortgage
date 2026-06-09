@@ -34,57 +34,6 @@ const Home = () => {
     }
   ];
 
-  // Testimonials data
-  const testimonials = [
-    {
-      id: 1,
-      name: "Michael Thompson",
-      role: "First-Time Home Buyer",
-      text: "Oakmont Capital made my first home purchase seamless. Their team guided me through every step and got me an amazing rate!",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/men/1.jpg"
-    },
-    {
-      id: 2,
-      name: "Sarah Johnson",
-      role: "Homeowner",
-      text: "Refinancing with Oakmont Capital saved me over $500/month. The process was quick and the team was incredibly helpful.",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/women/2.jpg"
-    },
-    {
-      id: 3,
-      name: "David Chen",
-      role: "Real Estate Investor",
-      text: "As an investor, I need reliable financing. Oakmont Capital delivers every time with competitive rates and fast closings.",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/men/3.jpg"
-    },
-    {
-      id: 4,
-      name: "Emily Rodriguez",
-      role: "Homeowner",
-      text: "The team at Oakmont Capital went above and beyond to help us secure our dream home. Highly recommend!",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/women/4.jpg"
-    },
-    {
-      id: 5,
-      name: "James Wilson",
-      role: "First-Time Buyer",
-      text: "Excellent service from start to finish. They made the complex mortgage process easy to understand.",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/men/5.jpg"
-    },
-    {
-      id: 6,
-      name: "Lisa Anderson",
-      role: "Investor",
-      text: "Best mortgage broker experience I've ever had. Competitive rates and exceptional customer service.",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/women/6.jpg"
-    }
-  ];
 
   // Services data
   const services = [
@@ -313,31 +262,6 @@ const Home = () => {
               <h3>Digital Experience</h3>
               <p>Upload documents and track progress from anywhere</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section - 3 in a row */}
-      <section className="testimonials">
-        <div className="container">
-          <div className="section-header fade-up">
-            <h2>WHAT OUR CLIENTS SAY</h2>
-            <p className="testimonials-subtitle">Real stories from happy homeowners</p>
-          </div>
-          <div className="testimonials-grid">
-            {testimonials.slice(0, 3).map((testimonial, index) => (
-              <div key={testimonial.id} className="testimonial-card fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="testimonial-rating">{"★".repeat(testimonial.rating)}</div>
-                <p className="testimonial-text">"{testimonial.text}"</p>
-                <div className="testimonial-author">
-                  <img src={testimonial.image} alt={testimonial.name} className="testimonial-image" />
-                  <div className="testimonial-info">
-                    <strong>{testimonial.name}</strong>
-                    <span>{testimonial.role}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
