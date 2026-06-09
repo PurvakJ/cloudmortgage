@@ -10,14 +10,14 @@ const Home = () => {
   const carouselImages = [
     {
       url: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      title: "Canadian Home Ownership",
-      subtitle: "Making Your Dream Home a Reality Across Canada",
+      title: "Residential Lending",
+      subtitle: "First time home buyers, Primary Residence & Investment properties",
       description: "Get the best mortgage rates and flexible terms for your Canadian dream home"
     },
     {
       url: "https://images.pexels.com/photos/439416/pexels-photo-439416.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      title: "CMHC Insured Financing",
-      subtitle: "Low Down Payment Options for Canadian Buyers",
+      title: "Commercial Financing",
+      subtitle: "Cmhc insured financing, Structured Financing & Construction loans",
       description: "Compare rates from 100+ Canadian lenders to find your perfect match"
     },
     {
