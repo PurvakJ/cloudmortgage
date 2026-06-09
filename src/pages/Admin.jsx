@@ -138,19 +138,19 @@ function Admin() {
           <div className="admin-hero-container">
             <div className="admin-hero-content">
               <h1 className="fade-up">Oakmont Capital</h1>
-              <p className="fade-up">Administrator Portal</p>
+              <p className="fade-up">Canadian Mortgage Administrator Portal</p>
               <div className="hero-stats fade-up">
                 <div className="hero-stat">
                   <span className="hero-stat-number">Secure</span>
-                  <span className="hero-stat-label">Access Only</span>
+                  <span className="hero-stat-label">Canadian Access</span>
                 </div>
                 <div className="hero-stat">
                   <span className="hero-stat-number">24/7</span>
-                  <span className="hero-stat-label">Monitoring</span>
+                  <span className="hero-stat-label">System Monitoring</span>
                 </div>
                 <div className="hero-stat">
                   <span className="hero-stat-number">Encrypted</span>
-                  <span className="hero-stat-label">Connection</span>
+                  <span className="hero-stat-label">SSL Connection</span>
                 </div>
               </div>
             </div>
@@ -162,7 +162,7 @@ function Admin() {
             <form className="login-card fade-up" onSubmit={login}>
               <div className="login-icon">🔐</div>
               <h2>Admin Login</h2>
-              <p className="login-subtitle">Enter your credentials to access the dashboard</p>
+              <p className="login-subtitle">Enter your credentials to access the Oakmont Capital dashboard</p>
 
               <input
                 type="email"
@@ -205,15 +205,15 @@ function Admin() {
             <div className="hero-stats fade-up">
               <div className="hero-stat">
                 <span className="hero-stat-number">{data.length}</span>
-                <span className="hero-stat-label">Total Submissions</span>
+                <span className="hero-stat-label">Total Canadian Inquiries</span>
               </div>
               <div className="hero-stat">
                 <span className="hero-stat-number">Secure</span>
-                <span className="hero-stat-label">Environment</span>
+                <span className="hero-stat-label">Admin Environment</span>
               </div>
               <div className="hero-stat">
                 <span className="hero-stat-number">Real-time</span>
-                <span className="hero-stat-label">Data</span>
+                <span className="hero-stat-label">Canadian Data</span>
               </div>
             </div>
           </div>
@@ -225,15 +225,15 @@ function Admin() {
           {/* CONTACT DATA SECTION */}
           <div className="section fade-up">
             <div className="section-header">
-              <h2>📋 Contact Submissions</h2>
+              <h2>📋 Canadian Client Inquiries</h2>
               <button className="load-btn" onClick={fetchData} disabled={isLoading}>
-                {isLoading ? 'Loading...' : '🔄 Load Data'}
+                {isLoading ? 'Loading...' : '🔄 Load Inquiries'}
               </button>
             </div>
 
             {data.length === 0 ? (
               <div className="no-data">
-                <p>No contact submissions yet. Click "Load Data" to fetch submissions.</p>
+                <p>No Canadian client inquiries yet. Click "Load Inquiries" to fetch submissions from Canadian home buyers.</p>
               </div>
             ) : (
               <div className="table-container">
@@ -268,7 +268,7 @@ function Admin() {
           {/* UPDATE PASSWORD SECTION */}
           <div className="section fade-up">
             <div className="section-header">
-              <h2>🔒 Update Password</h2>
+              <h2>🔒 Update Admin Password</h2>
             </div>
             <div className="update-box">
               <input
@@ -283,7 +283,7 @@ function Admin() {
             </div>
             {updateMsg && <p className={updateMsg.includes('Successfully') ? 'success' : 'error'}>{updateMsg}</p>}
             <p className="security-note">
-              ⚠️ Use a strong password with at least 8 characters, including numbers and special characters.
+              ⚠️ Use a strong password with at least 8 characters, including numbers and special characters, to protect Canadian client data.
             </p>
           </div>
         </div>

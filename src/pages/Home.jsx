@@ -6,139 +6,88 @@ import './Home.css';
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Carousel images
+  // Carousel images - Canadian focused
   const carouselImages = [
     {
       url: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      title: "Dream Home Financing",
-      subtitle: "Making Homeownership Accessible",
-      description: "Get the best rates and flexible terms for your dream home"
+      title: "Canadian Home Ownership",
+      subtitle: "Making Your Dream Home a Reality Across Canada",
+      description: "Get the best mortgage rates and flexible terms for your Canadian dream home"
     },
     {
       url: "https://images.pexels.com/photos/439416/pexels-photo-439416.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      title: "Best Mortgage Rates",
-      subtitle: "Competitive Rates, Flexible Terms",
-      description: "Compare rates from 100+ lenders to find your perfect match"
+      title: "CMHC Insured Financing",
+      subtitle: "Low Down Payment Options for Canadian Buyers",
+      description: "Compare rates from 100+ Canadian lenders to find your perfect match"
     },
     {
       url: "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      title: "Expert Guidance",
-      subtitle: "Your Trusted Mortgage Partner",
-      description: "Professional advisors guide you every step of the way"
+      title: "Self-Employed Solutions",
+      subtitle: "Alternative A Mortgages for Business for Self",
+      description: "Professional mortgage solutions tailored for self-employed Canadians"
     },
     {
       url: "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      title: "Quick Approval",
-      subtitle: "Fast & Hassle-Free Process",
-      description: "Get pre-approved in 24 hours with our streamlined process"
+      title: "Quick Canadian Approval",
+      subtitle: "Fast & Hassle-Free Mortgage Process",
+      description: "Get pre-approved in 24 hours with our streamlined Canadian mortgage process"
     }
   ];
 
-  // Testimonials data
-  const testimonials = [
-    {
-      id: 1,
-      name: "Michael Thompson",
-      role: "First-Time Home Buyer",
-      text: "Oakmont Capital made my first home purchase seamless. Their team guided me through every step and got me an amazing rate!",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/men/1.jpg"
-    },
-    {
-      id: 2,
-      name: "Sarah Johnson",
-      role: "Homeowner",
-      text: "Refinancing with Oakmont Capital saved me over $500/month. The process was quick and the team was incredibly helpful.",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/women/2.jpg"
-    },
-    {
-      id: 3,
-      name: "David Chen",
-      role: "Real Estate Investor",
-      text: "As an investor, I need reliable financing. Oakmont Capital delivers every time with competitive rates and fast closings.",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/men/3.jpg"
-    },
-    {
-      id: 4,
-      name: "Emily Rodriguez",
-      role: "Homeowner",
-      text: "The team at Oakmont Capital went above and beyond to help us secure our dream home. Highly recommend!",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/women/4.jpg"
-    },
-    {
-      id: 5,
-      name: "James Wilson",
-      role: "First-Time Buyer",
-      text: "Excellent service from start to finish. They made the complex mortgage process easy to understand.",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/men/5.jpg"
-    },
-    {
-      id: 6,
-      name: "Lisa Anderson",
-      role: "Investor",
-      text: "Best mortgage broker experience I've ever had. Competitive rates and exceptional customer service.",
-      rating: 5,
-      image: "https://randomuser.me/api/portraits/women/6.jpg"
-    }
-  ];
 
-  // Services data
+  // Canadian Mortgage Services data based on your provided programs
   const services = [
     {
       icon: "🏠",
-      title: "First-Time Home Buyers",
-      description: "Expert guidance and special programs for first-time buyers",
-      features: ["Low down payment options", "Down payment assistance", "Free credit counseling"]
+      title: "Refinance for Secondary Suites",
+      description: "Enables homeowners to add secondary suites with insured refinancing options",
+      features: ["Add rental income potential", "CMHC insured refinancing", "Increase property value"]
     },
     {
-      icon: "🔄",
-      title: "Mortgage Refinancing",
-      description: "Lower your payments and save money with refinancing",
-      features: ["Rate reduction", "Cash-out options", "Lower monthly payments"]
+      icon: "🏢",
+      title: "Investment Property Program",
+      description: "Purchase additional investment properties with as little as 20% down",
+      features: ["20% minimum down payment", "Qualified borrower program", "Expand your portfolio"]
     },
     {
-      icon: "⚡",
-      title: "Quick Pre-Approval",
-      description: "Get pre-approved in 24 hours and shop with confidence",
-      features: ["24-hour approval", "Free consultation", "No obligation"]
+      icon: "👨‍👩‍👧‍👦",
+      title: "Family Plan Program",
+      description: "Help immediate family members with good credit buy a home",
+      features: ["Alternative GDSR/TDSR requirements", "Family guarantee options", "Support loved ones"]
+    },
+    {
+      icon: "🏖️",
+      title: "Vacation/Secondary Homes",
+      description: "Purchase a second home with affordable monthly payments and just 5% down",
+      features: ["Only 5% down payment", "Affordable monthly payments", "Vacation property financing"]
     },
     {
       icon: "💰",
-      title: "Debt Consolidation",
-      description: "Combine debts into one manageable payment",
-      features: ["Lower interest rates", "Single payment", "Improve credit score"]
+      title: "Self-Directed RRSP",
+      description: "Use self-directed RRSP/RRIF funds for non-arm's length mortgage investments",
+      features: ["RRSP/RRIF fund utilization", "Non-arm's length investments", "Insurance provided"]
     },
     {
-      icon: "🏘️",
-      title: "Jumbo Loans",
-      description: "Financing for high-value properties",
-      features: ["Up to $3M loans", "Competitive rates", "Flexible terms"]
-    },
-    {
-      icon: "🇺🇸",
-      title: "VA Loans",
-      description: "Exclusive benefits for veterans and military",
-      features: ["0% down payment", "No PMI", "Lower rates"]
+      icon: "💵",
+      title: "Borrowed Down Payment",
+      description: "Start building equity now even if you can't save the full down payment",
+      features: ["Alternative down payment sources", "Start building equity sooner", "Flexible qualification"]
     }
   ];
 
-  // FAQ data
+  // Canadian FAQ data
   const faqs = [
     {
-      question: "What credit score do I need to qualify for a mortgage?",
-      answer: "Most conventional loans require a minimum credit score of 620. FHA loans may accept scores as low as 580, and VA loans have no minimum credit score requirement."
+      question: "What is the minimum down payment for a home in Canada?",
+      answer: "In Canada, the minimum down payment is 5% for homes under $500,000. For homes between $500,000 and $1 million, it's 5% on the first $500,000 and 10% on the remainder. Homes over $1 million require 20% down payment."
     },
     {
-      question: "How much down payment is required?",
-      answer: "Down payments can range from 0% (VA and USDA loans) to 20% or more for conventional loans. First-time home buyers may qualify for programs with as little as 3% down."
+      question: "What is CMHC insurance and do I need it?",
+      answer: "CMHC mortgage loan insurance is required for all Canadian home buyers with a down payment of less than 20%. It protects lenders against default and allows you to purchase with as little as 5% down."
     },
     {
-      question: "How long does the mortgage process take?",
-      answer: "The average mortgage process takes 30-45 days from application to closing. However, pre-approval can be obtained in as little as 24 hours."
+      question: "What is the maximum amortization period in Canada?",
+      answer: "For insured mortgages (less than 20% down), the maximum amortization period is 25 years. For uninsured mortgages (20%+ down), you may qualify for up to 30-year amortization."
     }
   ];
 
@@ -231,8 +180,8 @@ const Home = () => {
       <section className="featured-services">
         <div className="container">
           <div className="section-header fade-up">
-            <h2>POPULAR MORTGAGE SERVICES</h2>
-            <p className="section-subtitle">Comprehensive solutions for every home financing need</p>
+            <h2>POPULAR CANADIAN MORTGAGE SERVICES</h2>
+            <p className="section-subtitle">Comprehensive solutions for every Canadian home financing need</p>
           </div>
           <div className="services-grid">
             {services.map((service, index) => (
@@ -252,12 +201,58 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Why Choose Us Section - Canadian Focus */}
+      <section className="why-choose-us">
+        <div className="container">
+          <div className="section-header fade-up">
+            <h2 style={{ color: "black" }}>
+              WHY CHOOSE OAKMONT CAPITAL?
+            </h2>
+            <p className="section-subtitle" style={{ color: "black" }}>
+              Canada's trusted mortgage partner for over 25 years
+            </p>
+          </div>
+          <div className="features-grid">
+            <div className="feature fade-up">
+              <div className="feature-icon">🍁</div>
+              <h3>Canadian Experts</h3>
+              <p>Specialized knowledge of Canadian mortgage regulations and CMHC requirements</p>
+            </div>
+            <div className="feature fade-up" style={{ animationDelay: '0.1s' }}>
+              <div className="feature-icon">⚡</div>
+              <h3>Fast Canadian Approval</h3>
+              <p>Get approved quickly with our streamlined digital process</p>
+            </div>
+            <div className="feature fade-up" style={{ animationDelay: '0.2s' }}>
+              <div className="feature-icon">🎯</div>
+              <h3>Personalized Solutions</h3>
+              <p>Tailored mortgage options based on your unique Canadian situation</p>
+            </div>
+            <div className="feature fade-up" style={{ animationDelay: '0.3s' }}>
+              <div className="feature-icon">🔒</div>
+              <h3>Secure & Confidential</h3>
+              <p>Your data is protected with bank-level security compliant with Canadian standards</p>
+            </div>
+            <div className="feature fade-up" style={{ animationDelay: '0.4s' }}>
+              <div className="feature-icon">🤝</div>
+              <h3>Dedicated Support</h3>
+              <p>Personal mortgage agent assigned to guide you through the Canadian process</p>
+            </div>
+            <div className="feature fade-up" style={{ animationDelay: '0.5s' }}>
+              <div className="feature-icon">📱</div>
+              <h3>Digital Experience</h3>
+              <p>Upload documents and track progress from anywhere in Canada</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-background"></div>
         <div className="hero-content">
-          <h1 className="fade-up">YOUR DREAM<br />HOME AWAITS</h1>
-          <p className="fade-up">SMART MORTGAGE SOLUTIONS<br />TAILORED FOR YOU</p>
+          <h1 className="fade-up">YOUR CANADIAN<br />DREAM HOME AWAITS</h1>
+          <p className="fade-up">SMART MORTGAGE SOLUTIONS<br />TAILORED FOR CANADIANS</p>
           <Link to="/calculator" className="btn-primary fade-up">GET STARTED</Link>
           <div className="rating fade-up">
             <span className="stars">★★★★★</span>
@@ -267,86 +262,16 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="why-choose-us">
-        <div className="container">
-          <div className="section-header fade-up">
-            <h2 style={{ color: "white" }}>
-              WHY CHOOSE OAKMONT CAPITAL?
-            </h2>
-            <p className="section-subtitle" style={{ color: "rgba(255,255,255,0.9)" }}>
-              We're committed to your homeownership success
-            </p>
-          </div>
-          <div className="features-grid">
-            <div className="feature fade-up">
-              <div className="feature-icon">📊</div>
-              <h3>Best Rates Guaranteed</h3>
-              <p>We compare rates from multiple lenders to get you the best deal</p>
-            </div>
-            <div className="feature fade-up" style={{ animationDelay: '0.1s' }}>
-              <div className="feature-icon">⚡</div>
-              <h3>Fast Approval Process</h3>
-              <p>Get approved quickly with our streamlined digital process</p>
-            </div>
-            <div className="feature fade-up" style={{ animationDelay: '0.2s' }}>
-              <div className="feature-icon">🎯</div>
-              <h3>Personalized Solutions</h3>
-              <p>Tailored mortgage options based on your unique situation</p>
-            </div>
-            <div className="feature fade-up" style={{ animationDelay: '0.3s' }}>
-              <div className="feature-icon">🔒</div>
-              <h3>Secure & Confidential</h3>
-              <p>Your data is protected with bank-level security</p>
-            </div>
-            <div className="feature fade-up" style={{ animationDelay: '0.4s' }}>
-              <div className="feature-icon">🤝</div>
-              <h3>Dedicated Support</h3>
-              <p>Personal loan officer assigned to guide you through the process</p>
-            </div>
-            <div className="feature fade-up" style={{ animationDelay: '0.5s' }}>
-              <div className="feature-icon">📱</div>
-              <h3>Digital Experience</h3>
-              <p>Upload documents and track progress from anywhere</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section - 3 in a row */}
-      <section className="testimonials">
-        <div className="container">
-          <div className="section-header fade-up">
-            <h2>WHAT OUR CLIENTS SAY</h2>
-            <p className="testimonials-subtitle">Real stories from happy homeowners</p>
-          </div>
-          <div className="testimonials-grid">
-            {testimonials.slice(0, 3).map((testimonial, index) => (
-              <div key={testimonial.id} className="testimonial-card fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="testimonial-rating">{"★".repeat(testimonial.rating)}</div>
-                <p className="testimonial-text">"{testimonial.text}"</p>
-                <div className="testimonial-author">
-                  <img src={testimonial.image} alt={testimonial.name} className="testimonial-image" />
-                  <div className="testimonial-info">
-                    <strong>{testimonial.name}</strong>
-                    <span>{testimonial.role}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Calculator Preview Section */}
       <section className="calculator-preview">
         <div className="calculator-preview-content">
-          <h2 className="fade-up">Calculate Your Mortgage Payment</h2>
-          <p className="fade-up">Use our free calculator to estimate your monthly payments</p>
+          <h2 className="fade-up">Calculate Your Canadian Mortgage Payment</h2>
+          <p className="fade-up">Use our free calculator to estimate your monthly payments, including CMHC insurance</p>
           <div className="calculator-features fade-up">
-            <div className="calc-feature">✓ Estimate monthly payments</div>
-            <div className="calc-feature">✓ Compare loan options</div>
-            <div className="calc-feature">✓ See total interest costs</div>
+            <div className="calc-feature">✓ Estimate monthly payments with stress test</div>
+            <div className="calc-feature">✓ Compare Canadian loan options</div>
+            <div className="calc-feature">✓ Calculate CMHC insurance costs</div>
           </div>
           <Link to="/calculator" className="btn-primary fade-up">Try Our Calculator →</Link>
         </div>
@@ -357,20 +282,20 @@ const Home = () => {
         <div className="sticky-background-image"></div>
         <div className="sticky-container">
           <div className="sticky-content">
-            <h2 className="fade-up">MORTGAGE INDUSTRY LEADERS</h2>
-            <p className="fade-up">Setting Standards in Service and Innovation</p>
+            <h2 className="fade-up">CANADA'S MORTGAGE INDUSTRY LEADERS</h2>
+            <p className="fade-up">Setting Standards in Canadian Service and Innovation</p>
             <div className="industry-stats fade-up">
               <div className="industry-stat">
                 <span className="stat-number">25+</span>
-                <span className="stat-label">Years of Excellence</span>
+                <span className="stat-label">Years of Canadian Excellence</span>
               </div>
               <div className="industry-stat">
                 <span className="stat-number">$2B+</span>
-                <span className="stat-label">Loans Funded</span>
+                <span className="stat-label">Canadian Loans Funded</span>
               </div>
               <div className="industry-stat">
                 <span className="stat-number">5000+</span>
-                <span className="stat-label">Happy Clients</span>
+                <span className="stat-label">Happy Canadian Clients</span>
               </div>
             </div>
             <Link to="/about" className="btn-primary-outline fade-up">Learn More</Link>
@@ -378,12 +303,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FAQ Preview Section */}
+      {/* FAQ Preview Section - Canadian FAQs */}
       <section className="faq-preview">
         <div className="container">
           <div className="section-header fade-up">
             <h2>FREQUENTLY ASKED QUESTIONS</h2>
-            <p className="section-subtitle">Answers to common mortgage questions</p>
+            <p className="section-subtitle">Answers to common Canadian mortgage questions</p>
           </div>
           <div className="faq-grid">
             {faqs.map((faq, index) => (
@@ -394,8 +319,8 @@ const Home = () => {
             ))}
           </div>
           <div className="faq-button">
-            <Link to="/faqs" className="btn-secondary">View All FAQs</Link>
-          </div>
+  <Link to="/faqs" className="btn-secondary">View All FAQs</Link>
+</div>
         </div>
       </section>
 
@@ -403,8 +328,8 @@ const Home = () => {
       <section className="cta-section">
         <div className="cta-background"></div>
         <div className="cta-content">
-          <h2 className="fade-up">READY TO START YOUR HOME JOURNEY?</h2>
-          <p className="fade-up">Get pre-approved today and take the first step toward homeownership</p>
+          <h2 className="fade-up">READY TO START YOUR CANADIAN HOME JOURNEY?</h2>
+          <p className="fade-up">Get pre-approved today and take the first step toward Canadian homeownership</p>
           <div className="cta-buttons fade-up">
             <Link to="/contact" className="btn-primary">Contact Us</Link>
             <Link to="/calculator" className="btn-secondary-outline">Calculate Payments</Link>

@@ -1,4 +1,7 @@
-/* Calculator.css - Oakmont Capital - Optimized for Performance */
+/* Calculator.css - Enhanced CSS for Oakmont Capital Calculator Page */
+/* Premium Design with Brown Accents and Smooth Animations */
+
+@import url('https://fonts.cdnfonts.com/css/rasputin');
 
 * {
   margin: 0;
@@ -7,18 +10,22 @@
 }
 
 .calculator-page {
-  width: 100%;
-  background: #f8f9fa;
-  min-height: 100vh;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  overflow-x: hidden;
 }
 
-/* ==================== HERO SECTION - FULL WIDTH IMAGE ==================== */
+/* ============================================
+   HERO SECTION
+   ============================================ */
 .calculator-hero {
   position: relative;
-  width: 100%;
-  height: 80vh;
-  min-height: 500px;
-  max-height: 700px;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
 }
 
@@ -26,588 +33,683 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('https://images.pexels.com/photos/4386393/pexels-photo-4386393.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1600');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  transform: scale(1);
-  transition: transform 0.3s ease;
+  background-attachment: fixed;
+  transform: scale(1.05);
+  transition: transform 8s ease;
 }
 
-/* Parallax effect only on desktop */
-@media (min-width: 1024px) {
-  .calculator-hero-image {
-    background-attachment: fixed;
-  }
+.calculator-hero:hover .calculator-hero-image {
+  transform: scale(1.1);
 }
 
 .calculator-hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(30, 60, 114, 0.88) 0%, rgba(42, 82, 152, 0.88) 100%);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
   z-index: 1;
 }
 
 .calculator-hero-container {
   position: relative;
   z-index: 2;
-  max-width: 1500px;
+  max-width: 1400px;
   margin: 0 auto;
-  height: 100%;
-  padding: 0 2rem;
+  padding: 0 40px;
+  width: 100%;
 }
 
 .calculator-hero-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .calculator-hero-content h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
-  font-family: 'Rasputin', 'Playfair Display', serif;
-  font-weight: 600;
+  font-size: 52px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #fff 0%, #c49a6c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .calculator-hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-  font-family: 'Rasputin', 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
-/* Hero Stats */
 .hero-stats {
   display: flex;
-  gap: 3rem;
   justify-content: center;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
 .hero-stat {
   text-align: center;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  min-width: 140px;
-  transition: transform 0.3s ease, background 0.3s ease;
+  position: relative;
 }
 
-.hero-stat:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-3px);
+.hero-stat:not(:last-child):after {
+  content: '';
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 40px;
+  background: rgba(255,255,255,0.3);
 }
 
 .hero-stat-number {
   display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #64b5f6;
-  margin-bottom: 0.3rem;
-  font-family: 'Rasputin', serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: #c49a6c;
+  margin-bottom: 8px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .hero-stat-label {
-  font-size: 0.85rem;
-  opacity: 0.9;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 1px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
-/* ==================== MAIN CONTENT CONTAINER - MAX 1500px ==================== */
+@media (max-width: 1024px) {
+  .calculator-hero {
+    height: 400px;
+  }
+  
+  .calculator-hero-content h1 {
+    font-size: 42px;
+  }
+  
+  .hero-stat-number {
+    font-size: 30px;
+  }
+  
+  .hero-stat:not(:last-child):after {
+    right: -20px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calculator-hero {
+    height: 500px;
+  }
+  
+  .calculator-hero-container {
+    padding: 0 20px;
+  }
+  
+  .calculator-hero-content h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+  }
+  
+  .calculator-hero-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .hero-stat:not(:last-child):after {
+    display: none;
+  }
+  
+  .hero-stat-number {
+    font-size: 28px;
+  }
+}
+
+/* ============================================
+   MAIN CONTAINER
+   ============================================ */
 .calculator-container {
-  max-width: 1500px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 60px 40px;
 }
 
-/* ==================== ANIMATIONS - OPTIMIZED ==================== */
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-  will-change: opacity, transform;
+@media (max-width: 768px) {
+  .calculator-container {
+    padding: 40px 20px;
+  }
 }
 
-.fade-up.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ==================== TABS ==================== */
+/* ============================================
+   TABS
+   ============================================ */
 .calculator-tabs {
   display: flex;
-  gap: 0.5rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
+  border-bottom: 2px solid rgba(196, 154, 108, 0.2);
+  padding-bottom: 20px;
 }
 
 .tab-btn {
-  padding: 0.8rem 1.5rem;
-  background: white;
-  border: 2px solid #e9ecef;
-  border-radius: 40px;
-  font-size: 1rem;
+  padding: 12px 30px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
   font-weight: 600;
-  color: #6c757d;
   cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: 'Rasputin', sans-serif;
+  transition: all 0.3s ease;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  color: #666;
+  border-radius: 40px;
 }
 
 .tab-btn:hover {
-  border-color: #64b5f6;
-  color: #64b5f6;
-  transform: translateY(-2px);
+  color: #c49a6c;
+  background: rgba(196, 154, 108, 0.1);
 }
 
 .tab-btn.active {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
   color: white;
-  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(139, 94, 60, 0.3);
 }
 
-/* ==================== CALCULATOR CONTENT ==================== */
+@media (max-width: 768px) {
+  .calculator-tabs {
+    gap: 10px;
+  }
+  
+  .tab-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
+/* ============================================
+   CALCULATOR CONTENT
+   ============================================ */
 .calculator-content {
-  background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  animation: fadeIn 0.5s ease;
 }
 
-/* ==================== SECTION STYLES ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Two Columns Layout */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 1024px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* ============================================
+   CALCULATOR SECTIONS
+   ============================================ */
 .calculator-section {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 15px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(196, 154, 108, 0.1);
 }
 
 .section-title {
-  font-size: 1.5rem;
-  color: #1e3c72;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #64b5f6;
-  font-family: 'Rasputin', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 25px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #c49a6c, #8B5E3C);
+  border-radius: 2px;
 }
 
 .section-note {
-  font-size: 0.85rem;
-  color: #6c757d;
-  margin-bottom: 1rem;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 20px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
-/* ==================== INPUT GROUPS ==================== */
+/* Input Groups */
 .input-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 25px;
 }
 
 .input-group label {
   display: block;
+  font-size: 14px;
   font-weight: 600;
-  color: #343a40;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  font-family: 'Rasputin', sans-serif;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .input-group input[type="range"] {
   width: 100%;
-  margin: 0.5rem 0;
-  height: 5px;
-  border-radius: 5px;
-  background: #e9ecef;
-  outline: none;
+  height: 6px;
   -webkit-appearance: none;
+  background: linear-gradient(90deg, #c49a6c, #8B5E3C);
+  border-radius: 3px;
+  outline: none;
+  margin-bottom: 15px;
 }
 
 .input-group input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 18px;
   height: 18px;
+  background: #c49a6c;
   border-radius: 50%;
-  background: #64b5f6;
   cursor: pointer;
-  transition: transform 0.1s ease;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .input-group input[type="range"]::-webkit-slider-thumb:hover {
-  background: #2196f3;
-  transform: scale(1.15);
+  transform: scale(1.2);
+  background: #8B5E3C;
 }
 
 .input-group input[type="number"],
 .input-group select {
+  padding: 12px 16px;
+  border: 2px solid rgba(196, 154, 108, 0.2);
+  border-radius: 12px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
   width: 100%;
-  padding: 0.8rem;
-  border: 2px solid #e9ecef;
-  border-radius: 10px;
-  font-size: 1rem;
-  transition: all 0.2s ease;
-  background: white;
-  font-family: 'Rasputin', sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
 }
 
 .input-group input[type="number"]:focus,
 .input-group select:focus {
   outline: none;
-  border-color: #64b5f6;
-  box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.1);
+  border-color: #c49a6c;
+  box-shadow: 0 0 0 3px rgba(196, 154, 108, 0.1);
 }
 
 .input-with-value {
-  position: relative;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+}
+
+.currency-symbol {
+  font-size: 16px;
+  font-weight: 600;
+  color: #c49a6c;
+  margin-right: 4px;
 }
 
 .input-with-value input {
   flex: 1;
-}
-
-.input-symbol {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #6c757d;
+  padding-left: 8px;
 }
 
 .input-note {
-  font-size: 0.8rem;
-  color: #6c757d;
-  margin-top: 0.3rem;
-  display: block;
+  font-size: 12px;
+  color: #999;
+  margin-left: 10px;
 }
 
 .input-tip {
-  font-size: 0.85rem;
-  color: #64b5f6;
-  margin-top: 1rem;
+  font-size: 12px;
+  color: #c49a6c;
+  margin-top: 15px;
   font-style: italic;
-  font-family: 'Rasputin', sans-serif;
 }
 
-/* ==================== RESULTS SECTION ==================== */
+/* Results Section */
 .results-section {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  border-radius: 15px;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  border-radius: 24px;
+  padding: 30px;
+  margin-top: 30px;
+  border: 1px solid rgba(196, 154, 108, 0.2);
 }
 
 .estimated-payment {
   text-align: center;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 15px;
-  margin-bottom: 1.5rem;
+  padding: 20px;
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  border-radius: 20px;
+  margin-bottom: 25px;
+  color: white;
 }
 
 .estimated-label {
-  font-size: 0.9rem;
-  color: #6c757d;
+  font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'Rasputin', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  opacity: 0.9;
 }
 
 .estimated-amount {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #1e3c72;
-  margin-top: 0.5rem;
-  font-family: 'Rasputin', serif;
+  font-size: 48px;
+  font-weight: 800;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .payment-summary {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 25px;
 }
 
 .summary-item {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 16px;
   text-align: center;
+  border: 1px solid rgba(196, 154, 108, 0.1);
 }
 
 .summary-item span {
   display: block;
-  font-size: 0.85rem;
-  color: #6c757d;
-  margin-bottom: 0.5rem;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
 }
 
 .summary-item strong {
-  font-size: 1.2rem;
-  color: #1e3c72;
-  font-family: 'Rasputin', serif;
-}
-
-/* ==================== PAYMENT BREAKDOWN ==================== */
-.payment-breakdown {
-  margin-bottom: 1.5rem;
+  font-size: 20px;
+  color: #1a1a1a;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .payment-breakdown h3 {
-  margin-bottom: 1rem;
-  color: #1e3c72;
-  font-family: 'Rasputin', serif;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #1a1a1a;
 }
 
 .breakdown-bars {
   display: flex;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
-  margin-bottom: 0.5rem;
+  margin-bottom: 15px;
 }
 
 .breakdown-bar {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 0.85rem;
+  font-size: 12px;
   font-weight: 600;
+  color: white;
 }
 
 .breakdown-bar.principal {
-  background: #64b5f6;
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
 }
 
 .breakdown-bar.interest {
-  background: #ffc107;
+  background: linear-gradient(135deg, #e8c4a0, #c49a6c);
 }
 
 .breakdown-labels {
   display: flex;
   justify-content: space-between;
-  font-size: 0.85rem;
-  color: #6c757d;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 13px;
+  color: #666;
 }
 
-/* ==================== TWO COLUMNS LAYOUT ==================== */
-.two-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-/* ==================== RESULTS CARDS ==================== */
+/* Results Cards */
 .results-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 15px;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e9ecef;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(196, 154, 108, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.results-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .results-card h3 {
-  color: #1e3c72;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-family: 'Rasputin', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 15px;
 }
 
 .result-amount {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #64b5f6;
-  margin: 0.5rem 0;
-  font-family: 'Rasputin', serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #c49a6c;
+  margin-bottom: 10px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .result-sub {
-  font-size: 0.9rem;
-  color: #6c757d;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 14px;
+  color: #666;
 }
 
-/* ==================== RATIO ITEMS ==================== */
+/* Ratio Items */
 .ratio-item {
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  background: #f8f9fa;
-  border-radius: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(196, 154, 108, 0.1);
 }
 
 .ratio-item span {
   display: block;
-  font-size: 0.85rem;
-  color: #6c757d;
-  margin-bottom: 0.3rem;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
 }
 
 .ratio-item strong {
-  font-size: 1.2rem;
-  font-family: 'Rasputin', serif;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .ratio-item strong.good {
-  color: #4caf50;
+  color: #28a745;
 }
 
 .ratio-item strong.bad {
-  color: #f44336;
+  color: #dc3545;
 }
 
 .ratio-note {
-  font-size: 0.75rem;
-  color: #6c757d;
-  margin-top: 0.3rem;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 11px;
+  color: #999;
+  margin-top: 5px;
 }
 
 .ratio-explanation {
-  font-size: 0.8rem;
-  color: #6c757d;
-  margin-top: 1rem;
+  font-size: 12px;
+  color: #666;
   line-height: 1.5;
-  font-family: 'Rasputin', sans-serif;
 }
 
-/* ==================== FREQUENCY CARDS ==================== */
+/* Frequency Results */
 .frequency-results {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
 }
 
 .frequency-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 15px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  position: relative;
-  border: 1px solid #e9ecef;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(196, 154, 108, 0.1);
 }
 
 .frequency-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .frequency-card.recommended {
-  border: 2px solid #64b5f6;
-  background: linear-gradient(135deg, white, #f0f8ff);
+  border: 2px solid #c49a6c;
+  position: relative;
 }
 
 .recommended-badge {
-  display: inline-block;
-  background: linear-gradient(135deg, #64b5f6, #2196f3);
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
   color: white;
-  font-size: 0.7rem;
-  padding: 0.2rem 0.5rem;
+  font-size: 10px;
+  padding: 3px 8px;
   border-radius: 20px;
-  margin-left: 0.5rem;
+  margin-left: 8px;
   vertical-align: middle;
 }
 
 .frequency-card h3 {
-  color: #1e3c72;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  font-family: 'Rasputin', serif;
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #1a1a1a;
 }
 
 .payment-amount {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #64b5f6;
-  margin: 0.5rem 0;
-  font-family: 'Rasputin', serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #c49a6c;
+  margin-bottom: 5px;
 }
 
 .payment-detail {
-  font-size: 0.85rem;
-  color: #6c757d;
-  margin-bottom: 0.5rem;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 15px;
 }
 
 .interest-total {
-  font-size: 0.9rem;
-  color: #343a40;
-  margin: 0.5rem 0;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
 }
 
 .time-info {
-  font-size: 0.85rem;
-  color: #6c757d;
-  margin: 0.5rem 0;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
 }
 
 .savings {
-  font-size: 0.85rem;
-  color: #4caf50;
+  font-size: 13px;
+  color: #28a745;
   font-weight: 600;
-  margin-top: 0.5rem;
-  font-family: 'Rasputin', sans-serif;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(196, 154, 108, 0.2);
 }
 
-/* ==================== INTEREST COMPARISON CHART ==================== */
+/* Chart Section */
 .chart-section {
-  margin: 2rem 0;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 15px;
+  margin: 40px 0;
+  padding: 30px;
+  background: #fafafa;
+  border-radius: 24px;
+  text-align: center;
 }
 
 .chart-section h3 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #1e3c72;
-  font-family: 'Rasputin', serif;
+  font-size: 20px;
+  margin-bottom: 25px;
 }
 
 .interest-comparison-chart {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-end;
-  gap: 1rem;
-  min-height: 250px;
-  padding: 1rem;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .interest-bar-container {
-  flex: 1;
   text-align: center;
+  width: 80px;
 }
 
 .interest-bar {
-  background: linear-gradient(180deg, #64b5f6, #2196f3);
+  background: linear-gradient(to top, #c49a6c, #8B5E3C);
+  width: 50px;
+  margin: 0 auto 10px;
   border-radius: 10px 10px 0 0;
   transition: height 0.3s ease;
   position: relative;
-  min-height: 10px;
+  min-height: 20px;
 }
 
 .interest-value {
@@ -615,40 +717,30 @@
   top: -25px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.8rem;
+  font-size: 11px;
   font-weight: 600;
-  color: #1e3c72;
+  color: #c49a6c;
   white-space: nowrap;
-  font-family: 'Rasputin', sans-serif;
-}
-
-.interest-bar-container p {
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  color: #6c757d;
-  font-family: 'Rasputin', sans-serif;
 }
 
 .chart-note {
-  text-align: center;
-  font-size: 0.85rem;
-  color: #6c757d;
-  margin-top: 1rem;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 12px;
+  color: #999;
+  margin-top: 20px;
 }
 
-/* ==================== FREQUENCY EXPLANATION ==================== */
+/* Frequency Explanation */
 .frequency-explanation {
-  padding: 1.5rem;
-  background: #e3f2fd;
-  border-radius: 15px;
-  margin: 1.5rem 0;
+  background: linear-gradient(135deg, #fafafa, #ffffff);
+  padding: 25px;
+  border-radius: 20px;
+  margin: 30px 0;
 }
 
 .frequency-explanation h3 {
-  color: #1e3c72;
-  margin-bottom: 1rem;
-  font-family: 'Rasputin', serif;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #8B5E3C;
 }
 
 .frequency-explanation ul {
@@ -657,111 +749,111 @@
 }
 
 .frequency-explanation li {
-  padding: 0.5rem 0;
-  color: #495057;
-  line-height: 1.6;
-  font-family: 'Rasputin', sans-serif;
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  font-size: 14px;
+  color: #666;
 }
 
-.frequency-explanation .tip {
-  margin-top: 1rem;
-  padding: 0.8rem;
-  background: white;
-  border-radius: 8px;
-  color: #64b5f6;
-  font-weight: 500;
-  font-family: 'Rasputin', sans-serif;
+.frequency-explanation li:before {
+  content: "✓";
+  color: #c49a6c;
+  position: absolute;
+  left: 0;
 }
 
-/* ==================== COMPARE CALCULATOR ==================== */
+.tip {
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(196, 154, 108, 0.1);
+  border-radius: 12px;
+  color: #8B5E3C;
+}
+
+/* Scenarios Container */
 .scenarios-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: 30px;
+  margin-bottom: 30px;
 }
 
 .scenario-card {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 15px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
   position: relative;
-  border: 1px solid #e9ecef;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(196, 154, 108, 0.1);
 }
 
 .scenario-card h3 {
-  color: #1e3c72;
-  margin-bottom: 1rem;
-  font-family: 'Rasputin', serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #c49a6c;
 }
 
 .remove-scenario {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: #f44336;
+  top: 15px;
+  right: 15px;
+  background: #dc3545;
   color: white;
   border: none;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 1.2rem;
-  transition: all 0.2s ease;
+  font-size: 18px;
+  transition: all 0.3s ease;
 }
 
 .remove-scenario:hover {
-  background: #d32f2f;
   transform: scale(1.1);
+  background: #c82333;
 }
 
 .scenario-results {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #e9ecef;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(196, 154, 108, 0.2);
 }
 
 .scenario-results p {
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
-  font-family: 'Rasputin', sans-serif;
-}
-
-.scenario-results strong {
-  color: #64b5f6;
+  margin-bottom: 8px;
+  font-size: 14px;
 }
 
 .add-scenario-btn {
+  display: block;
   width: 100%;
-  padding: 1rem;
-  background: white;
-  border: 2px dashed #64b5f6;
-  border-radius: 10px;
-  color: #64b5f6;
-  font-size: 1rem;
+  padding: 12px;
+  background: transparent;
+  border: 2px dashed #c49a6c;
+  border-radius: 40px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
-  margin-bottom: 2rem;
-  font-family: 'Rasputin', sans-serif;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .add-scenario-btn:hover {
-  background: #64b5f6;
-  color: white;
-  border-color: transparent;
+  background: rgba(196, 154, 108, 0.1);
+  border-style: solid;
 }
 
-/* ==================== COMPARISON TABLE ==================== */
+/* Comparison Table */
 .comparison-table {
-  margin: 2rem 0;
+  margin: 30px 0;
   overflow-x: auto;
 }
 
 .comparison-table h3 {
-  margin-bottom: 1rem;
-  color: #1e3c72;
-  font-family: 'Rasputin', serif;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .comparison-table-wrapper {
@@ -771,361 +863,211 @@
 .comparison-table-inner {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
+  background: #ffffff;
+  border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .comparison-table-inner th,
 .comparison-table-inner td {
-  padding: 1rem;
+  padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid #e9ecef;
-  font-family: 'Rasputin', sans-serif;
+  border-bottom: 1px solid rgba(196, 154, 108, 0.1);
 }
 
 .comparison-table-inner th {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
   color: white;
   font-weight: 600;
 }
 
 .comparison-table-inner tr:hover {
-  background: #f8f9fa;
+  background: rgba(196, 154, 108, 0.05);
 }
 
 .export-pdf {
-  margin-top: 1rem;
-  padding: 0.8rem 1.5rem;
-  background: #f44336;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
   color: white;
   border: none;
   border-radius: 40px;
   cursor: pointer;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  font-family: 'Rasputin', sans-serif;
+  transition: all 0.3s ease;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .export-pdf:hover {
-  background: #d32f2f;
   transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 94, 60, 0.3);
 }
 
-/* ==================== RENT VS BUY ==================== */
-.net-position {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #e9ecef;
-  font-family: 'Rasputin', sans-serif;
-}
-
-.positive {
-  color: #4caf50;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  font-family: 'Rasputin', sans-serif;
-}
-
-.negative {
-  color: #f44336;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  font-family: 'Rasputin', sans-serif;
-}
-
-/* ==================== CTA SECTION ==================== */
+/* CTA Section */
 .cta-section {
-  margin-top: 2rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, #e3f2fd, #bbdef5);
-  border-radius: 15px;
+  margin-top: 50px;
+  padding: 40px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border-radius: 24px;
   text-align: center;
+  color: white;
 }
 
 .cta-section h3 {
-  color: #1e3c72;
-  margin-bottom: 0.5rem;
-  font-family: 'Rasputin', serif;
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
 .cta-section p {
-  color: #6c757d;
-  margin-bottom: 1rem;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 14px;
+  margin-bottom: 25px;
+  opacity: 0.9;
 }
 
 .cta-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .btn-contact,
 .btn-appointment {
-  padding: 0.8rem 1.5rem;
-  border: none;
+  padding: 12px 30px;
   border-radius: 40px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  font-family: 'Rasputin', sans-serif;
+  transition: all 0.3s ease;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  border: none;
 }
 
 .btn-contact {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
   color: white;
 }
 
 .btn-contact:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+  box-shadow: 0 5px 15px rgba(139, 94, 60, 0.4);
 }
 
 .btn-appointment {
-  background: white;
-  color: #1e3c72;
-  border: 2px solid #1e3c72;
+  background: transparent;
+  color: #c49a6c;
+  border: 2px solid #c49a6c;
 }
 
 .btn-appointment:hover {
-  background: #1e3c72;
+  background: #c49a6c;
   color: white;
   transform: translateY(-2px);
 }
 
-/* ==================== RESPONSIVE DESIGN ==================== */
-@media (max-width: 1024px) {
-  .calculator-container {
-    padding: 0 1.5rem;
-  }
-  
-  .two-columns {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .frequency-results {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-  
-  .calculator-hero {
-    height: 70vh;
-    min-height: 450px;
-  }
-  
-  .calculator-hero-content h1 {
-    font-size: 2.5rem;
-  }
+/* Net Position */
+.net-position {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
-@media (max-width: 768px) {
-  .calculator-container {
-    padding: 0 1rem;
-  }
-  
-  .calculator-hero {
-    height: 60vh;
-    min-height: 400px;
-  }
-  
-  .calculator-hero-container {
-    padding: 0 1rem;
-  }
-  
-  .calculator-hero-content h1 {
-    font-size: 1.8rem;
-  }
-  
-  .calculator-hero-content p {
-    font-size: 0.9rem;
-  }
-  
-  .hero-stats {
-    gap: 1rem;
-  }
-  
-  .hero-stat {
-    padding: 0.6rem 1.2rem;
-    min-width: 100px;
-  }
-  
-  .hero-stat-number {
-    font-size: 1.3rem;
-  }
-  
-  .hero-stat-label {
-    font-size: 0.7rem;
-  }
-  
-  .calculator-tabs {
-    gap: 0.3rem;
-  }
-  
-  .tab-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-  }
-  
-  .calculator-content {
-    padding: 1rem;
-  }
-  
-  .estimated-amount {
-    font-size: 2rem;
-  }
-  
-  .payment-summary {
-    grid-template-columns: 1fr;
-  }
-  
-  .scenarios-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .interest-comparison-chart {
-    flex-direction: column;
-    align-items: stretch;
-    min-height: auto;
-  }
-  
-  .interest-bar-container {
-    margin-bottom: 1rem;
-  }
-  
-  .interest-bar {
-    height: 40px !important;
-    border-radius: 5px;
-  }
-  
-  .interest-value {
-    top: 50%;
-    transform: translateY(-50%);
-    left: 10px;
-  }
-  
-  .comparison-table-inner {
-    font-size: 0.85rem;
-  }
-  
-  .comparison-table-inner th,
-  .comparison-table-inner td {
-    padding: 0.5rem;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .btn-contact,
-  .btn-appointment {
-    width: 100%;
-    max-width: 250px;
-  }
+.positive {
+  color: #28a745;
+  margin-top: 10px;
+  font-size: 13px;
 }
 
-@media (max-width: 480px) {
-  .calculator-hero {
-    height: 50vh;
-    min-height: 350px;
-  }
-  
-  .calculator-hero-content h1 {
-    font-size: 1.5rem;
-  }
-  
-  .calculator-tabs {
-    gap: 0.2rem;
-  }
-  
-  .tab-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
-  }
-  
-  .section-title {
-    font-size: 1.2rem;
-  }
-  
-  .estimated-amount {
-    font-size: 1.5rem;
-  }
-  
-  .frequency-card {
-    padding: 1rem;
-  }
-  
-  .payment-amount {
-    font-size: 1.3rem;
-  }
-  
-  .result-amount {
-    font-size: 1.5rem;
-  }
-  
-  .hero-stat {
-    padding: 0.5rem 1rem;
-    min-width: 80px;
-  }
-  
-  .hero-stat-number {
-    font-size: 1.1rem;
-  }
+.negative {
+  color: #dc3545;
+  margin-top: 10px;
+  font-size: 13px;
 }
 
-/* ==================== REDUCED MOTION PREFERENCE ==================== */
-@media (prefers-reduced-motion: reduce) {
-  .fade-up,
-  .frequency-card,
-  .tab-btn,
-  .btn-contact,
-  .btn-appointment,
-  .add-scenario-btn,
-  .remove-scenario,
-  .export-pdf {
-    transition: none !important;
-    animation: none !important;
-  }
-  
-  .fade-up {
-    opacity: 1;
-    transform: none;
-  }
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ==================== FOCUS STATES ==================== */
-.tab-btn:focus-visible,
-.input-group input:focus-visible,
-.input-group select:focus-visible,
-.btn-contact:focus-visible,
-.btn-appointment:focus-visible,
-.add-scenario-btn:focus-visible,
-.export-pdf:focus-visible,
-.remove-scenario:focus-visible {
-  outline: 3px solid #64b5f6;
-  outline-offset: 2px;
+.fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ==================== SCROLLBAR ==================== */
+/* ============================================
+   SCROLLBAR STYLES
+   ============================================ */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f5f5f5;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #64b5f6, #2196f3);
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #2196f3, #0d47a1);
+  background: linear-gradient(135deg, #8B5E3C, #6B4226);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button:focus,
+.tab-btn:focus,
+.add-scenario-btn:focus,
+.export-pdf:focus,
+.btn-contact:focus,
+.btn-appointment:focus {
+  outline: none;
+}
+
+button:focus-visible,
+.tab-btn:focus-visible,
+.add-scenario-btn:focus-visible,
+.export-pdf:focus-visible,
+.btn-contact:focus-visible,
+.btn-appointment:focus-visible {
+  outline: 3px solid #c49a6c;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #c49a6c;
+  color: white;
+}
+
+::-moz-selection {
+  background: #c49a6c;
+  color: white;
+}
+
+/* GPU Acceleration */
+.calculator-hero-image,
+.frequency-card,
+.results-card,
+.scenario-card {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }

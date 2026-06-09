@@ -9,7 +9,7 @@ function Calculator() {
   const [paymentLoanAmount, setPaymentLoanAmount] = useState(400000);
   const [paymentDownPayment, setPaymentDownPayment] = useState(50000);
   const [paymentInterestRate, setPaymentInterestRate] = useState(5);
-  const [paymentLoanTerm, setPaymentLoanTerm] = useState(30);
+  const [paymentLoanTerm, setPaymentLoanTerm] = useState(25);
   const [monthlyPayment, setMonthlyPayment] = useState(0);
   const [totalInterest, setTotalInterest] = useState(0);
   const [totalPayment, setTotalPayment] = useState(0);
@@ -102,7 +102,9 @@ function Calculator() {
     const numberOfPayments = paymentLoanTerm * 12;
     
     let payment = 0;
-    if (monthlyRate === 0) {
+    if (principal <= 0) {
+      payment = 0;
+    } else if (monthlyRate === 0) {
       payment = principal / numberOfPayments;
     } else {
       payment = principal * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments) / (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
@@ -308,6 +310,7 @@ function Calculator() {
     window.location.href = '/contact';
   };
 
+
   return (
     <div className="calculator-page">
       {/* Hero Section - Full width image with 1500px content constraint */}
@@ -372,12 +375,12 @@ function Calculator() {
                   onChange={(e) => setPaymentLoanAmount(Number(e.target.value))}
                 />
                 <div className="input-with-value">
+                  <span className="currency-symbol">$</span>
                   <input
                     type="number"
                     value={paymentLoanAmount}
                     onChange={(e) => setPaymentLoanAmount(Number(e.target.value))}
                   />
-                  <span className="input-symbol">$</span>
                 </div>
               </div>
 
@@ -392,12 +395,12 @@ function Calculator() {
                   onChange={(e) => setPaymentDownPayment(Number(e.target.value))}
                 />
                 <div className="input-with-value">
+                  <span className="currency-symbol">$</span>
                   <input
                     type="number"
                     value={paymentDownPayment}
                     onChange={(e) => setPaymentDownPayment(Number(e.target.value))}
                   />
-                  <span className="input-symbol">$</span>
                   <span className="input-note">{((paymentDownPayment / paymentLoanAmount) * 100).toFixed(1)}% of loan amount</span>
                 </div>
               </div>
@@ -431,6 +434,12 @@ function Calculator() {
                   onChange={(e) => setPaymentLoanTerm(Number(e.target.value))}
                 />
                 <select value={paymentLoanTerm} onChange={(e) => setPaymentLoanTerm(Number(e.target.value))}>
+                  <option value={1}>1 year</option>
+                  <option value={2}>2 years</option>
+                  <option value={3}>3 years</option>
+                  <option value={4}>4 years</option>
+                  <option value={5}>5 years</option>
+                  <option value={10}>10 years</option>
                   <option value={15}>15 years</option>
                   <option value={20}>20 years</option>
                   <option value={25}>25 years</option>
@@ -445,33 +454,48 @@ function Calculator() {
               <h2 className="section-title">Monthly Payment</h2>
               <div className="estimated-payment">
                 <p className="estimated-label">Estimated monthly payment</p>
-                <p className="estimated-amount">${monthlyPayment.toFixed(2)}</p>
+                <p className="estimated-amount">
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{monthlyPayment.toFixed(2)}</span>
+                </p>
               </div>
 
               <div className="payment-summary">
                 <div className="summary-item">
                   <span>Total Interest</span>
-                  <strong>${totalInterest.toFixed(2)}</strong>
+                  <strong>
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{totalInterest.toFixed(2)}</span>
+                  </strong>
                 </div>
                 <div className="summary-item">
                   <span>Total Payment</span>
-                  <strong>${totalPayment.toFixed(2)}</strong>
+                  <strong>
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{totalPayment.toFixed(2)}</span>
+                  </strong>
                 </div>
               </div>
 
               <div className="payment-breakdown">
                 <h3>Payment Breakdown</h3>
                 <div className="breakdown-bars">
-                  <div className="breakdown-bar principal" style={{ width: `${(principalAmount / totalPayment) * 100}%` }}>
-                    {((principalAmount / totalPayment) * 100).toFixed(0)}%
+                  <div className="breakdown-bar principal" style={{ width: totalPayment > 0 ? `${(principalAmount / totalPayment) * 100}%` : '0%' }}>
+                    {totalPayment > 0 ? `${((principalAmount / totalPayment) * 100).toFixed(0)}%` : '0%'}
                   </div>
-                  <div className="breakdown-bar interest" style={{ width: `${(totalInterest / totalPayment) * 100}%` }}>
-                    {((totalInterest / totalPayment) * 100).toFixed(0)}%
+                  <div className="breakdown-bar interest" style={{ width: totalPayment > 0 ? `${(totalInterest / totalPayment) * 100}%` : '0%' }}>
+                    {totalPayment > 0 ? `${((totalInterest / totalPayment) * 100).toFixed(0)}%` : '0%'}
                   </div>
                 </div>
                 <div className="breakdown-labels">
-                  <span>Principal ${principalAmount.toFixed(2)}</span>
-                  <span>Interest ${totalInterest.toFixed(2)}</span>
+                  <span>
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{principalAmount.toFixed(2)}</span> Principal
+                  </span>
+                  <span>
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{totalInterest.toFixed(2)}</span> Interest
+                  </span>
                 </div>
               </div>
             </div>
@@ -507,8 +531,12 @@ function Calculator() {
                       onChange={(e) => setAnnualIncome(Number(e.target.value))}
                     />
                     <div className="input-with-value">
+                      <span className="currency-symbol">$</span>
                       <input type="number" value={annualIncome} onChange={(e) => setAnnualIncome(Number(e.target.value))} />
-                      <span className="input-note">Monthly Income: ${(annualIncome / 12).toFixed(2)}</span>
+                      <span className="input-note">Monthly Income: 
+                        <span className="currency-symbol">$</span>
+                        <span className="amount-value">{(annualIncome / 12).toFixed(2)}</span>
+                      </span>
                     </div>
                   </div>
 
@@ -522,7 +550,10 @@ function Calculator() {
                       value={monthlyDebts}
                       onChange={(e) => setMonthlyDebts(Number(e.target.value))}
                     />
-                    <input type="number" value={monthlyDebts} onChange={(e) => setMonthlyDebts(Number(e.target.value))} />
+                    <div className="input-with-value">
+                      <span className="currency-symbol">$</span>
+                      <input type="number" value={monthlyDebts} onChange={(e) => setMonthlyDebts(Number(e.target.value))} />
+                    </div>
                     <span className="input-note">Car loans, credit cards, student loans, etc.</span>
                   </div>
 
@@ -536,7 +567,10 @@ function Calculator() {
                       value={affordabilityDownPayment}
                       onChange={(e) => setAffordabilityDownPayment(Number(e.target.value))}
                     />
-                    <input type="number" value={affordabilityDownPayment} onChange={(e) => setAffordabilityDownPayment(Number(e.target.value))} />
+                    <div className="input-with-value">
+                      <span className="currency-symbol">$</span>
+                      <input type="number" value={affordabilityDownPayment} onChange={(e) => setAffordabilityDownPayment(Number(e.target.value))} />
+                    </div>
                   </div>
                 </div>
 
@@ -553,29 +587,48 @@ function Calculator() {
                   <div className="input-group">
                     <label>Amortization (Years)</label>
                     <select value={amortizationYears} onChange={(e) => setAmortizationYears(Number(e.target.value))}>
+                      <option value={5}>5 years</option>
+                      <option value={10}>10 years</option>
                       <option value={15}>15 years</option>
                       <option value={20}>20 years</option>
                       <option value={25}>25 years</option>
                       <option value={30}>30 years</option>
                     </select>
+                    <input
+                      type="range"
+                      min="5"
+                      max="30"
+                      step="1"
+                      value={amortizationYears}
+                      onChange={(e) => setAmortizationYears(Number(e.target.value))}
+                    />
                   </div>
 
                   <div className="input-group">
                     <label>Property Tax (Annually) ($)</label>
                     <input type="range" min="0" max="20000" step="500" value={propertyTax} onChange={(e) => setPropertyTax(Number(e.target.value))} />
-                    <input type="number" value={propertyTax} onChange={(e) => setPropertyTax(Number(e.target.value))} />
+                    <div className="input-with-value">
+                      <span className="currency-symbol">$</span>
+                      <input type="number" value={propertyTax} onChange={(e) => setPropertyTax(Number(e.target.value))} />
+                    </div>
                   </div>
 
                   <div className="input-group">
                     <label>Heating (Monthly) ($)</label>
                     <input type="range" min="0" max="500" step="25" value={heatingCost} onChange={(e) => setHeatingCost(Number(e.target.value))} />
-                    <input type="number" value={heatingCost} onChange={(e) => setHeatingCost(Number(e.target.value))} />
+                    <div className="input-with-value">
+                      <span className="currency-symbol">$</span>
+                      <input type="number" value={heatingCost} onChange={(e) => setHeatingCost(Number(e.target.value))} />
+                    </div>
                   </div>
 
                   <div className="input-group">
                     <label>Condo Fees (Monthly) – 50% counted in GDS/TDS ($)</label>
                     <input type="range" min="0" max="2000" step="50" value={condoFees} onChange={(e) => setCondoFees(Number(e.target.value))} />
-                    <input type="number" value={condoFees} onChange={(e) => setCondoFees(Number(e.target.value))} />
+                    <div className="input-with-value">
+                      <span className="currency-symbol">$</span>
+                      <input type="number" value={condoFees} onChange={(e) => setCondoFees(Number(e.target.value))} />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -583,13 +636,23 @@ function Calculator() {
               <div className="right-column">
                 <div className="results-card">
                   <h3>Maximum Affordable Home Price</h3>
-                  <p className="result-amount">${maxHomePrice.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
-                  <p className="result-sub">Monthly Payment: ${affordablePayment.toFixed(2)}</p>
+                  <p className="result-amount">
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{maxHomePrice.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                  </p>
+                  <p className="result-sub">
+                    Monthly Payment: 
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{affordablePayment.toFixed(2)}</span>
+                  </p>
                 </div>
 
                 <div className="results-card">
                   <h3>Comfortable Home Price</h3>
-                  <p className="result-amount">${comfortableHomePrice.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+                  <p className="result-amount">
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{comfortableHomePrice.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                  </p>
                   <p className="result-sub">28% GDS ratio for better financial flexibility</p>
                 </div>
 
@@ -625,7 +688,10 @@ function Calculator() {
               <div className="input-group">
                 <label>Mortgage Amount ($)</label>
                 <input type="range" min="0" max="1000000" step="10000" value={freqMortgageAmount} onChange={(e) => setFreqMortgageAmount(Number(e.target.value))} />
-                <input type="number" value={freqMortgageAmount} onChange={(e) => setFreqMortgageAmount(Number(e.target.value))} />
+                <div className="input-with-value">
+                  <span className="currency-symbol">$</span>
+                  <input type="number" value={freqMortgageAmount} onChange={(e) => setFreqMortgageAmount(Number(e.target.value))} />
+                </div>
               </div>
 
               <div className="input-group">
@@ -637,57 +703,109 @@ function Calculator() {
               <div className="input-group">
                 <label>Amortization (Years)</label>
                 <select value={freqAmortizationYears} onChange={(e) => setFreqAmortizationYears(Number(e.target.value))}>
+                  <option value={5}>5 years</option>
+                  <option value={10}>10 years</option>
                   <option value={15}>15 years</option>
                   <option value={20}>20 years</option>
                   <option value={25}>25 years</option>
                   <option value={30}>30 years</option>
                 </select>
+                <input
+                  type="range"
+                  min="5"
+                  max="30"
+                  step="1"
+                  value={freqAmortizationYears}
+                  onChange={(e) => setFreqAmortizationYears(Number(e.target.value))}
+                />
               </div>
             </div>
 
             <div className="frequency-results">
               <div className="frequency-card">
                 <h3>Monthly</h3>
-                <p className="payment-amount">${frequencyData.monthly.payment.toFixed(0)}</p>
+                <p className="payment-amount">
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{frequencyData.monthly.payment.toFixed(0)}</span>
+                </p>
                 <p className="payment-detail">Payment Amount</p>
-                <p className="interest-total">Total Interest Paid: ${frequencyData.monthly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+                <p className="interest-total">Total Interest Paid: 
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{frequencyData.monthly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                </p>
                 <p className="time-info">Time to Pay Off: {frequencyData.monthly.years.toFixed(2)} years ({Math.round(frequencyData.monthly.payments)} payments)</p>
               </div>
 
               <div className="frequency-card">
                 <h3>Bi-Weekly</h3>
-                <p className="payment-amount">${frequencyData.biWeekly.payment.toFixed(0)}</p>
+                <p className="payment-amount">
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{frequencyData.biWeekly.payment.toFixed(0)}</span>
+                </p>
                 <p className="payment-detail">Payment Amount</p>
-                <p className="interest-total">Total Interest Paid: ${frequencyData.biWeekly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+                <p className="interest-total">Total Interest Paid: 
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{frequencyData.biWeekly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                </p>
                 <p className="time-info">Time to Pay Off: {frequencyData.biWeekly.years.toFixed(2)} years ({Math.round(frequencyData.biWeekly.payments)} payments)</p>
-                <p className="savings">Interest Savings: ${(frequencyData.monthly.totalInterest - frequencyData.biWeekly.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+                <p className="savings">Interest Savings: 
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{(frequencyData.monthly.totalInterest - frequencyData.biWeekly.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                </p>
               </div>
 
               <div className="frequency-card recommended">
                 <h3>Accelerated Bi-Weekly <span className="recommended-badge">Recommended</span></h3>
-                <p className="payment-amount">${frequencyData.accBiWeekly.payment.toFixed(0)}</p>
+                <p className="payment-amount">
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{frequencyData.accBiWeekly.payment.toFixed(0)}</span>
+                </p>
                 <p className="payment-detail">Payment Amount</p>
-                <p className="interest-total">Total Interest Paid: ${frequencyData.accBiWeekly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+                <p className="interest-total">Total Interest Paid: 
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{frequencyData.accBiWeekly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                </p>
                 <p className="time-info">Time to Pay Off: {frequencyData.accBiWeekly.years.toFixed(2)} years ({Math.round(frequencyData.accBiWeekly.payments)} payments)</p>
-                <p className="savings">Interest Savings: ${(frequencyData.monthly.totalInterest - frequencyData.accBiWeekly.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+                <p className="savings">Interest Savings: 
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{(frequencyData.monthly.totalInterest - frequencyData.accBiWeekly.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                </p>
               </div>
 
               <div className="frequency-card">
                 <h3>Weekly</h3>
-                <p className="payment-amount">${frequencyData.weekly.payment.toFixed(0)}</p>
+                <p className="payment-amount">
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{frequencyData.weekly.payment.toFixed(0)}</span>
+                </p>
                 <p className="payment-detail">Payment Amount</p>
-                <p className="interest-total">Total Interest Paid: ${frequencyData.weekly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+                <p className="interest-total">Total Interest Paid: 
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{frequencyData.weekly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                </p>
                 <p className="time-info">Time to Pay Off: {frequencyData.weekly.years.toFixed(2)} years ({Math.round(frequencyData.weekly.payments)} payments)</p>
-                <p className="savings">Interest Savings: ${(frequencyData.monthly.totalInterest - frequencyData.weekly.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+                <p className="savings">Interest Savings: 
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{(frequencyData.monthly.totalInterest - frequencyData.weekly.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                </p>
               </div>
 
               <div className="frequency-card">
                 <h3>Accelerated Weekly</h3>
-                <p className="payment-amount">${frequencyData.accWeekly.payment.toFixed(0)}</p>
+                <p className="payment-amount">
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{frequencyData.accWeekly.payment.toFixed(0)}</span>
+                </p>
                 <p className="payment-detail">Payment Amount</p>
-                <p className="interest-total">Total Interest Paid: ${frequencyData.accWeekly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+                <p className="interest-total">Total Interest Paid: 
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{frequencyData.accWeekly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                </p>
                 <p className="time-info">Time to Pay Off: {frequencyData.accWeekly.years.toFixed(2)} years ({Math.round(frequencyData.accWeekly.payments)} payments)</p>
-                <p className="savings">Interest Savings: ${(frequencyData.monthly.totalInterest - frequencyData.accWeekly.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+                <p className="savings">Interest Savings: 
+                  <span className="currency-symbol">$</span>
+                  <span className="amount-value">{(frequencyData.monthly.totalInterest - frequencyData.accWeekly.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                </p>
               </div>
             </div>
 
@@ -696,31 +814,46 @@ function Calculator() {
               <div className="interest-comparison-chart">
                 <div className="interest-bar-container">
                   <div className="interest-bar" style={{ height: `${Math.min((frequencyData.monthly.totalInterest / Math.max(frequencyData.monthly.totalInterest, 1)) * 200, 200)}px` }}>
-                    <span className="interest-value">${(frequencyData.monthly.totalInterest / 1000).toFixed(0)}k</span>
+                    <span className="interest-value">
+                      <span className="currency-symbol">$</span>
+                      <span className="amount-value">{(frequencyData.monthly.totalInterest / 1000).toFixed(0)}k</span>
+                    </span>
                   </div>
                   <p>Monthly</p>
                 </div>
                 <div className="interest-bar-container">
                   <div className="interest-bar" style={{ height: `${Math.min((frequencyData.biWeekly.totalInterest / Math.max(frequencyData.monthly.totalInterest, 1)) * 200, 200)}px` }}>
-                    <span className="interest-value">${(frequencyData.biWeekly.totalInterest / 1000).toFixed(0)}k</span>
+                    <span className="interest-value">
+                      <span className="currency-symbol">$</span>
+                      <span className="amount-value">{(frequencyData.biWeekly.totalInterest / 1000).toFixed(0)}k</span>
+                    </span>
                   </div>
                   <p>Bi-Weekly</p>
                 </div>
                 <div className="interest-bar-container">
                   <div className="interest-bar" style={{ height: `${Math.min((frequencyData.accBiWeekly.totalInterest / Math.max(frequencyData.monthly.totalInterest, 1)) * 200, 200)}px` }}>
-                    <span className="interest-value">${(frequencyData.accBiWeekly.totalInterest / 1000).toFixed(0)}k</span>
+                    <span className="interest-value">
+                      <span className="currency-symbol">$</span>
+                      <span className="amount-value">{(frequencyData.accBiWeekly.totalInterest / 1000).toFixed(0)}k</span>
+                    </span>
                   </div>
                   <p>Acc. Bi-Weekly</p>
                 </div>
                 <div className="interest-bar-container">
                   <div className="interest-bar" style={{ height: `${Math.min((frequencyData.weekly.totalInterest / Math.max(frequencyData.monthly.totalInterest, 1)) * 200, 200)}px` }}>
-                    <span className="interest-value">${(frequencyData.weekly.totalInterest / 1000).toFixed(0)}k</span>
+                    <span className="interest-value">
+                      <span className="currency-symbol">$</span>
+                      <span className="amount-value">{(frequencyData.weekly.totalInterest / 1000).toFixed(0)}k</span>
+                    </span>
                   </div>
                   <p>Weekly</p>
                 </div>
                 <div className="interest-bar-container">
                   <div className="interest-bar" style={{ height: `${Math.min((frequencyData.accWeekly.totalInterest / Math.max(frequencyData.monthly.totalInterest, 1)) * 200, 200)}px` }}>
-                    <span className="interest-value">${(frequencyData.accWeekly.totalInterest / 1000).toFixed(0)}k</span>
+                    <span className="interest-value">
+                      <span className="currency-symbol">$</span>
+                      <span className="amount-value">{(frequencyData.accWeekly.totalInterest / 1000).toFixed(0)}k</span>
+                    </span>
                   </div>
                   <p>Acc. Weekly</p>
                 </div>
@@ -761,7 +894,10 @@ function Calculator() {
                     )}
                     <div className="input-group">
                       <label>Mortgage Amount ($)</label>
-                      <input type="number" value={scenario.amount} onChange={(e) => updateScenario(scenario.id, 'amount', Number(e.target.value))} />
+                      <div className="input-with-value">
+                        <span className="currency-symbol">$</span>
+                        <input type="number" value={scenario.amount} onChange={(e) => updateScenario(scenario.id, 'amount', Number(e.target.value))} />
+                      </div>
                     </div>
                     <div className="input-group">
                       <label>Interest Rate (%)</label>
@@ -770,6 +906,8 @@ function Calculator() {
                     <div className="input-group">
                       <label>Amortization (Years)</label>
                       <select value={scenario.years} onChange={(e) => updateScenario(scenario.id, 'years', Number(e.target.value))}>
+                        <option value={5}>5 years</option>
+                        <option value={10}>10 years</option>
                         <option value={15}>15 years</option>
                         <option value={20}>20 years</option>
                         <option value={25}>25 years</option>
@@ -777,9 +915,24 @@ function Calculator() {
                       </select>
                     </div>
                     <div className="scenario-results">
-                      <p>Monthly Payment: <strong>${payment.toFixed(2)}</strong></p>
-                      <p>Total Payment: <strong>${totalPaymentAmount.toFixed(2)}</strong></p>
-                      <p>Total Interest: <strong>${totalInterestAmount.toFixed(2)}</strong></p>
+                      <p>Monthly Payment: 
+                        <strong>
+                          <span className="currency-symbol">$</span>
+                          <span className="amount-value">{payment.toFixed(2)}</span>
+                        </strong>
+                      </p>
+                      <p>Total Payment: 
+                        <strong>
+                          <span className="currency-symbol">$</span>
+                          <span className="amount-value">{totalPaymentAmount.toFixed(2)}</span>
+                        </strong>
+                      </p>
+                      <p>Total Interest: 
+                        <strong>
+                          <span className="currency-symbol">$</span>
+                          <span className="amount-value">{totalInterestAmount.toFixed(2)}</span>
+                        </strong>
+                      </p>
                     </div>
                   </div>
                 );
@@ -801,7 +954,10 @@ function Calculator() {
                   <tbody>
                     <tr>
                       <td>Mortgage Amount</td>
-                      {scenarios.map(scenario => <td key={scenario.id}>${scenario.amount.toLocaleString()}</td>)}
+                      {scenarios.map(scenario => <td key={scenario.id}>
+                        <span className="currency-symbol">$</span>
+                        <span className="amount-value">{scenario.amount.toLocaleString()}</span>
+                      </td>)}
                     </tr>
                     <tr>
                       <td>Interest Rate (%)</td>
@@ -817,15 +973,24 @@ function Calculator() {
                         <React.Fragment key={scenario.id}>
                           <tr>
                             <td>Monthly Payment</td>
-                            <td>${payment.toFixed(2)}</td>
+                            <td>
+                              <span className="currency-symbol">$</span>
+                              <span className="amount-value">{payment.toFixed(2)}</span>
+                            </td>
                           </tr>
                           <tr>
                             <td>Total Payment</td>
-                            <td>${totalPaymentAmount.toFixed(2)}</td>
+                            <td>
+                              <span className="currency-symbol">$</span>
+                              <span className="amount-value">{totalPaymentAmount.toFixed(2)}</span>
+                            </td>
                           </tr>
                           <tr>
                             <td>Total Interest</td>
-                            <td>${totalInterestAmount.toFixed(2)}</td>
+                            <td>
+                              <span className="currency-symbol">$</span>
+                              <span className="amount-value">{totalInterestAmount.toFixed(2)}</span>
+                            </td>
                           </tr>
                         </React.Fragment>
                       );
@@ -854,12 +1019,16 @@ function Calculator() {
                   <div className="input-group">
                     <label>Monthly Rent ($)</label>
                     <input type="range" min="500" max="10000" step="100" value={rentMonthly} onChange={(e) => setRentMonthly(Number(e.target.value))} />
-                    <input type="number" value={rentMonthly} onChange={(e) => setRentMonthly(Number(e.target.value))} />
+                    <div className="input-with-value">
+                      <span className="currency-symbol">$</span>
+                      <input type="number" value={rentMonthly} onChange={(e) => setRentMonthly(Number(e.target.value))} />
+                    </div>
                   </div>
                   <div className="input-group">
                     <label>Annual Rent Increase (%)</label>
                     <input type="range" min="0" max="10" step="0.5" value={rentIncrease} onChange={(e) => setRentIncrease(Number(e.target.value))} />
                     <input type="number" step="0.5" value={rentIncrease} onChange={(e) => setRentIncrease(Number(e.target.value))} />
+                    <span className="input-note">% increase per year</span>
                   </div>
                 </div>
 
@@ -868,12 +1037,19 @@ function Calculator() {
                   <div className="input-group">
                     <label>Home Price ($)</label>
                     <input type="range" min="100000" max="2000000" step="25000" value={buyHomePrice} onChange={(e) => setBuyHomePrice(Number(e.target.value))} />
-                    <input type="number" value={buyHomePrice} onChange={(e) => setBuyHomePrice(Number(e.target.value))} />
+                    <div className="input-with-value">
+                      <span className="currency-symbol">$</span>
+                      <input type="number" value={buyHomePrice} onChange={(e) => setBuyHomePrice(Number(e.target.value))} />
+                    </div>
                   </div>
                   <div className="input-group">
                     <label>Down Payment ($)</label>
                     <input type="range" min="0" max={buyHomePrice} step="5000" value={buyDownPayment} onChange={(e) => setBuyDownPayment(Number(e.target.value))} />
-                    <input type="number" value={buyDownPayment} onChange={(e) => setBuyDownPayment(Number(e.target.value))} />
+                    <div className="input-with-value">
+                      <span className="currency-symbol">$</span>
+                      <input type="number" value={buyDownPayment} onChange={(e) => setBuyDownPayment(Number(e.target.value))} />
+                    </div>
+                    <span className="input-note">{((buyDownPayment / buyHomePrice) * 100).toFixed(1)}% of home price</span>
                   </div>
                   <div className="input-group">
                     <label>Interest Rate (%)</label>
@@ -883,22 +1059,40 @@ function Calculator() {
                   <div className="input-group">
                     <label>Annual Property Tax ($)</label>
                     <input type="range" min="0" max="20000" step="500" value={buyPropertyTax} onChange={(e) => setBuyPropertyTax(Number(e.target.value))} />
-                    <input type="number" value={buyPropertyTax} onChange={(e) => setBuyPropertyTax(Number(e.target.value))} />
+                    <div className="input-with-value">
+                      <span className="currency-symbol">$</span>
+                      <input type="number" value={buyPropertyTax} onChange={(e) => setBuyPropertyTax(Number(e.target.value))} />
+                    </div>
                   </div>
                   <div className="input-group">
                     <label>Annual Maintenance ($)</label>
                     <input type="range" min="0" max="10000" step="500" value={buyMaintenance} onChange={(e) => setBuyMaintenance(Number(e.target.value))} />
-                    <input type="number" value={buyMaintenance} onChange={(e) => setBuyMaintenance(Number(e.target.value))} />
+                    <div className="input-with-value">
+                      <span className="currency-symbol">$</span>
+                      <input type="number" value={buyMaintenance} onChange={(e) => setBuyMaintenance(Number(e.target.value))} />
+                    </div>
                   </div>
                   <div className="input-group">
                     <label>Home Appreciation (%)</label>
                     <input type="range" min="0" max="10" step="0.5" value={homeAppreciation} onChange={(e) => setHomeAppreciation(Number(e.target.value))} />
                     <input type="number" step="0.5" value={homeAppreciation} onChange={(e) => setHomeAppreciation(Number(e.target.value))} />
+                    <span className="input-note">% increase in home value per year</span>
                   </div>
                   <div className="input-group">
                     <label>Time Period (Years)</label>
                     <input type="range" min="1" max="30" step="1" value={timePeriod} onChange={(e) => setTimePeriod(Number(e.target.value))} />
-                    <input type="number" value={timePeriod} onChange={(e) => setTimePeriod(Number(e.target.value))} />
+                    <select value={timePeriod} onChange={(e) => setTimePeriod(Number(e.target.value))}>
+                      <option value={1}>1 year</option>
+                      <option value={2}>2 years</option>
+                      <option value={3}>3 years</option>
+                      <option value={4}>4 years</option>
+                      <option value={5}>5 years</option>
+                      <option value={10}>10 years</option>
+                      <option value={15}>15 years</option>
+                      <option value={20}>20 years</option>
+                      <option value={25}>25 years</option>
+                      <option value={30}>30 years</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -906,23 +1100,38 @@ function Calculator() {
               <div className="right-column">
                 <div className="results-card">
                   <h3>Total Cost of Renting</h3>
-                  <p className="result-amount">${rentTotalCost.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                  <p className="result-amount">
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{rentTotalCost.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                  </p>
                 </div>
 
                 <div className="results-card">
                   <h3>Total Cost of Buying</h3>
-                  <p className="result-amount">${buyTotalCost.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                  <p className="result-amount">
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{buyTotalCost.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                  </p>
                 </div>
 
                 <div className="results-card">
                   <h3>Equity Built</h3>
-                  <p className="result-amount">${equityBuilt.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                  <p className="result-amount">
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{equityBuilt.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                  </p>
                 </div>
 
                 <div className="results-card">
                   <h3>After {timePeriod} Years</h3>
-                  <p>Home Value: ${finalHomeValue.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
-                  <p className="net-position">Net Financial Position (vs Renting): ${netPosition.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                  <p>Home Value: 
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{finalHomeValue.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                  </p>
+                  <p className="net-position">Net Financial Position (vs Renting): 
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{netPosition.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                  </p>
                   {netPosition > 0 ? (
                     <p className="positive">✓ Buying would put you ahead financially in this period.</p>
                   ) : (

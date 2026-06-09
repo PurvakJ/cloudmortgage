@@ -1,4 +1,7 @@
-/* Services.css - Oakmont Capital - Optimized for Performance */
+/* Services.css - Enhanced CSS for Oakmont Capital Services Page */
+/* Premium Design with Brown Accents and Smooth Animations */
+
+@import url('https://fonts.cdnfonts.com/css/rasputin');
 
 * {
   margin: 0;
@@ -7,18 +10,22 @@
 }
 
 .services-page {
-  width: 100%;
-  background: #f8f9fa;
-  min-height: 100vh;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  overflow-x: hidden;
 }
 
-/* ==================== HERO SECTION - FULL WIDTH IMAGE ==================== */
+/* ============================================
+   HERO SECTION
+   ============================================ */
 .services-hero {
   position: relative;
-  width: 100%;
-  height: 80vh;
-  min-height: 500px;
-  max-height: 700px;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
 }
 
@@ -26,667 +33,652 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.pexels.com/photos/439416/pexels-photo-439416.jpeg?auto=compress&cs=tinysrgb&w=1600');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  transform: scale(1);
-  transition: transform 0.3s ease;
+  background-attachment: fixed;
+  transform: scale(1.05);
+  transition: transform 8s ease;
 }
 
-/* Parallax effect only on desktop */
-@media (min-width: 1024px) {
-  .services-hero-image {
-    background-attachment: fixed;
-  }
+.services-hero:hover .services-hero-image {
+  transform: scale(1.1);
 }
 
 .services-hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(30, 60, 114, 0.88) 0%, rgba(42, 82, 152, 0.88) 100%);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
   z-index: 1;
 }
 
 .services-hero-container {
   position: relative;
   z-index: 2;
-  max-width: 1500px;
+  max-width: 1400px;
   margin: 0 auto;
-  height: 100%;
-  padding: 0 2rem;
+  padding: 0 40px;
+  width: 100%;
 }
 
 .services-hero-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .services-hero-content h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
-  font-family: 'Rasputin', 'Playfair Display', serif;
-  font-weight: 600;
+  font-size: 56px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #fff 0%, #c49a6c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .services-hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-  font-family: 'Rasputin', 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
-/* Hero Stats */
 .hero-stats {
   display: flex;
-  gap: 3rem;
   justify-content: center;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
 .hero-stat {
   text-align: center;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  min-width: 140px;
-  transition: transform 0.3s ease, background 0.3s ease;
+  position: relative;
 }
 
-.hero-stat:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-3px);
+.hero-stat:not(:last-child):after {
+  content: '';
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 40px;
+  background: rgba(255,255,255,0.3);
 }
 
 .hero-stat-number {
   display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #64b5f6;
-  margin-bottom: 0.3rem;
-  font-family: 'Rasputin', serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: #c49a6c;
+  margin-bottom: 8px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .hero-stat-label {
-  font-size: 0.85rem;
-  opacity: 0.9;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 1px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
-/* ==================== SERVICES CONTAINER - MAX 1500px ==================== */
+@media (max-width: 1024px) {
+  .services-hero {
+    height: 450px;
+  }
+  
+  .services-hero-content h1 {
+    font-size: 44px;
+  }
+  
+  .hero-stat-number {
+    font-size: 30px;
+  }
+  
+  .hero-stat:not(:last-child):after {
+    right: -20px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    height: 550px;
+  }
+  
+  .services-hero-container {
+    padding: 0 20px;
+  }
+  
+  .services-hero-content h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+  }
+  
+  .services-hero-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .hero-stat:not(:last-child):after {
+    display: none;
+  }
+  
+  .hero-stat-number {
+    font-size: 28px;
+  }
+}
+
+/* ============================================
+   SERVICES CONTAINER
+   ============================================ */
 .services-container {
   max-width: 1500px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 80px 40px;
 }
 
-/* ==================== ANIMATIONS - OPTIMIZED ==================== */
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-  will-change: opacity, transform;
-}
-
-.fade-up.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-left {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  will-change: opacity, transform;
-}
-
-.fade-left.animate {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.fade-right {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  will-change: opacity, transform;
-}
-
-.fade-right.animate {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.scale-in {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  will-change: opacity, transform;
-}
-
-.scale-in.animate {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* ==================== SERVICES GRID ==================== */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
 }
 
-/* ==================== SERVICE CARD - OPTIMIZED ==================== */
 .service-card {
-  background: white;
+  background: #ffffff;
   border-radius: 20px;
-  padding: 2rem;
-  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1), 
-              box-shadow 0.4s ease,
-              border-color 0.2s ease;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e9ecef;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  padding: 35px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(196, 154, 108, 0.1);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
-/* Hover effect without pseudo-element animation to reduce lag */
+.service-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #c49a6c, #8B5E3C);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover:before {
+  transform: scaleX(1);
+}
+
 .service-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-  border-color: #64b5f6;
+  border-color: rgba(196, 154, 108, 0.3);
 }
 
 .service-icon {
-  font-size: 2.8rem;
-  margin-bottom: 1.2rem;
+  font-size: 56px;
+  margin-bottom: 25px;
+  display: inline-block;
   transition: transform 0.3s ease;
 }
 
 .service-card:hover .service-icon {
-  transform: scale(1.05);
+  transform: scale(1.1) rotate(5deg);
 }
 
 .service-title {
-  font-size: 1.3rem;
-  color: #1e3c72;
-  margin-bottom: 1rem;
+  font-size: 22px;
   font-weight: 700;
-  line-height: 1.4;
-  min-height: 60px;
-  font-family: 'Rasputin', serif;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  line-height: 1.3;
 }
 
 .service-description {
-  color: #6c757d;
+  font-size: 14px;
+  color: #666666;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
-  font-size: 0.95rem;
-  font-family: 'Rasputin', sans-serif;
+  margin-bottom: 25px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .service-button {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 40px;
+  display: inline-block;
+  background: transparent;
+  color: #c49a6c;
+  border: 2px solid #c49a6c;
+  padding: 10px 25px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s ease;
+  border-radius: 40px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
   width: 100%;
-  font-size: 0.95rem;
-  font-family: 'Rasputin', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.service-button:hover:before {
+  left: 100%;
 }
 
 .service-button:hover {
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+  box-shadow: 0 5px 15px rgba(139, 94, 60, 0.3);
 }
 
-.service-button:active {
-  transform: translateY(0);
+@media (max-width: 1024px) {
+  .services-container {
+    padding: 60px 30px;
+  }
+  
+  .services-grid {
+    gap: 25px;
+  }
+  
+  .service-card {
+    padding: 25px;
+  }
+  
+  .service-title {
+    font-size: 20px;
+  }
 }
 
-/* ==================== MODAL OVERLAY ==================== */
+@media (max-width: 768px) {
+  .services-container {
+    padding: 40px 20px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* ============================================
+   MODAL STYLES
+   ============================================ */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 1rem;
-  overflow-y: auto;
+  animation: fadeIn 0.3s ease;
+  padding: 20px;
 }
 
-/* ==================== MODAL CONTENT ==================== */
-.modal-content {
-  background: white;
-  border-radius: 25px;
-  max-width: 850px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  animation: modalSlideIn 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-}
-
-@keyframes modalSlideIn {
+@keyframes fadeIn {
   from {
-    transform: translateY(-30px);
     opacity: 0;
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+  }
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 24px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .modal-close {
   position: sticky;
-  top: 1rem;
-  right: 1rem;
+  top: 15px;
+  right: 15px;
   float: right;
-  background: #f44336;
-  color: white;
+  background: rgba(0, 0, 0, 0.5);
   border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-size: 1.3rem;
+  font-size: 32px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
   z-index: 10;
-  margin: 1rem 1rem 0 0;
+  backdrop-filter: blur(4px);
 }
 
 .modal-close:hover {
-  background: #d32f2f;
-  transform: scale(1.05);
+  background: #c49a6c;
+  transform: scale(1.1);
 }
 
-.modal-close:active {
-  transform: scale(0.95);
-}
-
-/* ==================== MODAL HEADER ==================== */
 .modal-header {
-  padding: 2rem 2rem 0 2rem;
   text-align: center;
-  clear: both;
+  padding: 40px 40px 20px;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  border-bottom: 1px solid rgba(196, 154, 108, 0.2);
 }
 
 .modal-icon {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+  font-size: 64px;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 
 .modal-title {
-  font-size: 1.8rem;
-  color: #1e3c72;
-  margin-bottom: 0.5rem;
+  font-size: 32px;
   font-weight: 700;
-  font-family: 'Rasputin', serif;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .modal-subtitle {
-  font-size: 0.85rem;
-  color: #64b5f6;
+  font-size: 14px;
+  color: #c49a6c;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 600;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
-/* ==================== MODAL BODY ==================== */
 .modal-body {
-  padding: 1.5rem 2rem 2rem 2rem;
+  padding: 30px 40px;
 }
 
 .service-detailed-description {
-  color: #495057;
+  font-size: 16px;
   line-height: 1.8;
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-  background: #f8f9fa;
-  padding: 1.2rem;
-  border-radius: 15px;
-  border-left: 4px solid #64b5f6;
-  font-family: 'Rasputin', sans-serif;
+  color: #555555;
+  margin-bottom: 30px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
-/* ==================== SERVICE SECTIONS ==================== */
 .service-section {
-  margin-bottom: 2rem;
+  margin-bottom: 35px;
 }
 
 .section-title {
-  font-size: 1.3rem;
-  color: #1e3c72;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #64b5f6;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  position: relative;
   display: inline-block;
-  font-family: 'Rasputin', serif;
 }
 
-/* ==================== BENEFITS LIST ==================== */
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #c49a6c, #8B5E3C);
+  border-radius: 2px;
+}
+
 .benefits-list {
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 0.8rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
 .benefits-list li {
-  padding: 0.5rem 0 0.5rem 1.8rem;
+  padding: 10px 0;
+  color: #555555;
+  font-size: 14px;
   position: relative;
-  color: #495057;
-  font-size: 0.95rem;
-  font-family: 'Rasputin', sans-serif;
+  padding-left: 28px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  transition: transform 0.2s ease;
+}
+
+.benefits-list li:hover {
+  transform: translateX(5px);
+  color: #8B5E3C;
 }
 
 .benefits-list li:before {
   content: "✓";
+  color: #c49a6c;
   position: absolute;
   left: 0;
-  color: #4caf50;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 16px;
 }
 
-/* ==================== PROCESS STEPS ==================== */
 .process-steps {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 15px;
 }
 
 .process-step {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 0.8rem;
-  background: #f8f9fa;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  background: #f8f8f8;
   border-radius: 12px;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .process-step:hover {
-  background: #e3f2fd;
+  background: #f0f0f0;
   transform: translateX(5px);
 }
 
 .step-number {
   width: 36px;
   height: 36px;
-  background: linear-gradient(135deg, #64b5f6, #2196f3);
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
   flex-shrink: 0;
-  font-family: 'Rasputin', serif;
 }
 
 .step-text {
-  flex: 1;
-  color: #495057;
+  font-size: 14px;
+  color: #555555;
   line-height: 1.5;
-  font-size: 0.95rem;
-  font-family: 'Rasputin', sans-serif;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
-/* ==================== WHO CAN APPLY ==================== */
 .who-can-apply {
-  background: #e3f2fd;
-  padding: 1rem 1.2rem;
-  border-radius: 12px;
-  color: #1e3c72;
-  line-height: 1.6;
-  font-size: 0.95rem;
-  font-family: 'Rasputin', sans-serif;
+  background: linear-gradient(135deg, #f8f8f8, #ffffff);
+  padding: 20px;
+  border-radius: 16px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555555;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  border-left: 4px solid #c49a6c;
 }
 
-/* ==================== CONTACT SECTION ==================== */
 .contact-section {
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  padding: 1.5rem;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  padding: 25px;
   border-radius: 20px;
-  margin-top: 1rem;
+  margin-top: 30px;
 }
 
 .contact-message {
-  color: #495057;
-  margin-bottom: 1.5rem;
+  font-size: 15px;
+  color: #555555;
+  margin-bottom: 25px;
   line-height: 1.6;
-  font-family: 'Rasputin', sans-serif;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
-/* ==================== ACTION BUTTONS ==================== */
 .action-buttons {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 15px;
+  margin-bottom: 25px;
   flex-wrap: wrap;
 }
 
 .btn-appointment,
 .btn-calculator {
-  flex: 1;
-  padding: 0.8rem 1.5rem;
-  border: none;
+  padding: 12px 30px;
   border-radius: 40px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  font-size: 0.95rem;
-  font-family: 'Rasputin', sans-serif;
+  transition: all 0.3s ease;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  border: none;
 }
 
 .btn-appointment {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
   color: white;
+  box-shadow: 0 4px 12px rgba(139, 94, 60, 0.3);
 }
 
 .btn-appointment:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+  box-shadow: 0 6px 18px rgba(139, 94, 60, 0.4);
+  background: linear-gradient(135deg, #8B5E3C, #6B4226);
 }
 
 .btn-calculator {
-  background: white;
-  color: #1e3c72;
-  border: 2px solid #1e3c72;
+  background: transparent;
+  color: #8B5E3C;
+  border: 2px solid #c49a6c;
 }
 
 .btn-calculator:hover {
-  background: #1e3c72;
+  background: #c49a6c;
   color: white;
   transform: translateY(-2px);
 }
 
-.btn-appointment:active,
-.btn-calculator:active {
-  transform: translateY(0);
-}
-
-/* ==================== CONTACT INFO ==================== */
 .contact-info {
   background: white;
-  padding: 1rem;
-  border-radius: 12px;
-  margin-bottom: 1rem;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(196, 154, 108, 0.2);
 }
 
 .contact-item {
-  padding: 0.5rem 0;
   display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.5rem;
 }
 
 .contact-label {
-  font-weight: 600;
-  color: #1e3c72;
-  min-width: 100px;
-  font-family: 'Rasputin', serif;
+  font-weight: 700;
+  color: #1a1a1a;
+  min-width: 70px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .contact-value {
-  color: #495057;
-  font-family: 'Rasputin', sans-serif;
+  color: #555555;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
-/* ==================== DISCLAIMER ==================== */
 .disclaimer-note {
-  font-size: 0.75rem;
-  color: #adb5bd;
+  font-size: 12px;
+  color: #999999;
   line-height: 1.5;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #dee2e6;
   font-style: italic;
-  font-family: 'Rasputin', sans-serif;
-}
-
-/* ==================== SCROLLBAR - OPTIMIZED ==================== */
-.modal-content::-webkit-scrollbar {
-  width: 6px;
-}
-
-.modal-content::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.modal-content::-webkit-scrollbar-thumb {
-  background: #64b5f6;
-  border-radius: 10px;
-}
-
-.modal-content::-webkit-scrollbar-thumb:hover {
-  background: #2196f3;
-}
-
-/* ==================== RESPONSIVE DESIGN ==================== */
-@media (max-width: 1024px) {
-  .services-container {
-    padding: 0 1.5rem;
-  }
-  
-  .services-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .services-hero {
-    height: 70vh;
-    min-height: 450px;
-  }
-  
-  .services-hero-content h1 {
-    font-size: 2.5rem;
-  }
+  margin-top: 15px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
 }
 
 @media (max-width: 768px) {
-  .services-container {
-    padding: 0 1rem;
-  }
-  
-  .services-hero {
-    height: 60vh;
-    min-height: 400px;
-  }
-  
-  .services-hero-container {
-    padding: 0 1rem;
-  }
-  
-  .services-hero-content h1 {
-    font-size: 1.8rem;
-  }
-  
-  .services-hero-content p {
-    font-size: 0.9rem;
-  }
-  
-  .hero-stats {
-    gap: 1rem;
-  }
-  
-  .hero-stat {
-    padding: 0.6rem 1.2rem;
-    min-width: 100px;
-  }
-  
-  .hero-stat-number {
-    font-size: 1.3rem;
-  }
-  
-  .hero-stat-label {
-    font-size: 0.7rem;
-  }
-  
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-    margin: 2rem 0;
-  }
-  
-  .service-card {
-    padding: 1.5rem;
-  }
-  
-  .service-title {
-    font-size: 1.1rem;
-    min-height: auto;
-  }
-  
   .modal-content {
-    max-height: 85vh;
+    max-height: 90vh;
   }
   
   .modal-header {
-    padding: 1.5rem 1.5rem 0 1.5rem;
+    padding: 30px 20px 15px;
   }
   
   .modal-title {
-    font-size: 1.4rem;
+    font-size: 24px;
   }
   
   .modal-body {
-    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    padding: 20px;
   }
   
   .benefits-list {
@@ -700,138 +692,175 @@
   .btn-appointment,
   .btn-calculator {
     width: 100%;
+    text-align: center;
   }
   
   .process-step {
-    padding: 0.6rem;
+    padding: 10px;
   }
   
   .step-number {
-    width: 32px;
-    height: 32px;
-    font-size: 0.9rem;
-  }
-  
-  .step-text {
-    font-size: 0.85rem;
-  }
-  
-  .contact-item {
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-  
-  .contact-label {
-    min-width: auto;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
   }
 }
 
-@media (max-width: 480px) {
-  .services-hero {
-    height: 50vh;
-    min-height: 350px;
-  }
-  
-  .services-hero-content h1 {
-    font-size: 1.5rem;
-  }
-  
-  .hero-stat {
-    padding: 0.5rem 0.8rem;
-    min-width: 80px;
-  }
-  
-  .hero-stat-number {
-    font-size: 1rem;
-  }
-  
-  .hero-stat-label {
-    font-size: 0.6rem;
-  }
-  
-  .modal-title {
-    font-size: 1.2rem;
-  }
-  
-  .section-title {
-    font-size: 1.1rem;
-  }
-  
-  .service-detailed-description {
-    font-size: 0.85rem;
-    padding: 1rem;
-  }
-  
-  .benefits-list li {
-    font-size: 0.85rem;
-  }
-  
-  .who-can-apply {
-    font-size: 0.85rem;
-  }
-  
-  .modal-close {
-    top: 0.5rem;
-    right: 0.5rem;
-    width: 32px;
-    height: 32px;
-    font-size: 1.2rem;
-  }
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ==================== REDUCED MOTION PREFERENCE ==================== */
-@media (prefers-reduced-motion: reduce) {
-  .fade-up,
-  .fade-left,
-  .fade-right,
-  .scale-in,
-  .service-card,
-  .service-button,
-  .modal-content,
-  .process-step,
-  .hero-stat {
-    transition: none !important;
-    animation: none !important;
-  }
-  
-  .fade-up,
-  .fade-left,
-  .fade-right,
-  .scale-in {
-    opacity: 1;
-    transform: none;
-  }
+.fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ==================== PRINT STYLES ==================== */
-@media print {
-  .services-hero,
-  .modal-overlay {
-    position: static;
-    background: none;
-    height: auto;
-  }
-  
-  .services-hero-image {
-    display: none;
-  }
-  
-  .modal-content {
-    max-height: none;
-    overflow: visible;
-    box-shadow: none;
-  }
-  
-  .modal-close,
-  .action-buttons,
-  .service-button {
-    display: none;
-  }
-  
-  .service-card {
-    break-inside: avoid;
-    page-break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #ddd;
-  }
+.fade-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-in.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger animation delays for service cards */
+.service-card:nth-child(1) { transition-delay: 0s; }
+.service-card:nth-child(2) { transition-delay: 0.03s; }
+.service-card:nth-child(3) { transition-delay: 0.06s; }
+.service-card:nth-child(4) { transition-delay: 0.09s; }
+.service-card:nth-child(5) { transition-delay: 0.12s; }
+.service-card:nth-child(6) { transition-delay: 0.15s; }
+.service-card:nth-child(7) { transition-delay: 0.18s; }
+.service-card:nth-child(8) { transition-delay: 0.21s; }
+.service-card:nth-child(9) { transition-delay: 0.24s; }
+.service-card:nth-child(10) { transition-delay: 0.27s; }
+.service-card:nth-child(11) { transition-delay: 0.30s; }
+.service-card:nth-child(12) { transition-delay: 0.33s; }
+
+/* ============================================
+   SCROLLBAR STYLES
+   ============================================ */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #8B5E3C, #6B4226);
+}
+
+/* Modal scrollbar */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  border-radius: 10px;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus Styles */
+button:focus,
+.service-button:focus,
+.modal-close:focus,
+.btn-appointment:focus,
+.btn-calculator:focus {
+  outline: none;
+}
+
+button:focus-visible,
+.service-button:focus-visible,
+.modal-close:focus-visible,
+.btn-appointment:focus-visible,
+.btn-calculator:focus-visible {
+  outline: 3px solid #c49a6c;
+  outline-offset: 3px;
+}
+
+/* Selection Style */
+::selection {
+  background: #c49a6c;
+  color: white;
+}
+
+::-moz-selection {
+  background: #c49a6c;
+  color: white;
+}
+
+/* Loading state for buttons */
+.service-button:disabled,
+.btn-appointment:disabled,
+.btn-calculator:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* GPU Acceleration */
+.service-card,
+.modal-content,
+.services-hero-image {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }

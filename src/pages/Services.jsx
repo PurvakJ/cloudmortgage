@@ -10,264 +10,314 @@ function Services() {
   const services = [
     {
       id: 1,
-      title: "First-Time Home Buyers",
-      description: "Expert guidance for first-time buyers navigating the mortgage process with confidence and clarity.",
-      detailedDescription: "Buying your first home is an exciting milestone, but it can also be overwhelming. Our dedicated first-time home buyer program provides step-by-step guidance through the entire mortgage process, from pre-approval to closing.",
+      title: "Refinance for Secondary Suites",
+      description: "Enables lenders to offer an insured refinancing option for homeowners seeking to add secondary suites to their properties.",
+      detailedDescription: "Adding a secondary suite to your property can create additional rental income and increase your home's value. Our insured refinancing option helps Canadian homeowners access the equity needed to finance suite conversions, from basement apartments to laneway homes.",
       keyBenefits: [
-        "Down payment assistance programs",
-        "Educational resources and workshops",
-        "Preferred rates for first-time buyers",
-        "Step-by-step guidance through process",
-        "Credit score improvement strategies",
-        "Government grant eligibility assessment"
+        "Access equity for suite construction",
+        "CMHC insured refinancing",
+        "Create additional rental income",
+        "Increase property value",
+        "Flexible refinance terms",
+        "Expert guidance on suite regulations"
       ],
       process: [
-        "Initial consultation to understand your goals",
-        "Pre-approval application and document collection",
-        "Home search and offer preparation",
-        "Mortgage approval and underwriting",
-        "Closing coordination and final walkthrough"
+        "Initial consultation to assess suite potential",
+        "Equity evaluation and refinance calculation",
+        "CMHC insurance application (if applicable)",
+        "Refinance approval and funding",
+        "Construction coordination support"
       ],
-      whoCanApply: "First-time homebuyers who haven't owned a home in the past 3 years, with stable income and acceptable credit history.",
+      whoCanApply: "Canadian homeowners with sufficient equity looking to add a secondary suite to their property.",
       contactInfo: {
-        phone: "(403) 400-3064",
-        email: "clientcare.cortez@gmail.com"
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
       }
     },
     {
       id: 2,
-      title: "Mortgage Refinancing",
-      description: "Optimize your mortgage terms and rates to save money and achieve your financial goals.",
-      detailedDescription: "Refinancing your mortgage can help you lower your monthly payments, shorten your loan term, or access your home's equity for major expenses. Our experts analyze your current situation to find the best refinancing solution.",
+      title: "Investment Property Program",
+      description: "Provide qualified borrowers with the opportunity to purchase an additional investment property with as little as 20% down.",
+      detailedDescription: "Expand your real estate portfolio with our specialized investment property program. Qualified Canadian borrowers can purchase additional investment properties with as little as 20% down, making it easier to build long-term wealth through real estate.",
       keyBenefits: [
-        "Lower interest rates and monthly payments",
-        "Switch from variable to fixed rates",
-        "Cash-out refinance for home improvements",
-        "Debt consolidation opportunities",
-        "Remove mortgage insurance",
-        "Shorten loan term to build equity faster"
-      ],
-      process: [
-        "Current mortgage analysis",
-        "Rate comparison and savings calculation",
-        "Application and documentation",
-        "Property appraisal if needed",
-        "Closing and fund disbursement"
-      ],
-      whoCanApply: "Homeowners with existing mortgages who have at least 20% equity and good credit history.",
-      contactInfo: {
-        phone: "(403) 400-3064",
-        email: "clientcare.cortez@gmail.com"
-      }
-    },
-    {
-      id: 3,
-      title: "Mortgage Transfers",
-      description: "Seamlessly transfer your mortgage to take advantage of better rates and terms.",
-      detailedDescription: "Moving your mortgage to a new lender can unlock better rates and terms without the hassle of a full refinance. We handle all the paperwork and coordination to ensure a smooth transition.",
-      keyBenefits: [
-        "Better interest rates and terms",
-        "No appraisal often required",
-        "Lower monthly payments",
-        "Switch to better lender service",
-        "Minimal documentation required",
-        "Fast processing times"
-      ],
-      process: [
-        "Current mortgage review",
-        "Lender comparison and selection",
-        "Transfer application submission",
-        "Legal document preparation",
-        "Fund transfer and registration"
-      ],
-      whoCanApply: "Homeowners with good payment history looking for better rates or terms from a different lender.",
-      contactInfo: {
-        phone: "(403) 400-3064",
-        email: "clientcare.cortez@gmail.com"
-      }
-    },
-    {
-      id: 4,
-      title: "Pre-Approval Services",
-      description: "Get pre-approved to know your budget and strengthen your position when making an offer.",
-      detailedDescription: "A mortgage pre-approval gives you a clear picture of your borrowing power and shows sellers you're a serious buyer. Our streamlined pre-approval process gets you ready to shop with confidence.",
-      keyBenefits: [
-        "Know your exact budget before shopping",
-        "Stronger negotiating position",
-        "Faster closing once offer accepted",
-        "Rate lock options available",
-        "Identify credit issues early",
-        "Shop with confidence"
-      ],
-      process: [
-        "Income and asset verification",
-        "Credit check and analysis",
-        "Affordability calculation",
-        "Pre-approval letter issued",
-        "Valid for 90-120 days"
-      ],
-      whoCanApply: "Any home buyer planning to purchase within the next 4 months, with verifiable income and acceptable credit.",
-      contactInfo: {
-        phone: "(403) 400-3064",
-        email: "clientcare.cortez@gmail.com"
-      }
-    },
-    {
-      id: 5,
-      title: "Debt Consolidation",
-      description: "Combine high-interest debts into one manageable mortgage payment.",
-      detailedDescription: "Stop juggling multiple high-interest payments. Our debt consolidation mortgage solution combines credit cards, car loans, and other debts into a single, lower monthly payment through your home equity.",
-      keyBenefits: [
-        "Single monthly payment",
-        "Lower overall interest rates",
-        "Improved cash flow",
-        "Potential tax benefits",
-        "Simplified debt management",
-        "Credit score improvement"
-      ],
-      process: [
-        "Debt inventory and analysis",
-        "Equity assessment",
-        "Consolidation strategy development",
-        "Application and approval",
-        "Debt payoff and closing"
-      ],
-      whoCanApply: "Homeowners with sufficient equity (typically 20%+) looking to consolidate high-interest debts.",
-      contactInfo: {
-        phone: "(403) 400-3064",
-        email: "clientcare.cortez@gmail.com"
-      }
-    },
-    {
-      id: 6,
-      title: "Self-Employed & Non-Traditional Mortgages",
-      description: "Mortgage solutions designed for self-employed and non-traditional income earners.",
-      detailedDescription: "Being self-employed shouldn't prevent you from getting a great mortgage. We specialize in alternative documentation mortgages that use bank statements, invoices, or accountant letters instead of traditional pay stubs.",
-      keyBenefits: [
-        "Bank statement programs available",
-        "Alternative income verification",
-        "Lower documentation requirements",
-        "Business assets considered",
-        "Stated income options",
-        "Flexible qualification criteria"
-      ],
-      process: [
-        "Income documentation review",
-        "Business financial analysis",
-        "Alternative qualification path",
-        "Lender matching and application",
-        "Approval and funding"
-      ],
-      whoCanApply: "Self-employed individuals, freelancers, contractors, and business owners with 2+ years of tax returns.",
-      contactInfo: {
-        phone: "(403) 400-3064",
-        email: "clientcare.cortez@gmail.com"
-      }
-    },
-    {
-      id: 7,
-      title: "Renewals",
-      description: "Review and renew your mortgage with competitive rates and better terms.",
-      detailedDescription: "Don't automatically renew with your current lender. We help you compare renewal offers from multiple lenders to ensure you get the best rates and terms for your next mortgage term.",
-      keyBenefits: [
-        "Rate comparison across lenders",
-        "Early renewal options available",
-        "Term flexibility",
-        "Prepayment privilege review",
-        "No appraisal typically needed",
-        "Minimal documentation"
-      ],
-      process: [
-        "Current term analysis",
-        "Rate shopping and comparison",
-        "Renewal negotiation",
-        "Documentation and approval",
-        "Smooth transition to new term"
-      ],
-      whoCanApply: "Homeowners whose mortgage term is ending within the next 6 months.",
-      contactInfo: {
-        phone: "(403) 400-3064",
-        email: "clientcare.cortez@gmail.com"
-      }
-    },
-    {
-      id: 8,
-      title: "Investment Property Financing",
-      description: "Strategic financing solutions for real estate investors.",
-      detailedDescription: "Expand your real estate portfolio with our specialized investment property mortgages. We understand the unique needs of investors and offer financing options designed to maximize your returns.",
-      keyBenefits: [
-        "Rental income considered",
-        "Portfolio lending options",
-        "Lower down payment options",
-        "Interest-only available",
-        "Multiple property financing",
-        "Refinance for better cash flow"
+        "As little as 20% down payment",
+        "Rental income considered for qualification",
+        "Multiple property financing available",
+        "Competitive investment rates",
+        "Portfolio growth strategy",
+        "Refinance options for better cash flow"
       ],
       process: [
         "Investment strategy review",
         "Property cash flow analysis",
-        "Portfolio assessment",
+        "Down payment verification",
         "Lender matching and application",
         "Closing and property acquisition"
       ],
-      whoCanApply: "Real estate investors with 1+ properties or first-time investors with strong qualifications.",
+      whoCanApply: "Qualified Canadian borrowers looking to purchase additional investment properties.",
       contactInfo: {
-        phone: "(403) 400-3064",
-        email: "clientcare.cortez@gmail.com"
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
+      }
+    },
+    {
+      id: 3,
+      title: "Family Plan Program",
+      description: "Help customers buy a home for immediate family with good credit who do not meet standard GDSR/TDSR requirements.",
+      detailedDescription: "The Family Plan Program helps Canadian families support their loved ones in achieving homeownership. If your immediate family member has good credit but doesn't meet standard debt service ratio requirements, this program provides flexible solutions to help them buy a home.",
+      keyBenefits: [
+        "Alternative GDSR/TDSR requirements",
+        "Family guarantee options",
+        "Support immediate family members",
+        "Good credit considered",
+        "Flexible qualification criteria",
+        "Path to homeownership"
+      ],
+      process: [
+        "Family situation assessment",
+        "Credit and income review",
+        "Alternative qualification path",
+        "Guarantee structure (if applicable)",
+        "Approval and home purchase"
+      ],
+      whoCanApply: "Canadian families helping immediate family members with good credit but non-standard debt ratios.",
+      contactInfo: {
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
+      }
+    },
+    {
+      id: 4,
+      title: "Vacation/Secondary Homes",
+      description: "Enable customers to purchase a second home at an affordable monthly payment with just 5% down.",
+      detailedDescription: "Dreaming of a cottage, cabin, or vacation home? Our Vacation/Secondary Homes program makes it possible with just 5% down and affordable monthly payments. Whether it's a ski chalet, beach house, or lakefront retreat, we can help you finance your perfect getaway.",
+      keyBenefits: [
+        "Only 5% down payment",
+        "Affordable monthly payments",
+        "CMHC insured options available",
+        "Cottages, cabins, and condos",
+        "Rental potential considered",
+        "Flexible qualification terms"
+      ],
+      process: [
+        "Vacation property selection",
+        "Down payment preparation",
+        "Application and qualification",
+        "Property appraisal",
+        "Closing and enjoying your retreat"
+      ],
+      whoCanApply: "Canadian buyers looking to purchase a secondary or vacation home.",
+      contactInfo: {
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
+      }
+    },
+    {
+      id: 5,
+      title: "Self-Directed RRSP",
+      description: "Provide the insurance to allow self-directed RRSP/RRIF funds to be used for non-arm's length mortgage investments.",
+      detailedDescription: "Unlock the potential of your retirement savings with our Self-Directed RRSP program. This specialized solution provides insurance that allows you to use self-directed RRSP or RRIF funds for non-arm's length mortgage investments, creating new opportunities for your retirement portfolio.",
+      keyBenefits: [
+        "RRSP/RRIF fund utilization",
+        "Non-arm's length investments",
+        "Insurance coverage provided",
+        "Portfolio diversification",
+        "Tax-efficient investing",
+        "Professional guidance available"
+      ],
+      process: [
+        "RRSP/RRIF assessment",
+        "Investment strategy development",
+        "Insurance application",
+        "Fund transfer coordination",
+        "Ongoing portfolio management"
+      ],
+      whoCanApply: "Canadian investors with self-directed RRSP/RRIF accounts looking for mortgage investment opportunities.",
+      contactInfo: {
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
+      }
+    },
+    {
+      id: 6,
+      title: "Borrowed Down Payment",
+      description: "Make it possible for borrowers who cannot save a required down payment to start building equity now.",
+      detailedDescription: "Don't let a lack of saved down payment hold you back from homeownership. Our Borrowed Down Payment program helps Canadian buyers who struggle to save the required down payment to start building equity now, with flexible solutions that recognize alternative down payment sources.",
+      keyBenefits: [
+        "Alternative down payment sources",
+        "Start building equity sooner",
+        "Flexible qualification criteria",
+        "Gifted down payment options",
+        "RRSP borrowing strategies",
+        "Path to homeownership"
+      ],
+      process: [
+        "Financial situation assessment",
+        "Down payment source identification",
+        "Alternative qualification review",
+        "Application and approval",
+        "Home purchase and equity building"
+      ],
+      whoCanApply: "Canadian home buyers who cannot save a traditional down payment but have alternative sources.",
+      contactInfo: {
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
+      }
+    },
+    {
+      id: 7,
+      title: "Second Mortgage Program",
+      description: "Provide borrowers with a Second Mortgage to be registered against their property up to 95% combined LTV on a purchase.",
+      detailedDescription: "Access additional funds with our Second Mortgage Program. This solution allows Canadian borrowers to register a second mortgage against their property up to 95% combined loan-to-value on a purchase, providing access to equity without disturbing your first mortgage terms.",
+      keyBenefits: [
+        "Up to 95% combined LTV",
+        "Preserve first mortgage terms",
+        "Quick access to funds",
+        "Flexible repayment options",
+        "Competitive second mortgage rates",
+        "Purchase or refinance options"
+      ],
+      process: [
+        "Equity and LTV assessment",
+        "First mortgage review",
+        "Second mortgage application",
+        "Property registration",
+        "Fund disbursement"
+      ],
+      whoCanApply: "Canadian homeowners or buyers needing additional financing up to 95% combined LTV.",
+      contactInfo: {
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
+      }
+    },
+    {
+      id: 8,
+      title: "Portability Feature",
+      description: "Help Sagen-insured borrowers to save on the costs of a new mortgage by 'porting' their mortgage default insurance.",
+      detailedDescription: "Moving to a new home? Save thousands with our Portability Feature. Sagen-insured Canadian borrowers can transfer or 'port' their mortgage default insurance to a new property, avoiding the cost of purchasing new insurance and keeping your favorable terms intact.",
+      keyBenefits: [
+        "Save on new insurance costs",
+        "Port your default insurance",
+        "Keep favorable mortgage terms",
+        "Seamless transition to new home",
+        "Avoid duplicate insurance payments",
+        "Expert porting guidance"
+      ],
+      process: [
+        "Current mortgage and insurance review",
+        "New property evaluation",
+        "Porting application submission",
+        "Insurance transfer coordination",
+        "New home closing"
+      ],
+      whoCanApply: "Sagen-insured Canadian borrowers moving to a new home who want to port their insurance.",
+      contactInfo: {
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
       }
     },
     {
       id: 9,
-      title: "Home Equity Line of Credit (HELOC)",
-      description: "Flexible access to your home equity without refinancing.",
-      detailedDescription: "A HELOC gives you a revolving line of credit based on your home equity, perfect for ongoing projects or unexpected expenses. You only pay interest on what you use, when you use it.",
+      title: "Business for Self (Alt. A)",
+      description: "Secure mortgage insurance for self-employed borrowers without traditional income who manage their finances responsibly.",
+      detailedDescription: "Being self-employed shouldn't prevent you from getting a great mortgage. Our Business for Self (Alt. A) program provides mortgage insurance for Canadian self-employed borrowers who may not have traditional income documentation but manage their finances responsibly.",
       keyBenefits: [
-        "Revolving credit access",
-        "Interest-only payment options",
-        "Use funds as needed",
-        "No closing costs available",
-        "Lower rates than credit cards",
-        "Tax-efficient borrowing"
+        "Alternative income verification",
+        "Bank statement programs",
+        "Lower documentation requirements",
+        "Business assets considered",
+        "Flexible qualification criteria",
+        "Secure insurance coverage"
       ],
       process: [
-        "Equity assessment",
-        "Credit limit determination",
-        "Application and approval",
-        "Line of credit setup",
-        "Access to funds within days"
+        "Business financial review",
+        "Alternative documentation collection",
+        "Insurance application",
+        "Lender matching",
+        "Approval and funding"
       ],
-      whoCanApply: "Homeowners with 20%+ equity and good credit seeking flexible borrowing options.",
+      whoCanApply: "Self-employed Canadians with 2+ years in business who manage their finances responsibly.",
       contactInfo: {
-        phone: "(403) 400-3064",
-        email: "clientcare.cortez@gmail.com"
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
       }
     },
     {
       id: 10,
-      title: "Private Mortgages",
-      description: "Alternative lending when traditional banks say no.",
-      detailedDescription: "Private mortgages provide fast, flexible solutions based on property equity rather than traditional credit requirements. These short-term options can help bridge financial gaps or complex situations.",
+      title: "Energy Efficient Housing Program",
+      description: "Reward home buyers purchasing energy-efficient homes or making energy saving renovations with significant savings.",
+      detailedDescription: "Go green and save green with our Energy Efficient Housing Program. Canadian home buyers who purchase energy-efficient homes or make energy-saving renovations qualify for significant savings, including better rates and insurance premium refunds.",
       keyBenefits: [
-        "Equity-based approval",
-        "Flexible credit requirements",
-        "Fast funding timelines",
-        "Alternative income verification",
-        "Non-standard properties accepted",
-        "Bridge financing available",
-        "Minimal prepayment penalties",
-        "Solution-focused underwriting"
+        "Significant premium savings",
+        "Better mortgage rates available",
+        "Energy-efficient home rewards",
+        "Renovation financing options",
+        "CMHC Eco Plus benefits",
+        "Lower monthly payments"
       ],
       process: [
-        "Situation Review - We assess your needs and timeline",
-        "Property Evaluation - Equity and value are reviewed",
-        "Lender Presentation - Your scenario is presented to private lenders",
-        "Fast Approval - Approval based primarily on equity",
-        "Rapid Closing - Funds are released quickly"
+        "Energy assessment or EnerGuide rating",
+        "Energy-efficient purchase/renovation plan",
+        "Application with energy documentation",
+        "Premium savings calculation",
+        "Approval and funding"
       ],
-      whoCanApply: "Typically 35%+ property equity, clear property title, acceptable property location, defined exit strategy, ability to service interest payments.",
+      whoCanApply: "Canadian home buyers purchasing energy-efficient homes or making energy-saving renovations.",
       contactInfo: {
-        phone: "(403) 400-3064",
-        email: "clientcare.cortez@gmail.com"
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
+      }
+    },
+    {
+      id: 11,
+      title: "Progress Advance Program",
+      description: "Let residential home builders and individual home buyers take advantage of insured progress advances while their property is being built.",
+      detailedDescription: "Building your dream home? Our Progress Advance Program provides insured progress advances during construction, ensuring you have the funds you need at each stage of building. Perfect for custom home builders and individual home buyers constructing their own property.",
+      keyBenefits: [
+        "Insured progress advances",
+        "Construction stage funding",
+        "Custom home builder friendly",
+        "Individual home buyer options",
+        "Draw schedule flexibility",
+        "Completion protection"
+      ],
+      process: [
+        "Construction plan review",
+        "Draw schedule establishment",
+        "Progress advance setup",
+        "Stage-by-stage funding",
+        "Final completion draw"
+      ],
+      whoCanApply: "Canadian residential home builders and individual home buyers constructing a property.",
+      contactInfo: {
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
+      }
+    },
+    {
+      id: 12,
+      title: "Purchase Plus Improvements",
+      description: "Help qualified home buyers roll home improvement costs into their mortgage with as little as 5% down.",
+      detailedDescription: "Buy a home that needs some TLC and finance the renovations too! Our Purchase Plus Improvements program allows qualified Canadian home buyers to roll home improvement costs into their mortgage with as little as 5% down, making fixer-uppers more accessible than ever.",
+      keyBenefits: [
+        "Only 5% down payment",
+        "Renovation costs rolled into mortgage",
+        "One simple monthly payment",
+        "CMHC insured options",
+        "Fixer-upper friendly",
+        "Instant home equity building"
+      ],
+      process: [
+        "Property and renovation assessment",
+        "Renovation quote collection",
+        "Combined mortgage application",
+        "Approval with improvement funds",
+        "Purchase and renovation completion"
+      ],
+      whoCanApply: "Qualified Canadian home buyers purchasing homes needing improvements.",
+      contactInfo: {
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
       }
     }
   ];
@@ -282,7 +332,6 @@ function Services() {
     const handleIntersect = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Use requestAnimationFrame for smoother animation
           requestAnimationFrame(() => {
             entry.target.classList.add('animate');
           });
@@ -314,7 +363,6 @@ function Services() {
 
   const closeModal = () => {
     setSelectedService(null);
-    // Prevent body scroll when modal is closed
     document.body.style.overflow = '';
   };
 
@@ -326,8 +374,9 @@ function Services() {
   // Get service icon
   const getServiceIcon = (id) => {
     const icons = {
-      1: "🏠", 2: "🔄", 3: "📋", 4: "✅", 5: "💰",
-      6: "💼", 7: "📅", 8: "🏘️", 9: "💳", 10: "🔒"
+      1: "🏠", 2: "🏘️", 3: "👨‍👩‍👧‍👦", 4: "🏖️", 5: "💰",
+      6: "💵", 7: "📝", 8: "🔄", 9: "💼", 10: "🌱",
+      11: "🏗️", 12: "🔨"
     };
     return icons[id] || "🏦";
   };
@@ -341,19 +390,19 @@ function Services() {
         <div className="services-hero-container">
           <div className="services-hero-content">
             <h1 className="fade-up">Oakmont Capital Services</h1>
-            <p className="fade-up">Comprehensive mortgage solutions tailored to your unique needs</p>
+            <p className="fade-up">Comprehensive Canadian mortgage solutions tailored to your unique needs</p>
             <div className="hero-stats fade-up">
               <div className="hero-stat">
                 <span className="hero-stat-number">25+</span>
-                <span className="hero-stat-label">Years Experience</span>
+                <span className="hero-stat-label">Years of Canadian Excellence</span>
               </div>
               <div className="hero-stat">
-                <span className="hero-stat-number">10k+</span>
-                <span className="hero-stat-label">Happy Clients</span>
+                <span className="hero-stat-number">5,000+</span>
+                <span className="hero-stat-label">Happy Canadian Clients</span>
               </div>
               <div className="hero-stat">
-                <span className="hero-stat-number">$5B+</span>
-                <span className="hero-stat-label">Loans Funded</span>
+                <span className="hero-stat-number">$2B+</span>
+                <span className="hero-stat-label">Canadian Loans Funded</span>
               </div>
             </div>
           </div>
@@ -393,7 +442,7 @@ function Services() {
             <div className="modal-header">
               <div className="modal-icon">{getServiceIcon(selectedService.id)}</div>
               <h2 className="modal-title">{selectedService.title}</h2>
-              <p className="modal-subtitle">About This Service</p>
+              <p className="modal-subtitle">About This Canadian Mortgage Service</p>
             </div>
             
             <div className="modal-body">
@@ -428,7 +477,7 @@ function Services() {
               <div className="service-section contact-section">
                 <h3 className="section-title">Ready to Get Started?</h3>
                 <p className="contact-message">
-                  Book a free consultation to discuss your mortgage needs and explore the best options for you.
+                  Book a free consultation to discuss your Canadian mortgage needs and explore the best options for you.
                 </p>
                 
                 <div className="action-buttons">
@@ -461,7 +510,7 @@ function Services() {
                 </div>
                 
                 <p className="disclaimer-note">
-                  Note: Every situation is unique. The information provided here is general in nature. 
+                  Note: Every Canadian mortgage situation is unique. The information provided here is general in nature. 
                   Book a consultation for personalized advice tailored to your specific circumstances.
                 </p>
               </div>

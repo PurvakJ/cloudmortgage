@@ -1,96 +1,157 @@
-/* Footer.css - Oakmont Capital Premium Footer Theme */
+/* footer.css - Enhanced CSS for Oakmont Capital Footer */
+/* Premium Design with Brown Accents and White Background */
 
+@import url('https://fonts.cdnfonts.com/css/rasputin');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   FOOTER MAIN STYLES
+   ============================================ */
 .footer {
-  background: linear-gradient(135deg, #0a1a2f 0%, #0d2b42 100%);
-  color: #e0e0e0;
-  font-family: 'Rasputin', 'Playfair Display', 'Plus Jakarta Sans', sans-serif;
-  margin-top: auto;
+  background: #ffffff;
+  color: #000000;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #f0f0f0;
+}
+
+.footer:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #c49a6c, #8B5E3C, #c49a6c);
 }
 
 .footer-content {
-  max-width: 1500px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 4rem 2rem 3rem;
+  padding: 60px 40px 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 2fr 1fr 1.5fr 1.2fr 1.3fr;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
 }
 
-/* Footer Sections */
-.footer-section h3,
-.footer-section h4 {
-  margin-bottom: 1.5rem;
-  font-family: 'Rasputin', serif;
-  letter-spacing: 1px;
+@media (max-width: 1200px) {
+  .footer-content {
+    grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
+    gap: 30px;
+  }
+  
+  .footer-section:first-child {
+    grid-column: span 2;
+  }
 }
 
+@media (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+  
+  .footer-section:first-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    padding: 40px 20px 30px;
+    gap: 30px;
+  }
+  
+  .footer-section:first-child {
+    grid-column: span 1;
+  }
+}
+
+/* ============================================
+   FOOTER SECTIONS
+   ============================================ */
 .footer-section h3 {
-  font-size: 1.8rem;
-  background: linear-gradient(135deg, #64b5f6, #2196f3);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin-bottom: 1rem;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  color: #000000;
 }
 
 .footer-section h3 span {
-  background: linear-gradient(135deg, #ffd89b, #c7e9fb);
+  color: #c49a6c;
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent;
 }
 
 .footer-section h4 {
-  font-size: 1.2rem;
-  color: #64b5f6;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
   position: relative;
-  padding-bottom: 0.75rem;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  color: #000000;
 }
 
-.footer-section h4::after {
+.footer-section h4:after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -8px;
   left: 0;
   width: 40px;
   height: 3px;
-  background: linear-gradient(135deg, #64b5f6, #2196f3);
+  background: linear-gradient(90deg, #c49a6c, #8B5E3C);
   border-radius: 2px;
 }
 
-/* Tagline and Description */
 .tagline {
-  color: #64b5f6;
-  font-size: 0.8rem;
+  font-size: 12px;
   letter-spacing: 2px;
-  margin-bottom: 1rem;
+  color: #c49a6c;
+  margin-bottom: 15px;
   font-weight: 600;
-  font-family: 'Rasputin', sans-serif;
 }
 
 .description {
+  font-size: 14px;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
-  color: #ffffff;
-  font-family: 'Rasputin', sans-serif;
+  color: #555555;
+  margin-bottom: 20px;
 }
 
 /* Trust Badges */
 .trust-badge {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
-  font-size: 0.9rem;
-  color: #ffffff;
-  font-family: 'Rasputin', sans-serif;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #333333;
+  transition: transform 0.3s ease;
 }
 
-.trust-badge span {
-  color: #64b5f6;
+.trust-badge:hover {
+  transform: translateX(5px);
+}
+
+.trust-badge span:first-child {
+  color: #c49a6c;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 16px;
 }
 
 /* Lists */
@@ -100,265 +161,346 @@
 }
 
 .footer-section ul li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 12px;
 }
 
 .footer-section ul li a {
-  color: #ffffff;
+  color: #555555;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 0.9rem;
-  font-family: 'Rasputin', sans-serif;
+  font-size: 14px;
+  position: relative;
   display: inline-block;
 }
 
+.footer-section ul li a:before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(90deg, #c49a6c, #8B5E3C);
+  transition: width 0.3s ease;
+}
+
 .footer-section ul li a:hover {
-  color: #64b5f6;
+  color: #c49a6c;
   transform: translateX(5px);
 }
 
-/* Contact Info - Updated with white text */
-.contact-info {
-  background: transparent;
-  padding: 0;
+.footer-section ul li a:hover:before {
+  width: 100%;
 }
 
-.contact-info p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  font-size: 0.9rem;
-  font-family: 'Rasputin', sans-serif;
-  color: #ffffff;
+/* Contact Info */
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555555;
+  margin-bottom: 15px;
 }
 
-.contact-info strong {
-  color: #64b5f6;
-  font-size: 0.85rem;
-  font-family: 'Rasputin', sans-serif;
+.footer-section p strong {
+  color: #c49a6c;
+  font-weight: 600;
 }
 
-.contact-info a {
-  color: #ffffff;
+.footer-section a {
+  color: #555555;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.contact-info a:hover {
-  color: #64b5f6;
+.footer-section a:hover {
+  color: #c49a6c;
 }
 
 /* Business Hours */
 .business-hours p {
-  margin-bottom: 0.75rem;
-  line-height: 1.6;
-  font-size: 0.9rem;
-  font-family: 'Rasputin', sans-serif;
-  color: #ffffff;
+  margin-bottom: 10px;
 }
 
 .business-hours strong {
-  color: #64b5f6;
-  font-size: 0.85rem;
-  font-family: 'Rasputin', sans-serif;
+  color: #c49a6c;
 }
 
 .emergency-support {
-  margin-top: 1rem;
-  padding: 0.75rem;
-  background: rgba(100, 181, 246, 0.1);
-  border-radius: 8px;
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(196, 154, 108, 0.08);
+  border-radius: 12px;
+  font-size: 12px;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  color: #ffd89b;
-  font-family: 'Rasputin', sans-serif;
+  gap: 8px;
+  color: #c49a6c;
+  border-left: 3px solid #c49a6c;
 }
 
 .emergency-support span {
-  font-size: 1rem;
+  font-size: 14px;
 }
 
-/* Footer Bottom */
+/* ============================================
+   FOOTER BOTTOM
+   ============================================ */
 .footer-bottom {
-  border-top: 1px solid rgba(100, 181, 246, 0.2);
-  padding: 1.5rem 2rem;
+  border-top: 1px solid #e0e0e0;
+  padding: 20px 40px;
+  background: #fafafa;
 }
 
 .footer-bottom-content {
-  max-width: 1500px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 15px;
 }
 
-.footer-bottom p {
-  font-size: 0.85rem;
-  color: #ffffff;
-  font-family: 'Rasputin', sans-serif;
+.footer-bottom-content p {
+  font-size: 13px;
+  color: #666666;
 }
 
 /* Social Icons */
 .social-icons {
   display: flex;
-  gap: 1rem;
+  gap: 15px;
 }
 
 .social-icons a {
-  color: #ffffff;
+  color: #666666;
   transition: all 0.3s ease;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(100, 181, 246, 0.1);
+  background: rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: white;
-  background: linear-gradient(135deg, #64b5f6, #2196f3);
+  color: #ffffff;
   transform: translateY(-3px);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .footer-content {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      padding: 3rem 2rem;
-  }
+.social-icons a:hover:nth-child(1) {
+  background: #1877f2;
+}
+
+.social-icons a:hover:nth-child(2) {
+  background: #1da1f2;
+}
+
+.social-icons a:hover:nth-child(3) {
+  background: #0077b5;
+}
+
+.social-icons a:hover:nth-child(4) {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
 }
 
 @media (max-width: 768px) {
-  .footer-content {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 2rem 1.5rem;
-  }
-  
-  .footer-section h3 {
-      font-size: 1.5rem;
-  }
-  
-  .footer-section h4 {
-      font-size: 1.1rem;
+  .footer-bottom {
+    padding: 20px;
   }
   
   .footer-bottom-content {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
   
   .social-icons {
-      justify-content: center;
-  }
-  
-  .footer-bottom {
-      padding: 1rem 1.5rem;
+    justify-content: center;
   }
 }
 
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
 @media (max-width: 480px) {
-  .footer-content {
-      padding: 2rem 1rem;
-  }
-  
   .footer-section h3 {
-      font-size: 1.3rem;
+    font-size: 24px;
   }
   
   .footer-section h4 {
-      font-size: 1rem;
+    font-size: 16px;
   }
   
-  .description,
-  .footer-section ul li a,
-  .contact-info p,
-  .business-hours p,
+  .description {
+    font-size: 13px;
+  }
+  
   .trust-badge {
-      font-size: 0.85rem;
+    font-size: 13px;
+  }
+  
+  .footer-section ul li a {
+    font-size: 13px;
+  }
+  
+  .footer-section p {
+    font-size: 13px;
+  }
+  
+  .emergency-support {
+    font-size: 11px;
+  }
+  
+  .footer-bottom-content p {
+    font-size: 11px;
   }
   
   .social-icons a {
-      width: 32px;
-      height: 32px;
+    width: 32px;
+    height: 32px;
   }
   
   .social-icons a svg {
-      width: 18px;
-      height: 18px;
+    width: 18px;
+    height: 18px;
   }
 }
 
-/* Hover Effects for Links */
-.footer-section ul li a,
-.contact-info a {
-  position: relative;
-}
-
-.footer-section ul li a::before {
-  content: '→';
-  position: absolute;
-  left: -15px;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-.footer-section ul li a:hover::before {
-  opacity: 1;
-  left: -20px;
-}
-
-/* Smooth Scroll for Footer Links */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Additional Premium Touches */
-.footer-section:first-child .trust-badge {
-  animation: fadeInUp 0.6s ease-out;
-}
-
+/* ============================================
+   ANIMATIONS
+   ============================================ */
 @keyframes fadeInUp {
   from {
-      opacity: 0;
-      transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Focus States for Accessibility */
-.footer-section ul li a:focus,
-.contact-info a:focus,
+.footer-section {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.footer-section:nth-child(1) { animation-delay: 0.05s; }
+.footer-section:nth-child(2) { animation-delay: 0.1s; }
+.footer-section:nth-child(3) { animation-delay: 0.15s; }
+.footer-section:nth-child(4) { animation-delay: 0.2s; }
+.footer-section:nth-child(5) { animation-delay: 0.25s; }
+
+/* ============================================
+   SCROLLBAR STYLES
+   ============================================ */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #c49a6c, #8B5E3C);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #8B5E3C, #6B4226);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Focus Styles */
+a:focus,
 .social-icons a:focus {
-  outline: 2px solid #64b5f6;
-  outline-offset: 2px;
+  outline: none;
+}
+
+a:focus-visible,
+.social-icons a:focus-visible {
+  outline: 2px solid #c49a6c;
+  outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* Print Styles */
+/* Selection Style */
+::selection {
+  background: #c49a6c;
+  color: white;
+}
+
+::-moz-selection {
+  background: #c49a6c;
+  color: white;
+}
+
+/* Link hover effect for service links */
+.footer-section ul li a {
+  position: relative;
+}
+
+/* Decorative element on footer */
+.footer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c49a6c, transparent);
+}
+
+/* Smooth hover transitions */
+.footer-section ul li a,
+.social-icons a,
+.trust-badge {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Emergency support icon animation */
+.emergency-support span {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Mobile menu adjustments */
+@media (max-width: 768px) {
+  .footer-section h4:after {
+    width: 30px;
+  }
+}
+
+/* Print styles */
 @media print {
   .footer {
-      background: #f8f9fa;
-      color: #333;
-      margin-top: 20px;
-  }
-  
-  .footer-section h4::after {
-      background: #333;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
   
   .social-icons a {
-      color: #333;
-      background: transparent;
+    background: none;
   }
 }

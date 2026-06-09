@@ -9,19 +9,19 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section">
           <h3>Oakmont<span>Capital</span></h3>
-          <p className="tagline">YOUR TRUSTED MORTGAGE PARTNER</p>
+          <p className="tagline">YOUR TRUSTED CANADIAN MORTGAGE PARTNER</p>
           <p className="description">
-            Oakmont Capital helps families achieve their dream of homeownership with expert guidance, 
-            competitive rates, and personalized mortgage solutions tailored to your unique needs.
+            Oakmont Capital helps Canadian families achieve their dream of homeownership with expert guidance, 
+            competitive rates, and personalized mortgage solutions tailored to your unique needs across Canada.
           </p>
           <div className="trust-badge">
-            <span>✓</span> 5000+ Happy Clients
+            <span>✓</span> 500+ Happy Canadian Clients
           </div>
           <div className="trust-badge">
-            <span>✓</span> $500M+ Loans Funded
+            <span>✓</span> $50M+ Canadian Loans Funded
           </div>
           <div className="trust-badge">
-            <span>✓</span> 5+ Years Experience
+            <span>✓</span> Trusted Mortgage Partner
           </div>
         </div>
 
@@ -41,35 +41,41 @@ const Footer = () => {
         <div className="footer-section">
           <h4>OUR SERVICES</h4>
           <ul>
-            <li><Link to="/services">Conventional Loans</Link></li>
-            <li><Link to="/services">FHA Loans</Link></li>
-            <li><Link to="/services">VA Loans</Link></li>
-            <li><Link to="/services">Mortgage Refinancing</Link></li>
-            <li><Link to="/services">First-Time Home Buyers</Link></li>
-            <li><Link to="/services">Private Mortgages</Link></li>
+            <li><Link to="/services">Refinance for Secondary Suites</Link></li>
+            <li><Link to="/services">Investment Property Program</Link></li>
+            <li><Link to="/services">Family Plan Program</Link></li>
+            <li><Link to="/services">Vacation/Secondary Homes</Link></li>
+            <li><Link to="/services">Self-Directed RRSP</Link></li>
+            <li><Link to="/services">Borrowed Down Payment</Link></li>
+            <li><Link to="/services">Second Mortgage Program</Link></li>
+            <li><Link to="/services">Portability Feature</Link></li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h4>CONTACT INFO</h4>
             <p>
-              <strong>📞 PHONES:</strong><br />
-              Main: +1 (780) 246 7559<br />
+              <strong>📞 PHONE:</strong><br />
+              +1 (780) 246 7559<br />
             </p>
             <p>
               <strong>✉️ EMAIL:</strong><br />
               <a href="mailto:deolmortgages10@gmail.com">deolmortgages10@gmail.com</a><br />
             </p>
+            <p>
+              <strong>🏠 SERVING:</strong><br />
+              Clients Across Canada
+            </p>
         </div>
 
         <div className="footer-section">
-          <h4>BUSINESS HOURS</h4>
+          <h4>BUSINESS HOURS (MST)</h4>
           <div className="business-hours">
             <p><strong>Monday - Friday:</strong><br />9:00 AM - 6:00 PM</p>
             <p><strong>Saturday:</strong><br />10:00 AM - 2:00 PM</p>
             <p><strong>Sunday:</strong><br />Closed</p>
             <div className="emergency-support">
-              <span>⚠️</span> Emergency Support Available 24/7
+              <span>⚠️</span> Emergency Mortgage Support Available 24/7 for Canadian Clients
             </div>
           </div>
         </div>
@@ -77,7 +83,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p>&copy; 2024 Oakmont Capital. All rights reserved.</p>
+          <p>&copy; 2024 Oakmont Capital. All rights reserved. | Canadian Mortgage Provider</p>
           <div className="social-icons">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebook size={22} />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -9,66 +9,6 @@ import Services from './pages/Services';
 import FAQs from './pages/FAQs';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
-
-// Loader Component
-function Loader({ onLoadingComplete }) {
-  const [isAnimating, setIsAnimating] = useState(true);
-  const [scale, setScale] = useState(0.3);
-
-  useEffect(() => {
-    // Scale animation from small to large
-    const scaleInterval = setInterval(() => {
-      setScale(prev => {
-        if (prev >= 1) {
-          clearInterval(scaleInterval);
-          return 1;
-        }
-        return Math.min(prev + 0.1, 1);
-      });
-    }, 100);
-
-    // Jumping animation
-    const jumpingAnimation = () => {
-      const loader = document.querySelector('.loader-image');
-      if (loader) {
-        loader.style.animation = 'jumpAndSpin 1.5s ease-in-out infinite';
-      }
-    };
-    jumpingAnimation();
-
-    // Stop animation and finish loading after 3 seconds
-    const timer = setTimeout(() => {
-      setIsAnimating(false);
-      if (onLoadingComplete) {
-        onLoadingComplete();
-      }
-    }, 3000);
-
-    return () => {
-      clearInterval(scaleInterval);
-      clearTimeout(timer);
-    };
-  }, [onLoadingComplete]);
-
-  if (!isAnimating) return null;
-
-  return (
-    <div className="loader-overlay">
-      <div className="loader-container">
-        <img 
-          src="https://i.postimg.cc/CKXPVZ1d/9b8900c0-6c5c-4d6e-b2ae-276f2602289b.png" 
-          alt="Loading..." 
-          className="loader-image"
-          style={{
-            transform: `scale(${scale})`,
-            transition: 'transform 0.1s ease-out'
-          }}
-        />
-        <div className="loader-text">Loading...</div>
-      </div>
-    </div>
-  );
-}
 
 // ScrollToTop component to handle route changes
 function ScrollToTop() {
@@ -83,7 +23,7 @@ function ScrollToTop() {
 
 // Floating buttons component
 function FloatingButtons() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = React.useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -135,14 +75,11 @@ function FloatingButtons() {
 }
 
 function AppContent() {
-  const [loading, setLoading] = useState(true);
-
   return (
     <div className="app">
-      {loading && <Loader onLoadingComplete={() => setLoading(false)} />}
       <Navbar />
       <ScrollToTop />
-      <main className="main-content" style={{ display: loading ? 'none' : 'block' }}>
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
