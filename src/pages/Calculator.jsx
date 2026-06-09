@@ -31,6 +31,10 @@ function Calculator() {
   const [gdsRatio, setGdsRatio] = useState(0);
   const [tdsRatio, setTdsRatio] = useState(0);
 
+  // New constants for GDS and TDS limits
+  const MAX_GDS = 39; // Updated from 32 to 39
+  const MAX_TDS = 44; // Updated from 40 to 44
+
   // Frequency Calculator State
   const [freqMortgageAmount, setFreqMortgageAmount] = useState(400000);
   const [freqInterestRate, setFreqInterestRate] = useState(5.5);
@@ -131,15 +135,15 @@ function Calculator() {
     setAmortizationData(yearlyData);
   }, [paymentLoanAmount, paymentDownPayment, paymentInterestRate, paymentLoanTerm]);
 
-  // Calculate Affordability
+  // Calculate Affordability with updated GDS (39%) and TDS (44%)
   useEffect(() => {
     const monthlyIncome = annualIncome / 12;
     const monthlyPropertyTax = propertyTax / 12;
     const monthlyHeating = heatingCost;
     const monthlyCondoFees50 = condoFees * 0.5;
     
-    // Calculate max affordable payment (32% of gross income for GDS)
-    const maxGDSPayment = monthlyIncome * 0.32;
+    // Calculate max affordable payment (MAX_GDS% of gross income for GDS)
+    const maxGDSPayment = monthlyIncome * (MAX_GDS / 100);
     const housingCostsWithoutMortgage = monthlyPropertyTax + monthlyHeating + monthlyCondoFees50;
     const maxMortgagePayment = Math.max(0, maxGDSPayment - housingCostsWithoutMortgage);
     
@@ -158,7 +162,7 @@ function Calculator() {
     setMaxHomePrice(Math.max(0, maxPrice));
     setAffordablePayment(Math.max(0, maxMortgagePayment));
     
-    // Calculate comfortable price (28% GDS)
+    // Calculate comfortable price (28% GDS) - keeping this as is for reference
     const comfortableGDSPayment = monthlyIncome * 0.28;
     const comfortableMortgagePayment = Math.max(0, comfortableGDSPayment - housingCostsWithoutMortgage);
     let comfortableMortgageAmount = 0;
@@ -172,14 +176,14 @@ function Calculator() {
     const comfortablePrice = comfortableMortgageAmount + affordabilityDownPayment;
     setComfortableHomePrice(Math.max(0, comfortablePrice));
     
-    // Calculate actual GDS and TDS for the max scenario
+    // Calculate actual GDS and TDS for the max scenario with new limits
     const actualMortgagePayment = maxMortgagePayment;
     const actualGDS = monthlyIncome > 0 ? ((actualMortgagePayment + monthlyPropertyTax + monthlyHeating + monthlyCondoFees50) / monthlyIncome) * 100 : 0;
     const actualTDS = monthlyIncome > 0 ? ((actualMortgagePayment + monthlyPropertyTax + monthlyHeating + monthlyCondoFees50 + monthlyDebts) / monthlyIncome) * 100 : 0;
     
     setGdsRatio(actualGDS);
     setTdsRatio(actualTDS);
-  }, [annualIncome, monthlyDebts, affordabilityDownPayment, affordabilityInterestRate, amortizationYears, propertyTax, heatingCost, condoFees]);
+  }, [annualIncome, monthlyDebts, affordabilityDownPayment, affordabilityInterestRate, amortizationYears, propertyTax, heatingCost, condoFees, MAX_GDS]);
 
   // Calculate Frequency Calculator
   useEffect(() => {
@@ -309,7 +313,6 @@ function Calculator() {
   const handleAppointmentClick = () => {
     window.location.href = '/contact';
   };
-
 
   return (
     <div className="calculator-page">
@@ -660,15 +663,16 @@ function Calculator() {
                   <h3>Debt Service Ratios</h3>
                   <div className="ratio-item">
                     <span>GDS Ratio (Gross Debt Service)</span>
-                    <strong className={gdsRatio <= 32 ? 'good' : 'bad'}>{gdsRatio.toFixed(1)}%</strong>
-                    <p className="ratio-note">Recommended: ≤32% | Max: 32%</p>
+                    <strong className={gdsRatio <= MAX_GDS ? 'good' : 'bad'}>{gdsRatio.toFixed(1)}%</strong>
+                    <p className="ratio-note">Maximum Allowed: {MAX_GDS}%</p>
                   </div>
                   <div className="ratio-item">
                     <span>TDS Ratio (Total Debt Service)</span>
-                    <strong className={tdsRatio <= 40 ? 'good' : 'bad'}>{tdsRatio.toFixed(1)}%</strong>
-                    <p className="ratio-note">Recommended: ≤40% | Max: 40%</p>
+                    <strong className={tdsRatio <= MAX_TDS ? 'good' : 'bad'}>{tdsRatio.toFixed(1)}%</strong>
+                    <p className="ratio-note">Maximum Allowed: {MAX_TDS}%</p>
                   </div>
                   <p className="ratio-explanation">
+                    <strong>Updated Guidelines:</strong> Maximum GDS is {MAX_GDS}% and Maximum TDS is {MAX_TDS}%<br/>
                     GDS Ratio includes housing costs (mortgage, property tax, heating, 50% condo fees)<br/>
                     TDS Ratio includes all housing costs plus other debt payments
                   </p>
