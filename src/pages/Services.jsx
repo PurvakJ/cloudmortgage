@@ -10,25 +10,25 @@ function Services() {
   const services = [
     {
       id: 1,
-      title: "Refinance for Secondary Suites",
-      description: "Enables lenders to offer an insured refinancing option for homeowners seeking to add secondary suites to their properties.",
-      detailedDescription: "Adding a secondary suite to your property can create additional rental income and increase your home's value. Our insured refinancing option helps Canadian homeowners access the equity needed to finance suite conversions, from basement apartments to laneway homes.",
+      title: "Refinance & Equity Take-Out (ETO)",
+      description: "Your home has built-up equity, put it to work with a refinance solution tailored to your financial goals.",
+      detailedDescription: "Refinancing isn't just about lowering your rate, it's about unlocking the financial potential already sitting in your home. From debt consolidation and renovations to secondary suite additions and investment opportunities, our equity take-out solutions give Canadian homeowners the flexibility to access their equity on their terms.",
       keyBenefits: [
-        "Access equity for suite construction",
-        "CMHC insured refinancing",
-        "Create additional rental income",
-        "Increase property value",
-        "Flexible refinance terms",
-        "Expert guidance on suite regulations"
+        "Unlock home equity for your goals",
+        "Lower your existing mortgage rate",
+        "Consolidate high-interest debt",
+        "Finance renovations or suite additions",
+        "Access up to 80% of your home's value",
+        "Tailored solutions for every financial need"
       ],
       process: [
-        "Initial consultation to assess suite potential",
+        "Consultation to assess your equity and refinance options",
         "Equity evaluation and refinance calculation",
-        "CMHC insurance application (if applicable)",
-        "Refinance approval and funding",
-        "Construction coordination support"
+        "Lender shopping and mortgage structuring",
+        "Application, approval and funding",
+        "Ongoing support post-closing"
       ],
-      whoCanApply: "Canadian homeowners with sufficient equity looking to add a secondary suite to their property.",
+      whoCanApply: "Any Canadian homeowner with sufficient equity looking to unlock their home's value — whether for renovations, debt consolidation, investments, or suite additions.",
       contactInfo: {
         phone: "(780) 246 7559",
         email: "deolmortgages10@gmail.com"
@@ -36,25 +36,25 @@ function Services() {
     },
     {
       id: 2,
-      title: "Investment Property Program",
-      description: "Provide qualified borrowers with the opportunity to purchase an additional investment property with as little as 20% down.",
-      detailedDescription: "Expand your real estate portfolio with our specialized investment property program. Qualified Canadian borrowers can purchase additional investment properties with as little as 20% down, making it easier to build long-term wealth through real estate.",
+      title: "Investment Property Financing",
+      description: "Grow your real estate portfolio with specialized financing designed for Canadian investors, starting with as little as 20% down",
+      detailedDescription: "Real estate is one of Canada's most powerful wealth-building tools, and the right financing strategy makes all the difference. Whether you're purchasing your first investment property or expanding an existing portfolio, our investment property program gives qualified Canadian borrowers access to competitive rates, flexible terms, and expert guidance to maximize long-term returns.",
       keyBenefits: [
         "As little as 20% down payment",
         "Rental income considered for qualification",
-        "Multiple property financing available",
-        "Competitive investment rates",
-        "Portfolio growth strategy",
-        "Refinance options for better cash flow"
+        "Finance upto 4 units in a single property",
+        "Competitive rates across 50+ lenders",
+        "Cash flow and Portfolio optimization",
+        "Expert guidance for real estate investors"
       ],
       process: [
-        "Investment strategy review",
-        "Property cash flow analysis",
-        "Down payment verification",
-        "Lender matching and application",
-        "Closing and property acquisition"
+        "Investment goals and strategy review",
+        "Property cash flow and affordability analysis",
+        "Down payment and qualification verification",
+        "Lender shopping and Mortgage structuring",
+        "Closing coordination and property acquisition"
       ],
-      whoCanApply: "Qualified Canadian borrowers looking to purchase additional investment properties.",
+      whoCanApply: "Any qualified Canadian borrower ready to purchase an investment property, from first-time investors building their first rental to seasoned investors expanding their portfolio.",
       contactInfo: {
         phone: "(780) 246 7559",
         email: "deolmortgages10@gmail.com"
@@ -62,25 +62,25 @@ function Services() {
     },
     {
       id: 3,
-      title: "Family Plan Program",
-      description: "Help customers buy a home for immediate family with good credit who do not meet standard GDSR/TDSR requirements.",
-      detailedDescription: "The Family Plan Program helps Canadian families support their loved ones in achieving homeownership. If your immediate family member has good credit but doesn't meet standard debt service ratio requirements, this program provides flexible solutions to help them buy a home.",
+      title: "Commercial Financing",
+      description: "From small business acquisitions to large-scale developments, commercial mortgage solutions built around your goals and structured for success.",
+      detailedDescription: "Commercial financing is complex, but it doesn't have to be complicated. At Oakmont Capital, we specialize in structuring commercial mortgage solutions that align with your business objectives, whether you're acquiring a new property, breaking ground on a development, or refinancing an existing commercial asset to improve cash flow. With access to multiple lenders and deep knowledge of the Canadian commercial lending landscape, we find the right solution every time.",
       keyBenefits: [
-        "Alternative GDSR/TDSR requirements",
-        "Family guarantee options",
-        "Support immediate family members",
-        "Good credit considered",
-        "Flexible qualification criteria",
-        "Path to homeownership"
+        "Office, retail, industrial, and multi-unit property financing",
+        "CMHC insured and conventional financing options",
+        "Competitive commercial rates across 100+ lenders",
+        "Construction, development, and bridge financing",
+        "Refinancing to optimize returns and reduce costs",
+        "Tailored solutions for complex commercial deals"
       ],
       process: [
-        "Family situation assessment",
-        "Credit and income review",
-        "Alternative qualification path",
-        "Guarantee structure (if applicable)",
-        "Approval and home purchase"
+        "Consultation to assess your commercial goals and financing needs",
+        "Deal structuring, cash flow analysis, and property valuation review",
+        "Commercial lender matching and mortgage structuring",
+        "Application submission, negotiation, and approval coordination",
+        "Closing coordination and ongoing post-funding support"
       ],
-      whoCanApply: "Canadian families helping immediate family members with good credit but non-standard debt ratios.",
+      whoCanApply: "Canadian business owners, real estate investors, and developers of all sizes — from entrepreneurs acquiring their first commercial property to seasoned investors and developers managing large-scale commercial portfolios.",
       contactInfo: {
         phone: "(780) 246 7559",
         email: "deolmortgages10@gmail.com"
@@ -88,25 +88,25 @@ function Services() {
     },
     {
       id: 4,
-      title: "Vacation/Secondary Homes",
-      description: "Enable customers to purchase a second home at an affordable monthly payment with just 5% down.",
-      detailedDescription: "Dreaming of a cottage, cabin, or vacation home? Our Vacation/Secondary Homes program makes it possible with just 5% down and affordable monthly payments. Whether it's a ski chalet, beach house, or lakefront retreat, we can help you finance your perfect getaway.",
+      title: "First Time Home Buyer Program",
+      description: "Stop renting. Start owning. We make your first mortgage simple, fast, and built entirely around you.",
+      detailedDescription: "The Canadian mortgage market can feel overwhelming, especially the first time. That's exactly why we're here. We cut through the complexity, match you with the right program, and fight for the best rate across 50+ lenders so your first home purchase is something to celebrate, not stress over.",
       keyBenefits: [
-        "Only 5% down payment",
-        "Affordable monthly payments",
-        "CMHC insured options available",
-        "Cottages, cabins, and condos",
-        "Rental potential considered",
-        "Flexible qualification terms"
+        "Minimum 5% down payment",
+        "First Home Savings Account (FHSA) eligible",
+        "RRSP Home Buyers' Plan access",
+        "We find the lender that fits you, not the one that's easiest",
+        "Pre-approved in as little as 24 hours",
+        "No jargon — just clear, honest advice"
       ],
       process: [
-        "Vacation property selection",
-        "Down payment preparation",
-        "Application and qualification",
-        "Property appraisal",
-        "Closing and enjoying your retreat"
+        "Free, no-obligation consultation",
+        "Pre-approval within 24 hours",
+        "First-time buyer program matching",
+        "Lender shopping for the best rate",
+        "Seamless closing from offer to keys"
       ],
-      whoCanApply: "Canadian buyers looking to purchase a secondary or vacation home.",
+      whoCanApply: "First-time buyers across Canada,  including those qualifying under FTHB program guidelines due to separation or divorce",
       contactInfo: {
         phone: "(780) 246 7559",
         email: "deolmortgages10@gmail.com"
@@ -114,25 +114,25 @@ function Services() {
     },
     {
       id: 5,
-      title: "Self-Directed RRSP",
-      description: "Provide the insurance to allow self-directed RRSP/RRIF funds to be used for non-arm's length mortgage investments.",
-      detailedDescription: "Unlock the potential of your retirement savings with our Self-Directed RRSP program. This specialized solution provides insurance that allows you to use self-directed RRSP or RRIF funds for non-arm's length mortgage investments, creating new opportunities for your retirement portfolio.",
+      title: "Self-Employed Mortgage Solutions",
+      description: "Self-employed and ready to own? Access mortgage financing built specifically for Canadian business owners - no T4 required.",
+      detailedDescription: "Being self-employed shouldn't stand between you and homeownership. Throug Business for Self program, self-employed Canadians with a minimum 2-year business history and responsible credit management can access insured mortgage financing without traditional income documentation, just a stated income and proof of your business.",
       keyBenefits: [
-        "RRSP/RRIF fund utilization",
-        "Non-arm's length investments",
-        "Insurance coverage provided",
-        "Portfolio diversification",
-        "Tax-efficient investing",
-        "Professional guidance available"
+        "No T4 or employment letter required",
+        "Stated income qualification",
+        "Minimum 10% down payment",
+        "2-year business history or experience in the same field required",
+        "Available for sole proprietors, partnerships, and corporations",
+        "Specialist lender matching for self-employed borrowers"
       ],
       process: [
-        "RRSP/RRIF assessment",
-        "Investment strategy development",
-        "Insurance application",
-        "Fund transfer coordination",
-        "Ongoing portfolio management"
+        "Consultation to assess your business history and qualification options",
+        "Business Finacial Statement's review and stated income assessment",
+        "Specialist lender matching across 50+ lenders",
+        "Application, insurer approval, and commitment coordination",
+        "Seamless closing from approval to funding"
       ],
-      whoCanApply: "Canadian investors with self-directed RRSP/RRIF accounts looking for mortgage investment opportunities.",
+      whoCanApply: "Any self-employed Canadian — sole proprietor, partner, or incorporated business owner,  with 2+ years in the same field, responsible credit history, and no outstanding tax arrears.",
       contactInfo: {
         phone: "(780) 246 7559",
         email: "deolmortgages10@gmail.com"
@@ -140,25 +140,25 @@ function Services() {
     },
     {
       id: 6,
-      title: "Borrowed Down Payment",
-      description: "Make it possible for borrowers who cannot save a required down payment to start building equity now.",
-      detailedDescription: "Don't let a lack of saved down payment hold you back from homeownership. Our Borrowed Down Payment program helps Canadian buyers who struggle to save the required down payment to start building equity now, with flexible solutions that recognize alternative down payment sources.",
+      title: "No Down Payment Mortgage Solutions",
+      description: "No down payment saved? There's still a path to homeownership, and we'll help you find it.",
+      detailedDescription: "There are more ways to fund a down payment than most buyers realize. Gifts, RRSP funds, FHSA contributions, and even borrowed funds from a Line of Credit or Credit Card are all eligible — provided the borrowed amount fits within your GDS and TDS debt servicing ratios. We'll identify the right path and get you moving.",
       keyBenefits: [
-        "Alternative down payment sources",
-        "Start building equity sooner",
-        "Flexible qualification criteria",
-        "Gifted down payment options",
-        "RRSP borrowing strategies",
-        "Path to homeownership"
+        "Gifted down payment accepted from immediate family",   
+        "RRSP Home Buyers' Plan, up to $35,000 tax-free",
+        "First Home Savings Account (FHSA) eligible",
+        "Line of Credit and Credit Card funds eligible toward down payment",
+        "Borrowed funds accepted within GDS/TDS debt servicing ratios",
+        "Tailored strategy across 50+ lenders"
       ],
       process: [
-        "Financial situation assessment",
-        "Down payment source identification",
-        "Alternative qualification review",
-        "Application and approval",
-        "Home purchase and equity building"
+        "Consultation to understand your financial position and down payment options",
+        "Down payment strategy and debt servicing ratio assessment",
+        "Debt servicing ratio review to confirm borrowed funds eligibility",
+        "Lender selection, application, and approval coordination",
+        "Seamless closing, from strategy to keys in hand"   
       ],
-      whoCanApply: "Canadian home buyers who cannot save a traditional down payment but have alternative sources.",
+      whoCanApply: "Any Canadian home buyer without traditional down payment savings who has access to alternative sources, including family gifts, RRSP or FHSA funds, a Line of Credit, or Credit Card",
       contactInfo: {
         phone: "(780) 246 7559",
         email: "deolmortgages10@gmail.com"
@@ -166,25 +166,25 @@ function Services() {
     },
     {
       id: 7,
-      title: "Second Mortgage Program",
-      description: "Provide borrowers with a Second Mortgage to be registered against their property up to 95% combined LTV on a purchase.",
-      detailedDescription: "Access additional funds with our Second Mortgage Program. This solution allows Canadian borrowers to register a second mortgage against their property up to 95% combined loan-to-value on a purchase, providing access to equity without disturbing your first mortgage terms.",
+      title: "B-side Mortgage Solutions",
+      description: "Bruised credit. High debt. Low declared income. Whatever your situation, there's a mortgage solution built for you.",
+      detailedDescription: "The big banks say no? We find lenderswho says yes. B-side mortgages are built for Canadians whose financial history doesn't fit the traditional lending box. Bruised credit, high debt, low declared income, or a recent Consumer Proposal — there's a structured path forward. Minimum 20% down required, with a portion eligible to be borrowed.",
       keyBenefits: [
-        "Up to 95% combined LTV",
-        "Preserve first mortgage terms",
-        "Quick access to funds",
-        "Flexible repayment options",
-        "Competitive second mortgage rates",
-        "Purchase or refinance options"
+        "Bruised or damaged credit accepted",
+        "Consumer Proposals — recently discharged or completed considered",
+        "High debt loads and elevated TDS ratios accommodated",
+        "Low declared or stated income accepted",
+        "Minimum 20% down — portion eligible to be borrowed",
+        "Clear pathway back to prime mortgage lending"
       ],
       process: [
-        "Equity and LTV assessment",
-        "First mortgage review",
-        "Second mortgage application",
-        "Property registration",
-        "Fund disbursement"
+        "Confidential, judgment-free consultation to understand your situation",
+        "Full credit, debt, and income profile review",
+        "Down payment strategy and source verification",
+        "Alternative lender matching based on your specific profile",
+        "Seamless application, approval, and closing support"
       ],
-      whoCanApply: "Canadian homeowners or buyers needing additional financing up to 95% combined LTV.",
+      whoCanApply: "Any Canadian borrower who has been declined by traditional lenders due to bruised credit, high debt, low declared income, or a recent Consumer Proposal, with a minimum 20% down payment available, including borrowed funds.",
       contactInfo: {
         phone: "(780) 246 7559",
         email: "deolmortgages10@gmail.com"
@@ -192,25 +192,25 @@ function Services() {
     },
     {
       id: 8,
-      title: "Portability Feature",
-      description: "Help Sagen-insured borrowers to save on the costs of a new mortgage by 'porting' their mortgage default insurance.",
-      detailedDescription: "Moving to a new home? Save thousands with our Portability Feature. Sagen-insured Canadian borrowers can transfer or 'port' their mortgage default insurance to a new property, avoiding the cost of purchasing new insurance and keeping your favorable terms intact.",
+      title: "Primary Residence Financing",
+      description: "First home or fourth - if it's your primary residence, minimum down payment options are on the table. Every time.",
+      detailedDescription: "Let's bust a myth. Most Canadians believe the minimum down payment is a one-time privilege reserved for first-time buyers. It's not. The minimum down payment is tied to the property — not the buyer's history. As long as you are purchasing a primary residence, you qualify for minimum down payment options — whether it's your second home, or third. Stop letting outdated assumptions limit your options.",
       keyBenefits: [
-        "Save on new insurance costs",
-        "Port your default insurance",
-        "Keep favorable mortgage terms",
-        "Seamless transition to new home",
-        "Avoid duplicate insurance payments",
-        "Expert porting guidance"
+        "Minimum down payment available on every primary residence — not just your first",
+        "5% minimum on properties under $500,000",
+        "5% on first $500,000 and 10% on remainder up to $999,999",
+        "20% required on properties $1,000,000 and above",
+        "Retire in your dream home with minimal upfront costs",
+        "Competitive rates across 50+ lenders"
       ],
       process: [
-        "Current mortgage and insurance review",
-        "New property evaluation",
-        "Porting application submission",
-        "Insurance transfer coordination",
-        "New home closing"
+        "Consultation to review your purchase goals and down payment position",
+        "Pre-approval and stress test qualification review",
+        "Lender shopping for the best rates and terms",
+        "Application, approval, and commitment coordination",
+        "Closing support from offer accepted to keys in hand"
       ],
-      whoCanApply: "Sagen-insured Canadian borrowers moving to a new home who want to port their insurance.",
+      whoCanApply: "Any Canadian purchasing a primary residence, regardless of whether you've owned before. If it's your primary home, minimum down payment options apply.",
       contactInfo: {
         phone: "(780) 246 7559",
         email: "deolmortgages10@gmail.com"
@@ -218,25 +218,25 @@ function Services() {
     },
     {
       id: 9,
-      title: "Business for Self (Alt. A)",
-      description: "Secure mortgage insurance for self-employed borrowers without traditional income who manage their finances responsibly.",
-      detailedDescription: "Being self-employed shouldn't prevent you from getting a great mortgage. Our Business for Self (Alt. A) program provides mortgage insurance for Canadian self-employed borrowers who may not have traditional income documentation but manage their finances responsibly.",
+      title: "Purchase Plus Improvements Mortgage",
+      description: "See potential where others see problems, buy the home and fund the renovations in one smart mortgage solution.",
+      detailedDescription: "Stop waiting for the perfect home,  build it. Bundle eligible renovation costs directly into your mortgage and skip the separate loan entirely. Adding a legal basement suite is one of the smartest moves available, it adds long-term rental income and increases your mortgage affordability by 3–4% by factoring projected rental income into your qualification.",
       keyBenefits: [
-        "Alternative income verification",
-        "Bank statement programs",
-        "Lower documentation requirements",
-        "Business assets considered",
-        "Flexible qualification criteria",
-        "Secure insurance coverage"
+        "Renovation costs bundled directly into your mortgage",
+        "Fund value-adding upgrades without a separate loan ",
+        "Legal suite addition boosts mortgage affordability by 3–4%",
+        "Projected rental income from legal suite used for qualification",
+        "Increase property value from day one",
+        "Available on insured mortgages"
       ],
       process: [
-        "Business financial review",
-        "Alternative documentation collection",
-        "Insurance application",
-        "Lender matching",
-        "Approval and funding"
+        "Consultation to assess purchase goals and renovation scope",
+        "Renovation estimate and post-improvement value assessment",
+        "Mortgage structuring with improvement costs included",
+        "Lender matching and application submission",
+        "Renovation funds released upon completion and inspection"
       ],
-      whoCanApply: "Self-employed Canadians with 2+ years in business who manage their finances responsibly.",
+      whoCanApply: "Any Canadian homebuyer purchasing a property with plans for eligible value-adding renovations — from legal basement suites and kitchen upgrades to structural improvements that increase the property's appraised value.",
       contactInfo: {
         phone: "(780) 246 7559",
         email: "deolmortgages10@gmail.com"
@@ -244,82 +244,30 @@ function Services() {
     },
     {
       id: 10,
-      title: "Energy Efficient Housing Program",
-      description: "Reward home buyers purchasing energy-efficient homes or making energy saving renovations with significant savings.",
-      detailedDescription: "Go green and save green with our Energy Efficient Housing Program. Canadian home buyers who purchase energy-efficient homes or make energy-saving renovations qualify for significant savings, including better rates and insurance premium refunds.",
+      title: "Mortgage Renewals & HELOC",
+      description: "Two of the most powerful financial tools available to Canadian homeowners, and most people don't use either one to their full advantage.",
+      detailedDescription: "Whether your mortgage is coming up for renewal or you're looking to access the equity you've built, both are significant financial opportunities that most Canadians underutilize. Don't auto-renew with your existing lender without shopping — it could cost you thousands. And if you've built equity in your home, a HELOC gives you flexible, low-interest access to those funds without selling or refinancing. We help you maximize both.",
       keyBenefits: [
-        "Significant premium savings",
-        "Better mortgage rates available",
-        "Energy-efficient home rewards",
-        "Renovation financing options",
-        "CMHC Eco Plus benefits",
-        "Lower monthly payments"
+        "Shop renewal rates across 50+ lenders, never auto-renew blind",
+        "Switch lenders at renewal with no penalty",
+        "Access up to 80% of your home's appraised value via HELOC",
+        "Revolving credit — borrow, repay, and borrow again",
+        "Interest charged only on the amount drawn",
+        "Rates far lower than credit cards or personal loans"
       ],
       process: [
-        "Energy assessment or EnerGuide rating",
-        "Energy-efficient purchase/renovation plan",
-        "Application with energy documentation",
-        "Premium savings calculation",
-        "Approval and funding"
+        "Consultation to review renewal timeline and equity position",
+        "Market rate comparison and HELOC eligibility assessment",
+        "Lender matching and strategy recommendation",
+        "Application submission and approval coordination",
+        "Seamless closing — renewal, HELOC, or both"
       ],
-      whoCanApply: "Canadian home buyers purchasing energy-efficient homes or making energy-saving renovations.",
+      whoCanApply: "Any Canadian homeowner approaching their renewal date or holding a minimum of 20% home equity, if either applies to you, there's likely a financial opportunity worth exploring.",
       contactInfo: {
         phone: "(780) 246 7559",
         email: "deolmortgages10@gmail.com"
       }
     },
-    {
-      id: 11,
-      title: "Progress Advance Program",
-      description: "Let residential home builders and individual home buyers take advantage of insured progress advances while their property is being built.",
-      detailedDescription: "Building your dream home? Our Progress Advance Program provides insured progress advances during construction, ensuring you have the funds you need at each stage of building. Perfect for custom home builders and individual home buyers constructing their own property.",
-      keyBenefits: [
-        "Insured progress advances",
-        "Construction stage funding",
-        "Custom home builder friendly",
-        "Individual home buyer options",
-        "Draw schedule flexibility",
-        "Completion protection"
-      ],
-      process: [
-        "Construction plan review",
-        "Draw schedule establishment",
-        "Progress advance setup",
-        "Stage-by-stage funding",
-        "Final completion draw"
-      ],
-      whoCanApply: "Canadian residential home builders and individual home buyers constructing a property.",
-      contactInfo: {
-        phone: "(780) 246 7559",
-        email: "deolmortgages10@gmail.com"
-      }
-    },
-    {
-      id: 12,
-      title: "Purchase Plus Improvements",
-      description: "Help qualified home buyers roll home improvement costs into their mortgage with as little as 5% down.",
-      detailedDescription: "Buy a home that needs some TLC and finance the renovations too! Our Purchase Plus Improvements program allows qualified Canadian home buyers to roll home improvement costs into their mortgage with as little as 5% down, making fixer-uppers more accessible than ever.",
-      keyBenefits: [
-        "Only 5% down payment",
-        "Renovation costs rolled into mortgage",
-        "One simple monthly payment",
-        "CMHC insured options",
-        "Fixer-upper friendly",
-        "Instant home equity building"
-      ],
-      process: [
-        "Property and renovation assessment",
-        "Renovation quote collection",
-        "Combined mortgage application",
-        "Approval with improvement funds",
-        "Purchase and renovation completion"
-      ],
-      whoCanApply: "Qualified Canadian home buyers purchasing homes needing improvements.",
-      contactInfo: {
-        phone: "(780) 246 7559",
-        email: "deolmortgages10@gmail.com"
-      }
-    }
   ];
 
   // Optimized Intersection Observer for scroll animations with requestAnimationFrame
@@ -389,16 +337,16 @@ function Services() {
         <div className="services-hero-image" aria-label="Mortgage services hero background"></div>
         <div className="services-hero-container">
           <div className="services-hero-content">
-            <h1 className="fade-up">Oakmont Capital Services</h1>
-            <p className="fade-up">Comprehensive Canadian mortgage solutions tailored to your unique needs</p>
+            <h1 className="fade-up">What we Offer</h1>
+            <p className="fade-up">Every mortgage type. Every client situation. One trusted solution.</p>
             <div className="hero-stats fade-up">
               <div className="hero-stat">
-                <span className="hero-stat-number">25+</span>
-                <span className="hero-stat-label">Years of Canadian Excellence</span>
+                <span className="hero-stat-number">5+</span>
+                <span className="hero-stat-label">Years of Mortgage Excellence</span>
               </div>
               <div className="hero-stat">
-                <span className="hero-stat-number">5,000+</span>
-                <span className="hero-stat-label">Happy Canadian Clients</span>
+                <span className="hero-stat-number">1,000+</span>
+                <span className="hero-stat-label">Happy Clients</span>
               </div>
               <div className="hero-stat">
                 <span className="hero-stat-number">$2B+</span>

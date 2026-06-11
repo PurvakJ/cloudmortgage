@@ -11,26 +11,26 @@ const Home = () => {
     {
       url: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1600",
       title: "Residential Mortgages",
-      subtitle: "⁠First time home buyers, Primary Residence & Investment Properties",
-      description: "Get the best rates and flexible terms for your dream home"
+      subtitle: "⁠First Time Home Buyers, Primary Residence & Investment Properties",
+      description: "Competitive rates and flexible terms tailored to get you into your dream home."
     },
     {
       url: "https://images.pexels.com/photos/439416/pexels-photo-439416.jpeg?auto=compress&cs=tinysrgb&w=1600",
       title: "Commercial Financing",
-      subtitle: "Cmhc insured financing, Structured Financing & Construction Loans",
-      description: "Compare rates from 100+ lenders to find your perfect match"
+      subtitle: "CMHC Insured Financing, Commercial Term Financing & Construction Loans",
+      description: "From land acquisition to construction, we source the best commercial rates from over 20 lenders"
     },
     {
       url: "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      title: "Expert Guidance",
-      subtitle: "Your Trusted Mortgage Partner",
-      description: "Professional advisors guide you every step of the way"
+      title: "Banks Work for Banks. We Work for You",
+      subtitle: "No Bias. No Agenda. Just Results.",
+      description: "When you walk into a bank, you get their products. When you work with Oakmont Capital, you get 50+ lenders and an advisor whose only obligation is to you."
     },
     {
       url: "https://images.pexels.com/photos/164522/pexels-photo-164522.jpeg?auto=compress&cs=tinysrgb&w=1600",
       title: "Quick Approval",
-      subtitle: "Fast & Hassle-Free Process",
-      description: "Get pre-approved in 24 hours with our streamlined process"
+      subtitle: "Fast, Simple & Hassle-Free Process",
+      description: "Skip the back-and-forth — get pre-approved in 24 hours and move forward with confidence."
     }
   ];
 
@@ -40,58 +40,54 @@ const Home = () => {
     {
       icon: "🏠",
       title: "First-Time Home Buyers",
-      description: "Expert guidance and special programs for first-time buyers",
-      features: ["Low down payment options", "Down payment assistance", "Free credit counseling"]
+      description: "Purpose-built programs and dedicated guidance to get first-time buyers into a home with confidence.",
+      features: ["Flexible Down Payment Options", "Down Payment Assistance", "Complimentary Credit Counseling"]
+    },
+    {
+      icon: "🏘️",
+      title: "Primary & Secondary Residences",
+      description: "Tailored Financing for Primary and Secondary Homes with competitive rates and flexible terms",
+      features: ["Specialized Programs", "Competitive Rates", "Flexible terms"]
     },
     {
       icon: "🏢",
       title: "Commercial Financing",
-      description: "Flexible funding solutions to help businesses grow and expand",
-      features: [
-        "Business expansion loans",
-        "Equipment & machinery financing",
-        "Working capital solutions"
-      ]
+      description: "Flexible funding solutions designed to help businesses grow, expand, and thrive.",
+      features: ["Canadian Small Business Financing","CMHC MLI Programs","Business Expansion Loans"]
+    },
+    {
+      icon: "💰",
+      title: "Debt Consolidation & Refinancing",
+      description: "Simplify your finances by combining multiple debts into one manageable, lower-interest payment.",
+      features: ["Lower Interest Rates", "Single Monthly Payment", "Improve your Credit Score"]
+    },
+    {
+      icon: "💼",
+      title: "BFS Self Employed Financing",
+      description: "Mortgage financing designed for self-employed borrowers — qualify based on stated income without traditional income verification.",
+      features: ["As little as 10% Down Payment", "No Traditional Income Verification Required", "C"]
     },
     {
       icon: "⚡",
       title: "Quick Pre-Approval",
-      description: "Get pre-approved in 24 hours and shop with confidence",
-      features: ["24-hour approval", "Free consultation", "No obligation"]
+      description: "Get pre-approved in 24 hours and shop with confidence knowing your financing is secure.",
+      features: ["24-hour Pre-Approval", "Free Consultation", "No Obligation"]
     },
-    {
-      icon: "💰",
-      title: "Debt Consolidation",
-      description: "Combine debts into one manageable payment",
-      features: ["Lower interest rates", "Single payment", "Improve credit score"]
-    },
-    {
-      icon: "🏘️",
-      title: "Residential Financing",
-      description: "Financing for high-value properties",
-      features: ["Up to $3M loans", "Competitive rates", "Flexible terms"]
-    },
-    {
-      icon: "🇺🇸",
-      title: "Self Employed Loans",
-      description: "Exclusive benefits for veterans and military",
-      features: ["0% down payment", "No PMI", "Lower rates"]
-    }
   ];
 
   // FAQ data
   const faqs = [
     {
       question: "What credit score do I need to qualify for a mortgage?",
-      answer: "Most conventional loans require a minimum credit score of 620. FHA loans may accept scores as low as 580, and VA loans have no minimum credit score requirement."
+      answer: "In Canada, most lenders require a minimum credit score of 600 for insured mortgages and 680 for conventional mortgages. A stronger credit score not only improves your chances of approval but can also unlock better rates and terms."
     },
     {
       question: "How much down payment is required?",
-      answer: "Down payments can range from 0% (VA and USDA loans) to 20% or more for conventional loans. First-time home buyers may qualify for programs with as little as 3% down."
+      answer: "In Canada, the minimum down payment depends on the purchase price. Properties under $500,000 require a minimum of 5% down. For properties between $500,000 and $999,999, 5% is required on the first $500,000 and 10% on the remainder. Properties $1,000,000 and above require a minimum of 20% down and are not eligible for mortgage default insurance."
     },
     {
       question: "How long does the mortgage process take?",
-      answer: "The average mortgage process takes 30-45 days from application to closing. However, pre-approval can be obtained in as little as 24 hours."
+      answer: "Pre-approval can typically be obtained within 24–48 hours. From there, the full mortgage approval and closing process generally takes 30–45 days, though this can vary depending on the lender, property type, and complexity of the application. Having your documents ready in advance can help move things along faster."
     }
   ];
 

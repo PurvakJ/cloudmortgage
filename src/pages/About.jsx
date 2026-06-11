@@ -9,16 +9,16 @@ const About = () => {
     name: "Harnoor Deol",
     position: "Founder & Mortgage Specialist",
     image: "https://i.postimg.cc/jSZHB8hS/Whats-App-Image-2026-04-09-at-11-28-24.jpg",
-    bio: "As the founder of Oakmont Capital, Harnoor is dedicated to providing exceptional mortgage services with a personal touch. With a fresh perspective and deep commitment to client success, he has quickly established himself as a trusted partner in the mortgage industry, helping countless families achieve their homeownership dreams across Canada.",
+    bio: "Oakmont Capital was founded on a simple belief — that every Canadian deserves expert mortgage guidance without the runaround. With a personal approach and an unwavering commitment to client success, Harnoor has become a trusted partner for families across Canada on their journey to homeownership.",
     expertise: [
       "Certified Mortgage Professional",
-      "Expert in CMHC Insured Financing",
-      "Specialist in Canadian first-time home buyer programs",
-      "Secondary suite refinancing specialist",
-      "Investment property financing expert",
-      "Self-employed and Alternative A mortgage solutions"
+      "Commercial Financing",
+      "First-Time Home Buyer Specialist",
+      "Refinance and Debt Consolidation",
+      "Self-Employed Mortgage Solutions",
+      "B-side solutions for clients with unique financial situations",
     ],
-    philosophy: "Harnoor believes that every Canadian client deserves personalized attention and transparent guidance. Unlike large corporate lenders, he takes the time to understand each client's unique situation and finds the perfect mortgage solution tailored to their needs.",
+    philosophy: "Big banks offer products. I offers solutions. By taking the time to understand each client's unique financial picture, we deliver the kind of personalized, transparent mortgage guidance that corporate lenders simply can't match.",
     contactInfo: {
       phone: "+1 (780) 246 7559",
       email: "deolmortgages10@gmail.com"
@@ -31,7 +31,7 @@ const About = () => {
       <section className="about-hero">
         <div className="about-hero-content">
           <h1>ABOUT OAKMONT CAPITAL</h1>
-          <p>Your Trusted Canadian Mortgage Partner</p>
+          <p>Your Trusted Canadian Mortgage Advisor</p>
         </div>
       </section>
 
@@ -41,9 +41,10 @@ const About = () => {
           <div className="story-grid">
             <div className="story-content">
               <h2>OUR STORY</h2>
-              <p>Oakmont Capital was founded by Harnoor Deol with a simple yet powerful vision: to transform the Canadian mortgage industry by making home financing transparent, accessible, and stress-free for everyone across Canada.</p>
-              <p>What started as a one-person mission has grown into a trusted platform serving hundreds of Canadian homeowners. As a sole proprietor, Harnoor personally handles every client's mortgage needs, combining cutting-edge technology with personalized service to deliver the best possible mortgage solutions for the Canadian market.</p>
-              <p>Harnoor's commitment to innovation, integrity, and customer success has made Oakmont Capital a preferred partner for Canadian first-time homebuyers, seasoned investors, and families looking to refinance or add secondary suites to their properties.</p>
+              <p>Oakmont Capital was founded to do one thing differently — put Canadians first.</p>
+              <p>Frustrated by an industry built on complexity and corporate indifference, the vision was simple: bring transparency, accessibility, and genuine personal service to Canadian home financing. Today, hundreds of homeowners across Canada trust Oakmont Capital for exactly that.</p>
+              <p>Every client works directly with a Trusted Mortgage Specialist. Every solution is tailored. And every decision is made with one goal in mind — getting Canadians into the right mortgage for their life."
+</p>
               <div className="story-signature">
                 <p>- Harnoor Deol, Founder & Mortgage Specialist</p>
               </div>
@@ -62,12 +63,12 @@ const About = () => {
             <div className="mission-card">
               <div className="mv-icon">🎯</div>
               <h3>Our Mission</h3>
-              <p>To empower Canadian individuals and families with the knowledge, tools, and support they need to make informed mortgage decisions and achieve their dream of homeownership across Canada.</p>
+              <p>To cut through the complexity of the Canadian mortgage market and deliver honest, personalized guidance that puts every client in the best possible position to own their home.</p>
             </div>
             <div className="vision-card">
               <div className="mv-icon">👁️</div>
               <h3>Our Vision</h3>
-              <p>To become Canada's most trusted and innovative mortgage platform, setting new standards in transparency, customer service, and financial accessibility for all Canadians.</p>
+              <p>To redefine what Canadians expect from a mortgage broker — building a platform where trust, innovation, and genuine client advocacy set the standard.</p>
             </div>
           </div>
         </div>
@@ -84,7 +85,7 @@ const About = () => {
               <img src={ownerData.image} alt={ownerData.name} />
               <div className="owner-badge">
                 <span>⭐</span>
-                <span>Trusted Mortgage Partner</span>
+                <span>Your Trusted Mortgage Advisor</span>
               </div>
             </div>
             
@@ -124,27 +125,27 @@ const About = () => {
       <section className="about-values">
         <div className="container">
           <h2>OUR CORE VALUES</h2>
-          <p className="values-subtitle">The principles that guide everything we do</p>
+          <p className="values-subtitle">What we stand for and how we show up for you</p>
           <div className="values-grid">
             <div className="value-card">
               <div className="value-icon">🔒</div>
               <h3>Integrity First</h3>
-              <p>Operating with complete transparency and honesty in every Canadian mortgage transaction.</p>
+              <p>Complete transparency and honesty in every mortgage transaction, every time.</p>
             </div>
             <div className="value-card">
               <div className="value-icon">❤️</div>
-              <h3>Customer Focus</h3>
-              <p>Your success and satisfaction are at the heart of everything we do for Canadian homeowners.</p>
+              <h3>We Work For You, Not the Bank</h3>
+              <p>Your success is our success. Everything we do is built around your unique needs and goals.</p>
             </div>
             <div className="value-card">
               <div className="value-icon">💡</div>
               <h3>Innovation</h3>
-              <p>Continuously improving technology and processes to serve Canadian clients better.</p>
+              <p>Smarter tools and better processes — continuously refined to serve Canadian clients more effectively.</p>
             </div>
             <div className="value-card">
               <div className="value-icon">🤝</div>
-              <h3>Personal Service</h3>
-              <p>Every Canadian client receives direct, personalized attention from start to finish.</p>
+              <h3>Personalized Solutions</h3>
+              <p>No call centers. No cookie-cutter answers. Just direct, one-on-one guidance built around your goals.</p>
             </div>
           </div>
         </div>
@@ -156,10 +157,10 @@ const About = () => {
           <div className="stats-grid">
             <div className="stat-item">
               <span className="stat-number">100+</span>
-              <span className="stat-label">Canadian Clients Served</span>
+              <span className="stat-label"> Clients Served</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">$50M+</span>
+              <span className="stat-number">$200M+</span>
               <span className="stat-label">Mortgages Funded</span>
             </div>
             <div className="stat-item">
@@ -181,33 +182,33 @@ const About = () => {
           <div className="choose-grid">
             <div className="choose-item">
               <div className="choose-icon">👤</div>
-              <h3>Personal Service</h3>
-              <p>Direct access to the founder - no call centers or automated systems</p>
+              <h3>Full-Spectrum Mortgage Expertise</h3>
+              <p>Residential, commercial, self-employed, refinancing — expertise that covers every type of Canadian mortgage client.</p>
             </div>
             <div className="choose-item">
               <div className="choose-icon">🍁</div>
-              <h3>Canadian Experts</h3>
-              <p>Specialized knowledge of CMHC regulations and Canadian mortgage rules</p>
+              <h3>Your Advocate, Not the Bank's</h3>
+              <p>Banks work for shareholders. Oakmont Capital works for you — honest, unbiased guidance built entirely around your goals.</p>
             </div>
             <div className="choose-item">
               <div className="choose-icon">⚡</div>
-              <h3>Fast Approvals</h3>
-              <p>Get pre-approved in 24 hours with our streamlined Canadian process</p>
+              <h3>50+ Lenders, Better Rates</h3>
+              <p>More lenders means more competition for your business — and better rates and terms for you.</p>
             </div>
             <div className="choose-item">
               <div className="choose-icon">🏠</div>
-              <h3>Secondary Suite Specialists</h3>
-              <p>Expert guidance for refinancing to add secondary suites</p>
+              <h3>Creative Solutions for Every Client</h3>
+              <p>Straightforward or complex, every situation has a solution and we won't stop until we find it.</p>
             </div>
             <div className="choose-item">
               <div className="choose-icon">💻</div>
-              <h3>Online Tools</h3>
-              <p>Easy online application and document upload for Canadian clients</p>
+              <h3>Speed without Sacrifice</h3>
+              <p>Fast pre-approvals and an efficient process from start to finish — without cutting corners on finding you the best deal.</p>
             </div>
             <div className="choose-item">
               <div className="choose-icon">🤝</div>
-              <h3>Trusted Advisor</h3>
-              <p>Building lasting relationships, not just processing transactions</p>
+              <h3>Built on Trust, Not Transactions</h3>
+              <p>A mortgage is one of the biggest financial decisions of your life — you deserve an advisor who treats it that way, long after the deal is done.</p>
             </div>
           </div>
         </div>
@@ -217,20 +218,14 @@ const About = () => {
       <section className="about-cta">
         <div className="container">
           <div className="cta-content">
-            <h2>READY TO START YOUR CANADIAN MORTGAGE JOURNEY?</h2>
-            <p>Work directly with Harnoor to find the perfect loan solution for your Canadian home needs</p>
+            <h2>READY TO START YOUR MORTGAGE JOURNEY?</h2>
+            <p>Skip the middlemen — work one-on-one with an expert who knows the Canadian mortgage market inside and out.</p>
             <div className="cta-buttons">
               <Link to="/contact" className="btn-primary">CONTACT US TODAY</Link>
               <Link to="/calculator" className="btn-secondary">TRY OUR CALCULATOR</Link>
             </div>
-            <div className="personal-note">
-              <p>✓ Direct access to the founder</p>
-              <p>✓ Personalized attention from start to finish</p>
-              <p>✓ No automated systems or call centers</p>
-              <p>✓ CMHC insured financing expertise</p>
             </div>
           </div>
-        </div>
       </section>
     </div>
   );
