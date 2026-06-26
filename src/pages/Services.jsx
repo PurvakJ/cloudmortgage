@@ -410,7 +410,7 @@ function Services() {
               </div>
               <div className="hero-stat">
                 <span className="hero-stat-number">$2B+</span>
-                <span className="hero-stat-label">Canadian Loans Funded</span>
+                <span className="hero-stat-label">Loans Funded</span>
               </div>
             </div>
           </div>

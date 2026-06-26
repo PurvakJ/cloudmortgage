@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Contact.css';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -282,10 +282,6 @@ function Contact() {
               <FaFacebook size={20} />
               <span>Facebook</span>
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link twitter">
-              <FaTwitter size={20} />
-              <span>Twitter</span>
-            </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link linkedin">
               <FaLinkedin size={20} />
               <span>LinkedIn</span>
@@ -293,14 +289,6 @@ function Contact() {
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link instagram">
               <FaInstagram size={20} />
               <span>Instagram</span>
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-link youtube">
-              <FaYoutube size={20} />
-              <span>YouTube</span>
-            </a>
-            <a href="https://wa.me/+17802467559" target="_blank" rel="noopener noreferrer" className="social-link whatsapp">
-              <FaWhatsapp size={20} />
-              <span>WhatsApp</span>
             </a>
           </div>
         </div>
