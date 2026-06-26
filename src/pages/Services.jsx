@@ -63,6 +63,36 @@ function Services() {
       }
     },
     {
+      id: 12,
+      title: "Quick Pre-Approval",
+      logo: "✅", // Approval/checkmark icon
+      description:
+        "Get pre-approved in as little as 24 hours and start shopping for your new home with confidence, knowing exactly how much you can afford.",
+      detailedDescription:
+        "A mortgage pre-approval is the first step toward buying a home. It provides an estimate of how much you can borrow based on your income, credit, and financial profile. With a quick pre-approval, you'll have a clear budget, stronger negotiating power, and greater confidence when making an offer. Our mortgage experts guide you through the entire process, ensuring a fast, accurate, and hassle-free experience.",
+      keyBenefits: [
+        "Pre-approval in as little as 24 hours",
+        "Know your maximum home buying budget",
+        "Lock in competitive interest rates for a limited time",
+        "Strengthen your offer when purchasing a home",
+        "No obligation and no hidden fees",
+        "Expert guidance from experienced mortgage professionals"
+      ],
+      process: [
+        "Complete a simple online or phone application",
+        "Submit basic income and financial documents",
+        "Credit and affordability assessment",
+        "Receive your mortgage pre-approval",
+        "Start shopping for your home with confidence"
+      ],
+      whoCanApply:
+        "Anyone planning to purchase a home in Canada, including first-time home buyers, repeat buyers, newcomers, and self-employed individuals looking to understand their borrowing capacity before house hunting.",
+      contactInfo: {
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
+      }
+    },
+    {
       id: 3,
       title: "Commercial Financing",
       logo: "🏢", // Commercial building icon
@@ -308,37 +338,6 @@ function Services() {
         email: "deolmortgages10@gmail.com"
       }
     },
-
-    {
-      id: 12,
-      title: "Quick Pre-Approval",
-      logo: "✅", // Approval/checkmark icon
-      description:
-        "Get pre-approved in as little as 24 hours and start shopping for your new home with confidence, knowing exactly how much you can afford.",
-      detailedDescription:
-        "A mortgage pre-approval is the first step toward buying a home. It provides an estimate of how much you can borrow based on your income, credit, and financial profile. With a quick pre-approval, you'll have a clear budget, stronger negotiating power, and greater confidence when making an offer. Our mortgage experts guide you through the entire process, ensuring a fast, accurate, and hassle-free experience.",
-      keyBenefits: [
-        "Pre-approval in as little as 24 hours",
-        "Know your maximum home buying budget",
-        "Lock in competitive interest rates for a limited time",
-        "Strengthen your offer when purchasing a home",
-        "No obligation and no hidden fees",
-        "Expert guidance from experienced mortgage professionals"
-      ],
-      process: [
-        "Complete a simple online or phone application",
-        "Submit basic income and financial documents",
-        "Credit and affordability assessment",
-        "Receive your mortgage pre-approval",
-        "Start shopping for your home with confidence"
-      ],
-      whoCanApply:
-        "Anyone planning to purchase a home in Canada, including first-time home buyers, repeat buyers, newcomers, and self-employed individuals looking to understand their borrowing capacity before house hunting.",
-      contactInfo: {
-        phone: "(780) 246 7559",
-        email: "deolmortgages10@gmail.com"
-      }
-    }
   ];
 
   // Optimized Intersection Observer for scroll animations with requestAnimationFrame
@@ -390,16 +389,6 @@ function Services() {
     document.body.style.overflow = 'hidden';
   };
 
-  // Get service icon
-  const getServiceIcon = (id) => {
-    const icons = {
-      1: "🏠", 2: "🏘️", 3: "👨‍👩‍👧‍👦", 4: "🏖️", 5: "💰",
-      6: "💵", 7: "📝", 8: "🔄", 9: "💼", 10: "🌱",
-      11: "🏗️", 12: "🔨"
-    };
-    return icons[id] || "🏦";
-  };
-
   return (
     <div className="services-page">
       {/* Hero Section - Full width image with 1500px content constraint */}
@@ -437,7 +426,7 @@ function Services() {
               className="service-card fade-up" 
               style={{ animationDelay: `${Math.min(index * 0.03, 0.5)}s` }}
             >
-              <div className="service-icon">{getServiceIcon(service.id)}</div>
+              <div className="service-icon">{service.logo}</div> {/* Changed from getServiceIcon(service.id) to service.logo */}
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>
               <button 
@@ -459,7 +448,7 @@ function Services() {
             <button className="modal-close" onClick={closeModal} aria-label="Close modal">×</button>
             
             <div className="modal-header">
-              <div className="modal-icon">{getServiceIcon(selectedService.id)}</div>
+              <div className="modal-icon">{selectedService.logo}</div> {/* Changed from getServiceIcon(selectedService.id) to selectedService.logo */}
               <h2 className="modal-title">{selectedService.title}</h2>
               <p className="modal-subtitle">About This Canadian Mortgage Service</p>
             </div>
