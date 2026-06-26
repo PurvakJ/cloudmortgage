@@ -22,7 +22,7 @@ const Home = () => {
     },
     {
       url: "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      title: "Banks Work for Banks. We Work for You",
+      title: "We Advocate You Not The Banks",
       subtitle: "No Bias. No Agenda. Just Results.",
       description: "When you walk into a bank, you get their products. When you work with Oakmont Capital, you get 50+ lenders and an advisor whose only obligation is to you."
     },

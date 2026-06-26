@@ -8,8 +8,14 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>Oakmont<span>Capital</span></h3>
-          <p className="tagline">YOUR TRUSTED CANADIAN MORTGAGE PARTNER</p>
+          {/* Image logo instead of text */}
+          <div className="footer-logo">
+            <img 
+              src="https://res.cloudinary.com/dm9gg8yss/image/upload/v1782443993/WhatsApp_Image_2026-06-26_at_08.46.32_dn2hs2.jpg" 
+              alt="Oakmont Capital Logo" 
+              className="footer-logo-img"
+            />
+          </div>
           <p className="description">
             Oakmont Capital helps Canadian families achieve their dream of homeownership with expert guidance, 
             competitive rates, and personalized mortgage solutions tailored to your unique needs across Canada.
@@ -35,20 +41,6 @@ const Footer = () => {
             <li><Link to="/faqs">FAQs</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             <li><Link to="/admin">Admin</Link></li>
-          </ul>
-        </div>
-
-        <div className="footer-section">
-          <h4>OUR SERVICES</h4>
-          <ul>
-            <li><Link to="/services">Refinance for Secondary Suites</Link></li>
-            <li><Link to="/services">Investment Property Program</Link></li>
-            <li><Link to="/services">Family Plan Program</Link></li>
-            <li><Link to="/services">Vacation/Secondary Homes</Link></li>
-            <li><Link to="/services">Self-Directed RRSP</Link></li>
-            <li><Link to="/services">Borrowed Down Payment</Link></li>
-            <li><Link to="/services">Second Mortgage Program</Link></li>
-            <li><Link to="/services">Portability Feature</Link></li>
           </ul>
         </div>
 

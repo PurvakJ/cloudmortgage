@@ -36,7 +36,7 @@
   margin: 0 auto;
   padding: 60px 40px 40px;
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr 1.2fr 1.3fr;
+  grid-template-columns: 2fr 1.2fr 1.3fr 1.2fr; /* Changed from 5 to 4 columns */
   gap: 30px;
   position: relative;
   z-index: 1;
@@ -44,29 +44,29 @@
 
 @media (max-width: 1200px) {
   .footer-content {
-    grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr; /* 3 columns on medium screens */
     gap: 30px;
   }
   
   .footer-section:first-child {
-    grid-column: span 2;
+    grid-column: span 2; /* Brand section spans 2 columns */
   }
 }
 
 @media (max-width: 992px) {
   .footer-content {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
     gap: 35px;
   }
   
   .footer-section:first-child {
-    grid-column: span 2;
+    grid-column: span 2; /* Brand section spans both columns */
   }
 }
 
 @media (max-width: 768px) {
   .footer-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 column on mobile */
     padding: 40px 20px 30px;
     gap: 30px;
   }
@@ -391,7 +391,7 @@
 .footer-section:nth-child(2) { animation-delay: 0.1s; }
 .footer-section:nth-child(3) { animation-delay: 0.15s; }
 .footer-section:nth-child(4) { animation-delay: 0.2s; }
-.footer-section:nth-child(5) { animation-delay: 0.25s; }
+/* Removed the 5th child animation */
 
 /* ============================================
    SCROLLBAR STYLES
@@ -504,3 +504,50 @@ a:focus-visible,
     background: none;
   }
 }
+
+/* ============================================
+   FOOTER LOGO IMAGE
+   ============================================ */
+   .footer-logo {
+    margin-bottom: 15px;
+  }
+  
+  .footer-logo-img {
+    max-width: 110px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-logo-img:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Remove the old text logo styles */
+  .footer-section h3 {
+    display: none; /* Hides the old text logo */
+  }
+  
+  .footer-section .tagline {
+    display: none; /* Hides the tagline */
+  }
+  
+  /* Adjust description margin since logo is now used */
+  .footer-section .description {
+    margin-top: 5px;
+  }
+  
+  /* ============================================
+     RESPONSIVE LOGO
+     ============================================ */
+  @media (max-width: 768px) {
+    .footer-logo-img {
+      max-width: 180px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-logo-img {
+      max-width: 150px;
+    }
+  }
