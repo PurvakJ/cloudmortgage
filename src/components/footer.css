@@ -913,3 +913,184 @@ a:focus-visible,
       font-size: 7px;
     }
   }
+
+  /* ============================================
+   FOOTER LOGOS - SIDE BY SIDE
+   ============================================ */
+.footer-logos-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Clean slim vertical divider - NO arrows */
+.footer-logo-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 60px;
+  margin: 0 10px;
+  position: relative;
+}
+
+.footer-logo-divider::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 150px;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    #000000 20%, 
+    #000000 80%, 
+    transparent 100%
+  );
+  opacity: 0.5;
+}
+
+/* Remove all arrows/points */
+.footer-logo-divider::after {
+  display: none;
+}
+
+/* Logo 2 with Powered By text */
+.footer-logo-secondary-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.powered-by-text {
+  font-size: 10px;
+  color: #999999;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.footer-logo-secondary {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-img-secondary {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-img-secondary:hover {
+  transform: scale(1.05);
+}
+
+/* License text styling */
+.footer-license-text {
+  font-size: 9px;
+  color: #aaaaaa;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin-top: 2px;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* ============================================
+   RESPONSIVE LOGOS
+   ============================================ */
+@media (max-width: 768px) {
+  .footer-logos-container {
+    gap: 15px;
+  }
+  
+  .footer-logo-img {
+    max-width: 150px;
+  }
+  
+  .footer-logo-img-secondary {
+    max-width: 70px;
+  }
+  
+  .footer-logo-divider {
+    min-height: 50px;
+    margin: 0 8px;
+  }
+  
+  .footer-logo-divider::before {
+    height: 55px;
+  }
+  
+  .footer-tagline {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  
+  .powered-by-text {
+    font-size: 9px;
+  }
+  
+  .footer-license-text {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logos-container {
+    gap: 10px;
+    justify-content: flex-start;
+  }
+  
+  .footer-logo-img {
+    max-width: 120px;
+  }
+  
+  .footer-logo-img-secondary {
+    max-width: 60px;
+  }
+  
+  .footer-logo-divider {
+    min-height: 40px;
+    margin: 0 5px;
+  }
+  
+  .footer-logo-divider::before {
+    height: 40px;
+  }
+  
+  .footer-tagline {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+  
+  .footer-tagline:after {
+    width: 35px;
+  }
+  
+  .powered-by-text {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+  
+  .footer-license-text {
+    font-size: 7px;
+  }
+}
