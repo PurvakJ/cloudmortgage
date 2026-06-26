@@ -36,44 +36,74 @@ const Home = () => {
 
 
   // Services data
-  const services = [
-    {
-      icon: "🏠",
-      title: "First-Time Home Buyers",
-      description: "Purpose-built programs and dedicated guidance to get first-time buyers into a home with confidence.",
-      features: ["Flexible Down Payment Options", "Down Payment Assistance", "Complimentary Credit Counseling"]
-    },
-    {
-      icon: "🏘️",
-      title: "Primary & Secondary Residences",
-      description: "Tailored Financing for Primary and Secondary Homes with competitive rates and flexible terms",
-      features: ["Specialized Programs", "Competitive Rates", "Flexible terms"]
-    },
-    {
-      icon: "🏢",
-      title: "Commercial Financing",
-      description: "Flexible funding solutions designed to help businesses grow, expand, and thrive.",
-      features: ["Canadian Small Business Financing","CMHC MLI Programs","Business Expansion Loans"]
-    },
-    {
-      icon: "💰",
-      title: "Debt Consolidation & Refinancing",
-      description: "Simplify your finances by combining multiple debts into one manageable, lower-interest payment.",
-      features: ["Lower Interest Rates", "Single Monthly Payment", "Improve your Credit Score"]
-    },
-    {
-      icon: "💼",
-      title: "BFS Self Employed Financing",
-      description: "Mortgage financing designed for self-employed borrowers — qualify based on stated income without traditional income verification.",
-      features: ["As little as 10% Down Payment", "No Traditional Income Verification Required", "C"]
-    },
-    {
-      icon: "⚡",
-      title: "Quick Pre-Approval",
-      description: "Get pre-approved in 24 hours and shop with confidence knowing your financing is secure.",
-      features: ["24-hour Pre-Approval", "Free Consultation", "No Obligation"]
-    },
-  ];
+const services = [
+  {
+    icon: "🏠",
+    title: "First Time Home Buyer Program",
+    description:
+      "Stop renting. Start owning. We make your first mortgage simple, fast, and built entirely around you.",
+    features: [
+      "Low Down Payment Options",
+      "First-Time Home Buyer Incentives",
+      "Personalized Mortgage Guidance"
+    ]
+  },
+  {
+    icon: "🏘️",
+    title: "Self-Employed Mortgage Solutions",
+    description:
+      "Self-employed and ready to own? Access mortgage financing built specifically for Canadian business owners - no T4 required.",
+    features: [
+      "Alternative Income Verification",
+      "Mortgage Solutions for Business Owners",
+      "Flexible Qualification Requirements"
+    ]
+  },
+  {
+    icon: "🏢",
+    title: "No Down Payment Mortgage Solutions",
+    description:
+      "No down payment saved? There's still a path to homeownership, and we'll help you find it.",
+    features: [
+      "Zero Down Payment Programs",
+      "Down Payment Assistance Options",
+      "Expert Mortgage Planning"
+    ]
+  },
+  {
+    icon: "💰",
+    title: "Commercial Financing",
+    description:
+      "From small business acquisitions to large-scale developments, commercial mortgage solutions built around your goals and structured for success.",
+    features: [
+      "Commercial Property Financing",
+      "Business Expansion Loans",
+      "Customized Lending Solutions"
+    ]
+  },
+  {
+    icon: "💼",
+    title: "Primary Residence Financing",
+    description:
+      "First home or fourth - if it's your primary residence, minimum down payment options are on the table. Every time.",
+    features: [
+      "Low Minimum Down Payment",
+      "Competitive Mortgage Rates",
+      "Flexible Repayment Terms"
+    ]
+  },
+  {
+    icon: "⚡",
+    title: "Quick Pre-Approval",
+    description:
+      "Get pre-approved in 24 hours and shop with confidence knowing your financing is secure.",
+    features: [
+      "Fast 24-Hour Pre-Approval",
+      "Free Mortgage Consultation",
+      "No Obligation Application"
+    ]
+  },
+];
 
   // FAQ data
   const faqs = [

@@ -268,6 +268,35 @@ function Services() {
         email: "deolmortgages10@gmail.com"
       }
     },
+    {
+      id: 11,
+      title: "Canada Small Business Financing Program",
+      description:
+        "Secure the funding your business needs through government-backed financing designed to help Canadian entrepreneurs start, expand, or modernize their businesses.",
+      detailedDescription:
+        "The Canada Small Business Financing Program (CSBFP) helps small businesses gain access to financing by reducing the risk for lenders. Whether you're purchasing equipment, renovating commercial property, buying leasehold improvements, or expanding operations, this program can make it easier to qualify for the funding your business needs. We work with you to understand your goals, prepare your application, and connect you with lenders offering competitive financing solutions.",
+      keyBenefits: [
+        "Government-backed financing for eligible small businesses",
+        "Finance equipment, leasehold improvements, and commercial property",
+        "Competitive interest rates and flexible repayment options",
+        "Higher approval potential through participating lenders",
+        "Ideal for business expansion, modernization, or startup growth",
+        "Professional guidance throughout the application process"
+      ],
+      process: [
+        "Initial consultation to assess your financing needs",
+        "Review business eligibility and required documentation",
+        "Prepare and submit the financing application",
+        "Match your business with participating lenders",
+        "Loan approval, funding, and ongoing support"
+      ],
+      whoCanApply:
+        "Canadian small business owners, entrepreneurs, and startups seeking financing for purchasing equipment, leasehold improvements, commercial property, or business expansion, subject to lender and program eligibility requirements.",
+      contactInfo: {
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
+      }
+    },
   ];
 
   // Optimized Intersection Observer for scroll animations with requestAnimationFrame
