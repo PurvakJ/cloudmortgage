@@ -319,7 +319,7 @@ const Home = () => {
                 <span className="stat-label">Years of Excellence</span>
               </div>
               <div className="industry-stat">
-                <span className="stat-number">$15M+</span>
+                <span className="stat-number">$50M+</span>
                 <span className="stat-label">Annual Loans Funded</span>
               </div>
               <div className="industry-stat">

@@ -557,7 +557,7 @@ body.menu-open::before {
     text-decoration: none;
     transition: transform 0.3s ease;
     position: relative;
-    min-height: 100px;  /* Increased from 80px */
+    min-height: 70px;  /* Increased from 80px */
     min-width: 250px;   /* Increased from 200px */
   }
   
@@ -566,7 +566,7 @@ body.menu-open::before {
   }
   
   .logo-img {
-    height: 120px;      /* Increased from 80px */
+    height: 100px;      /* Increased from 80px */
     width: auto;
     display: block;
     transition: all 0.3s ease;
@@ -599,7 +599,7 @@ body.menu-open::before {
   }
   
   .navbar.scrolled .logo-img {
-    height: 130px;       /* Increased from 70px */
+    height: 85px;       /* Increased from 70px */
   }
   
   /* ============================================

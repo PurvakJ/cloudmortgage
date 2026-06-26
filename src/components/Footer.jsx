@@ -32,16 +32,12 @@ const Footer = () => {
           
           {/* Tagline line after the logos */}
           <p className="footer-tagline">YOUR TRUSTED CANADIAN MORTGAGE PARTNER</p>
-          
-          <p className="description">
-            Oakmont Capital helps Canadian families achieve their dream of homeownership with expert guidance, 
-            competitive rates, and personalized mortgage solutions tailored to your unique needs across Canada.
-          </p>
+        
           <div className="trust-badge">
             <span>✓</span> 1000+ Happy Clients
           </div>
           <div className="trust-badge">
-            <span>✓</span> $15M+ Annual Loans Funded
+            <span>✓</span> $50M+ Annual Loans Funded
           </div>
           <div className="trust-badge">
             <span>✓</span> Trusted Mortgage Partner

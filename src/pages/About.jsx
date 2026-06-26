@@ -31,7 +31,7 @@ const About = () => {
       <section className="about-hero">
         <div className="about-hero-content">
           <h1>ABOUT OAKMONT CAPITAL</h1>
-          <p>Your Trusted Canadian Mortgage Advisor</p>
+          <p>Your Trusted Mortgage Advisor</p>
         </div>
       </section>
 
@@ -159,7 +159,7 @@ const About = () => {
               <span className="stat-label"> Clients Served</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">$15M+</span>
+              <span className="stat-number">$50M+</span>
               <span className="stat-label">Annual Mortgages Funded</span>
             </div>
             <div className="stat-item">
