@@ -34,9 +34,9 @@
 .footer-content {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 60px 40px 40px;
+  padding: 0; /* Removed padding */
   display: grid;
-  grid-template-columns: 2fr 1.2fr 1.3fr 1.2fr; /* Changed from 5 to 4 columns */
+  grid-template-columns: 2fr 1.2fr 1.3fr 1.2fr;
   gap: 30px;
   position: relative;
   z-index: 1;
@@ -44,30 +44,30 @@
 
 @media (max-width: 1200px) {
   .footer-content {
-    grid-template-columns: 1.5fr 1fr 1fr; /* 3 columns on medium screens */
+    grid-template-columns: 1.5fr 1fr 1fr;
     gap: 30px;
   }
   
   .footer-section:first-child {
-    grid-column: span 2; /* Brand section spans 2 columns */
+    grid-column: span 2;
   }
 }
 
 @media (max-width: 992px) {
   .footer-content {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    grid-template-columns: repeat(2, 1fr);
     gap: 35px;
   }
   
   .footer-section:first-child {
-    grid-column: span 2; /* Brand section spans both columns */
+    grid-column: span 2;
   }
 }
 
 @media (max-width: 768px) {
   .footer-content {
-    grid-template-columns: 1fr; /* 1 column on mobile */
-    padding: 40px 20px 30px;
+    grid-template-columns: 1fr;
+    padding: 0; /* Removed padding */
     gap: 30px;
   }
   
@@ -79,6 +79,10 @@
 /* ============================================
    FOOTER SECTIONS
    ============================================ */
+.footer-section {
+  padding: 0; /* Added to ensure no padding on sections */
+}
+
 .footer-section h3 {
   font-size: 28px;
   font-weight: 700;
@@ -243,6 +247,118 @@
 }
 
 /* ============================================
+   FOOTER LOGOS - SIDE BY SIDE
+   ============================================ */
+.footer-logos-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-img {
+  max-width: 220px;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.05);
+}
+
+.footer-logo-divider {
+  color: #000000;
+  font-size: 80px;
+  font-weight: 300;
+  opacity: 0.8;
+  padding: 0 10px;
+  line-height: 1;
+}
+
+.footer-logo-divider:hover {
+  opacity: 1;
+}
+
+/* Logo 2 with Powered By text */
+.footer-logo-secondary-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.powered-by-text {
+  font-size: 10px;
+  color: #999999;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.footer-logo-secondary {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-img-secondary {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-img-secondary:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   FOOTER TAGLINE
+   ============================================ */
+.footer-tagline {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #5ba3d9;
+  margin-bottom: 18px;
+  font-weight: 600;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-tagline:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
+  border-radius: 2px;
+}
+
+/* Remove old text logo styles */
+.footer-section h3 {
+  display: none;
+}
+
+.footer-section .tagline {
+  display: none;
+}
+
+/* Adjust description margin */
+.footer-section .description {
+  margin-top: 5px;
+}
+
+/* ============================================
    FOOTER BOTTOM
    ============================================ */
 .footer-bottom {
@@ -369,6 +485,71 @@
 }
 
 /* ============================================
+   RESPONSIVE LOGOS
+   ============================================ */
+@media (max-width: 768px) {
+  .footer-logos-container {
+    gap: 10px;
+  }
+  
+  .footer-logo-img {
+    max-width: 170px;
+  }
+  
+  .footer-logo-img-secondary {
+    max-width: 80px;
+  }
+  
+  .footer-logo-divider {
+    font-size: 32px;
+    padding: 0 8px;
+  }
+  
+  .footer-tagline {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  
+  .powered-by-text {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logos-container {
+    gap: 8px;
+    justify-content: flex-start;
+  }
+  
+  .footer-logo-img {
+    max-width: 130px;
+  }
+  
+  .footer-logo-img-secondary {
+    max-width: 65px;
+  }
+  
+  .footer-logo-divider {
+    font-size: 24px;
+    padding: 0 5px;
+  }
+  
+  .footer-tagline {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+  
+  .footer-tagline:after {
+    width: 35px;
+  }
+  
+  .powered-by-text {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* ============================================
    ANIMATIONS
    ============================================ */
 @keyframes fadeInUp {
@@ -391,7 +572,6 @@
 .footer-section:nth-child(2) { animation-delay: 0.1s; }
 .footer-section:nth-child(3) { animation-delay: 0.15s; }
 .footer-section:nth-child(4) { animation-delay: 0.2s; }
-/* Removed the 5th child animation */
 
 /* ============================================
    SCROLLBAR STYLES
@@ -506,168 +686,12 @@ a:focus-visible,
 }
 
 /* ============================================
-   FOOTER LOGO IMAGE
-   ============================================ */
-   .footer-logo {
-    margin-bottom: 15px;
-  }
-  
-  .footer-logo-img {
-    max-width: 110px;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  
-  .footer-logo-img:hover {
-    transform: scale(1.03);
-  }
-  
-  /* Remove the old text logo styles */
-  .footer-section h3 {
-    display: none; /* Hides the old text logo */
-  }
-  
-  .footer-section .tagline {
-    display: none; /* Hides the tagline */
-  }
-  
-  /* Adjust description margin since logo is now used */
-  .footer-section .description {
-    margin-top: 5px;
-  }
-  
-  /* ============================================
-     RESPONSIVE LOGO
-     ============================================ */
-  @media (max-width: 768px) {
-    .footer-logo-img {
-      max-width: 180px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .footer-logo-img {
-      max-width: 150px;
-    }
-  }
-
-  /* ============================================
-   FOOTER LOGO IMAGES
-   ============================================ */
-.footer-logo {
-  margin-bottom: 8px;
-}
-
-.footer-logo-img {
-  max-width: 180px;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.footer-logo-img:hover {
-  transform: scale(1.03);
-}
-
-.footer-logo-secondary {
-  margin-bottom: 12px;
-}
-
-.footer-logo-img-secondary {
-  max-width: 180px;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.footer-logo-img-secondary:hover {
-  transform: scale(1.03);
-}
-
-/* ============================================
-   FOOTER TAGLINE
-   ============================================ */
-.footer-tagline {
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: #5ba3d9;
-  margin-bottom: 18px;
-  font-weight: 600;
-  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-.footer-tagline:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 2px;
-  background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
-  border-radius: 2px;
-}
-
-/* Remove old text logo styles */
-.footer-section h3 {
-  display: none;
-}
-
-.footer-section .tagline {
-  display: none;
-}
-
-/* Adjust description margin */
-.footer-section .description {
-  margin-top: 5px;
-}
-
-/* ============================================
-   RESPONSIVE LOGOS
-   ============================================ */
-@media (max-width: 768px) {
-  .footer-logo-img {
-    max-width: 160px;
-  }
-  
-  .footer-logo-img-secondary {
-    max-width: 140px;
-  }
-  
-  .footer-tagline {
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-logo-img {
-    max-width: 130px;
-  }
-  
-  .footer-logo-img-secondary {
-    max-width: 120px;
-  }
-  
-  .footer-tagline {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-  }
-  
-  .footer-tagline:after {
-    width: 35px;
-  }
-}
-
-/* ============================================
    FOOTER LOGOS - SIDE BY SIDE
    ============================================ */
    .footer-logos-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     margin-bottom: 10px;
     flex-wrap: wrap;
   }
@@ -678,7 +702,7 @@ a:focus-visible,
   }
   
   .footer-logo-img {
-    max-width: 180px;
+    max-width: 200px;
     height: auto;
     display: block;
     transition: transform 0.3s ease;
@@ -688,331 +712,54 @@ a:focus-visible,
     transform: scale(1.05);
   }
   
-  .footer-logo-divider {
-    color: #5ba3d9;
-    font-size: 28px;
-    font-weight: 300;
-    opacity: 0.6;
-    padding: 0 5px;
-  }
+  /* Slim pointed vertical divider */
+
   
-  .footer-logo-secondary {
-    display: flex;
-    align-items: center;
-  }
-  
-  .footer-logo-img-secondary {
-    max-width: 160px;
-    height: auto;
+  .footer-logo-divider::before {
+    content: '';
     display: block;
-    transition: transform 0.3s ease;
+    width: 1px;
+    height: 120px;
+    background: linear-gradient(180deg, 
+      transparent 0%, 
+      #000000 20%, 
+      #000000 80%, 
+      transparent 100%
+    );
+    opacity: 0.5;
   }
   
-  .footer-logo-img-secondary:hover {
-    transform: scale(1.05);
-  }
-  
-  /* ============================================
-     FOOTER TAGLINE
-     ============================================ */
-  .footer-tagline {
-    font-size: 13px;
-    letter-spacing: 3px;
-    color: #5ba3d9;
-    margin-bottom: 18px;
-    font-weight: 600;
-    font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-    position: relative;
-    padding-bottom: 12px;
-  }
-  
-  .footer-tagline:after {
+  /* Pointed ends using pseudo-elements */
+  .footer-logo-divider::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
-    border-radius: 2px;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 5px solid #000000;
+    opacity: 0.5;
   }
   
-  /* Remove old text logo styles */
-  .footer-section h3 {
-    display: none;
-  }
-  
-  .footer-section .tagline {
-    display: none;
-  }
-  
-  /* Adjust description margin */
-  .footer-section .description {
-    margin-top: 5px;
-  }
-  
-  /* ============================================
-     RESPONSIVE LOGOS
-     ============================================ */
-  @media (max-width: 768px) {
-    .footer-logos-container {
-      gap: 10px;
-    }
-    
-    .footer-logo-img {
-      max-width: 140px;
-    }
-    
-    .footer-logo-img-secondary {
-      max-width: 120px;
-    }
-    
-    .footer-logo-divider {
-      font-size: 22px;
-    }
-    
-    .footer-tagline {
-      font-size: 11px;
-      letter-spacing: 2px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .footer-logos-container {
-      gap: 8px;
-      justify-content: flex-start;
-    }
-    
-    .footer-logo-img {
-      max-width: 110px;
-    }
-    
-    .footer-logo-img-secondary {
-      max-width: 95px;
-    }
-    
-    .footer-logo-divider {
-      font-size: 18px;
-    }
-    
-    .footer-tagline {
-      font-size: 10px;
-      letter-spacing: 1.5px;
-    }
-    
-    .footer-tagline:after {
-      width: 35px;
-    }
-  }
-
-  /* ============================================
-   FOOTER LOGOS - SIDE BY SIDE
-   ============================================ */
-.footer-logos-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-}
-
-.footer-logo-img {
-  max-width: 220px; /* Increased size for logo 1 */
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.footer-logo-img:hover {
-  transform: scale(1.05);
-}
-
-.footer-logo-divider {
-  color: #5ba3d9;
-  font-size: 28px;
-  font-weight: 300;
-  opacity: 0.6;
-  padding: 0 5px;
-}
-
-/* Logo 2 with Powered By text */
-.footer-logo-secondary-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-.powered-by-text {
-  font-size: 10px;
-  color: #999999;
-  letter-spacing: 2px;
-  font-weight: 500;
-  text-transform: uppercase;
-  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-}
-
-.footer-logo-secondary {
-  display: flex;
-  align-items: center;
-}
-
-.footer-logo-img-secondary {
-  max-width: 100px; /* Smaller size for logo 2 */
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.footer-logo-img-secondary:hover {
-  transform: scale(1.05);
-}
-
-/* ============================================
-   FOOTER TAGLINE
-   ============================================ */
-.footer-tagline {
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: #5ba3d9;
-  margin-bottom: 18px;
-  font-weight: 600;
-  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-.footer-tagline:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 2px;
-  background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
-  border-radius: 2px;
-}
-
-/* Remove old text logo styles */
-.footer-section h3 {
-  display: none;
-}
-
-.footer-section .tagline {
-  display: none;
-}
-
-/* Adjust description margin */
-.footer-section .description {
-  margin-top: 5px;
-}
-
-/* ============================================
-   RESPONSIVE LOGOS
-   ============================================ */
-@media (max-width: 768px) {
-  .footer-logos-container {
-    gap: 10px;
-  }
-  
-  .footer-logo-img {
-    max-width: 170px; /* Slightly smaller on tablet */
-  }
-  
-  .footer-logo-img-secondary {
-    max-width: 80px; /* Smaller on tablet */
-  }
-  
+  /* Add bottom point using another pseudo */
   .footer-logo-divider {
-    font-size: 22px;
+    position: relative;
   }
   
-  .footer-tagline {
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
-  
-  .powered-by-text {
-    font-size: 9px;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-logos-container {
-    gap: 8px;
-    justify-content: flex-start;
-  }
-  
-  .footer-logo-img {
-    max-width: 130px; /* Smaller on mobile */
-  }
-  
-  .footer-logo-img-secondary {
-    max-width: 65px; /* Smaller on mobile */
-  }
-  
-  .footer-logo-divider {
-    font-size: 18px;
-  }
-  
-  .footer-tagline {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-  }
-  
-  .footer-tagline:after {
-    width: 35px;
-  }
-  
-  .powered-by-text {
-    font-size: 8px;
-    letter-spacing: 1.5px;
-  }
-}
-
-/* ============================================
-   FOOTER LOGOS - SIDE BY SIDE
-   ============================================ */
-   .footer-logos-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
-  }
-  
-  .footer-logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .footer-logo-img {
-    max-width: 220px;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  
-  .footer-logo-img:hover {
-    transform: scale(1.05);
-  }
-  
-  .footer-logo-divider {
-    color: #000000; /* Changed to black */
-    font-size: 80px; /* Increased size */
-    font-weight: 300;
-    opacity: 0.8; /* Slightly increased opacity for better visibility */
-    padding: 0 10px; /* Added more padding */
-    line-height: 1;
-  }
-  
-  .footer-logo-divider:hover {
-    opacity: 1; /* Full opacity on hover */
+  .footer-logo-divider .divider-bottom {
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 5px solid #000000;
+    opacity: 0.5;
   }
   
   /* Logo 2 with Powered By text */
@@ -1048,43 +795,14 @@ a:focus-visible,
     transform: scale(1.05);
   }
   
-  /* ============================================
-     FOOTER TAGLINE
-     ============================================ */
-  .footer-tagline {
-    font-size: 13px;
-    letter-spacing: 3px;
-    color: #5ba3d9;
-    margin-bottom: 18px;
-    font-weight: 600;
+  /* License text styling */
+  .footer-license-text {
+    font-size: 9px;
+    color: #aaaaaa;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin-top: 2px;
     font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
-    position: relative;
-    padding-bottom: 12px;
-  }
-  
-  .footer-tagline:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
-    border-radius: 2px;
-  }
-  
-  /* Remove old text logo styles */
-  .footer-section h3 {
-    display: none;
-  }
-  
-  .footer-section .tagline {
-    display: none;
-  }
-  
-  /* Adjust description margin */
-  .footer-section .description {
-    margin-top: 5px;
   }
   
   /* ============================================
@@ -1092,20 +810,38 @@ a:focus-visible,
      ============================================ */
   @media (max-width: 768px) {
     .footer-logos-container {
-      gap: 10px;
+      gap: 15px;
     }
     
     .footer-logo-img {
-      max-width: 170px;
+      max-width: 150px;
     }
     
     .footer-logo-img-secondary {
-      max-width: 80px;
+      max-width: 70px;
     }
     
     .footer-logo-divider {
-      font-size: 32px; /* Slightly smaller on tablet */
-      padding: 0 8px;
+      min-height: 50px;
+      margin: 0 8px;
+    }
+    
+    .footer-logo-divider::before {
+      height: 55px;
+    }
+    
+    .footer-logo-divider::after {
+      top: -3px;
+      border-left: 2.5px solid transparent;
+      border-right: 2.5px solid transparent;
+      border-bottom: 4px solid #000000;
+    }
+    
+    .footer-logo-divider .divider-bottom {
+      bottom: -3px;
+      border-left: 2.5px solid transparent;
+      border-right: 2.5px solid transparent;
+      border-top: 4px solid #000000;
     }
     
     .footer-tagline {
@@ -1116,25 +852,47 @@ a:focus-visible,
     .powered-by-text {
       font-size: 9px;
     }
+    
+    .footer-license-text {
+      font-size: 8px;
+    }
   }
   
   @media (max-width: 480px) {
     .footer-logos-container {
-      gap: 8px;
+      gap: 10px;
       justify-content: flex-start;
     }
     
     .footer-logo-img {
-      max-width: 130px;
+      max-width: 120px;
     }
     
     .footer-logo-img-secondary {
-      max-width: 65px;
+      max-width: 60px;
     }
     
     .footer-logo-divider {
-      font-size: 24px; /* Smaller on mobile */
-      padding: 0 5px;
+      min-height: 40px;
+      margin: 0 5px;
+    }
+    
+    .footer-logo-divider::before {
+      height: 40px;
+    }
+    
+    .footer-logo-divider::after {
+      top: -2px;
+      border-left: 2px solid transparent;
+      border-right: 2px solid transparent;
+      border-bottom: 3px solid #000000;
+    }
+    
+    .footer-logo-divider .divider-bottom {
+      bottom: -2px;
+      border-left: 2px solid transparent;
+      border-right: 2px solid transparent;
+      border-top: 3px solid #000000;
     }
     
     .footer-tagline {
@@ -1149,5 +907,9 @@ a:focus-visible,
     .powered-by-text {
       font-size: 8px;
       letter-spacing: 1.5px;
+    }
+    
+    .footer-license-text {
+      font-size: 7px;
     }
   }

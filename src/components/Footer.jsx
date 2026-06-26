@@ -17,7 +17,7 @@ const Footer = () => {
                 className="footer-logo-img"
               />
             </div>
-            <div className="footer-logo-divider">|</div>
+            <div className="footer-logo-divider"></div>
             <div className="footer-logo-secondary-wrapper">
               <span className="powered-by-text">Powered By</span>
               <div className="footer-logo-secondary">
@@ -27,21 +27,14 @@ const Footer = () => {
                   className="footer-logo-img-secondary"
                 />
               </div>
+              <br></br>
+              <span className="powered-by-text">License No. #10810</span>
             </div>
           </div>
           
           {/* Tagline line after the logos */}
           <p className="footer-tagline">YOUR TRUSTED CANADIAN MORTGAGE PARTNER</p>
-        
-          <div className="trust-badge">
-            <span>✓</span> 1000+ Happy Clients
-          </div>
-          <div className="trust-badge">
-            <span>✓</span> $50M+ Annual Loans Funded
-          </div>
-          <div className="trust-badge">
-            <span>✓</span> Trusted Mortgage Partner
-          </div>
+      
         </div>
 
         <div className="footer-section">
