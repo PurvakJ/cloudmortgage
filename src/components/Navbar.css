@@ -54,7 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: auto;
+  width: 100%; /* Changed from auto to 100% */
 }
 
 .navbar-logo {
@@ -65,6 +65,7 @@
   position: relative;
   min-height: 80px;
   min-width: 200px;
+  flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 .navbar-logo:hover {
@@ -109,7 +110,7 @@
 }
 
 /* ============================================
-   HAMBURGER MENU (MOBILE)
+   HAMBURGER MENU (MOBILE) - FIXED TO RIGHT
    ============================================ */
 .hamburger {
   display: none;
@@ -121,6 +122,9 @@
   background: transparent;
   border: none;
   z-index: 1001;
+  padding: 0;
+  margin-left: auto; /* Push hamburger to the right */
+  flex-shrink: 0; /* Prevent hamburger from shrinking */
 }
 
 .bar {
@@ -187,7 +191,7 @@
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
-  color: #ffffff; /* Default white color */
+  color: #ffffff;
   transition: all 0.3s ease;
   font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
   position: relative;
@@ -551,106 +555,107 @@ body.menu-open::before {
 /* ============================================
    LOGO SECTION - ENHANCED SIZES
    ============================================ */
-   .navbar-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-    position: relative;
-    min-height: 70px;  /* Increased from 80px */
-    min-width: 250px;   /* Increased from 200px */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  position: relative;
+  min-height: 70px;
+  min-width: 250px;
+  flex-shrink: 0; /* Added to prevent logo from shrinking */
+}
+
+.navbar-logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-img {
+  height: 100px;
+  width: auto;
+  display: block;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+/* Default logo (shown when NOT scrolled) */
+.logo-img.logo-default {
+  opacity: 1;
+  visibility: visible;
+}
+
+.logo-img.logo-scrolled {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* When scrolled, show scrolled logo and hide default logo */
+.navbar.scrolled .logo-img.logo-default {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.navbar.scrolled .logo-img.logo-scrolled {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar.scrolled .logo-img {
+  height: 85px;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS - ENHANCED
+   ============================================ */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 0;
   }
   
-  .navbar-logo:hover {
-    transform: scale(1.02);
+  .navbar.scrolled {
+    padding: 10px 0;
+  }
+  
+  .navbar-container {
+    padding: 0 20px;
+  }
+  
+  .navbar-logo {
+    min-height: 65px;
+    min-width: 180px;
   }
   
   .logo-img {
-    height: 100px;      /* Increased from 80px */
-    width: auto;
-    display: block;
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-  }
-  
-  /* Default logo (shown when NOT scrolled) */
-  .logo-img.logo-default {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .logo-img.logo-scrolled {
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  /* When scrolled, show scrolled logo and hide default logo */
-  .navbar.scrolled .logo-img.logo-default {
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  .navbar.scrolled .logo-img.logo-scrolled {
-    opacity: 1;
-    visibility: visible;
+    height: 65px;
   }
   
   .navbar.scrolled .logo-img {
-    height: 85px;       /* Increased from 70px */
+    height: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 0;
   }
   
-  /* ============================================
-     RESPONSIVE ADJUSTMENTS - ENHANCED
-     ============================================ */
-  @media (max-width: 768px) {
-    .navbar {
-      padding: 15px 0;
-    }
-    
-    .navbar.scrolled {
-      padding: 10px 0;
-    }
-    
-    .navbar-container {
-      padding: 0 20px;
-    }
-    
-    .navbar-logo {
-      min-height: 65px;    /* Increased from 50px */
-      min-width: 180px;    /* Increased from 150px */
-    }
-    
-    .logo-img {
-      height: 65px;        /* Increased from 50px */
-    }
-    
-    .navbar.scrolled .logo-img {
-      height: 55px;        /* Increased from 45px */
-    }
+  .navbar.scrolled {
+    padding: 8px 0;
   }
   
-  @media (max-width: 480px) {
-    .navbar {
-      padding: 12px 0;
-    }
-    
-    .navbar.scrolled {
-      padding: 8px 0;
-    }
-    
-    .navbar-logo {
-      min-height: 55px;    /* Increased from 40px */
-      min-width: 150px;    /* Increased from 120px */
-    }
-    
-    .logo-img {
-      height: 55px;        /* Increased from 40px */
-    }
-    
-    .navbar.scrolled .logo-img {
-      height: 45px;        /* Increased from 36px */
-    }
+  .navbar-logo {
+    min-height: 55px;
+    min-width: 150px;
   }
+  
+  .logo-img {
+    height: 55px;
+  }
+  
+  .navbar.scrolled .logo-img {
+    height: 45px;
+  }
+}
