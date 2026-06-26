@@ -127,15 +127,15 @@ function Contact() {
         <div className="contact-hero-container">
           <div className="contact-hero-content">
             <h1 className="fade-up">Contact Oakmont Capital</h1>
-            <p className="fade-up">Get in touch with our Canadian mortgage team. We're here to answer your questions and help you with your mortgage needs across Canada.</p>
+            <p className="fade-up">Get in touch with our mortgage team. We're here to answer your questions and help you with your mortgage needs across Canada.</p>
             <div className="hero-stats fade-up">
               <div className="hero-stat">
-                <span className="hero-stat-number">500+</span>
-                <span className="hero-stat-label">Happy Canadian Clients</span>
+                <span className="hero-stat-number">1000+</span>
+                <span className="hero-stat-label">Happy Families</span>
               </div>
               <div className="hero-stat">
                 <span className="hero-stat-number">24/7</span>
-                <span className="hero-stat-label">Canadian Support</span>
+                <span className="hero-stat-label">Support</span>
               </div>
               <div className="hero-stat">
                 <span className="hero-stat-number">&lt; 24h</span>
@@ -177,7 +177,7 @@ function Contact() {
               <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM</p>
               <p><strong>Sunday:</strong> Closed</p>
               <div className="emergency-note">
-                <span>⚠️</span> Emergency mortgage support available 24/7 for Canadian clients
+                <span>⚠️</span> Emergency mortgage support available 24/7 for  clients
               </div>
             </div>
           </div>
@@ -186,7 +186,7 @@ function Contact() {
         <div className="contact-form-section fade-up" style={{ animationDelay: '0.1s' }}>
             <form onSubmit={handleSubmit} className="contact-form">
               <h2>Send us a message</h2>
-              <p className="form-note">We'll get back to you within 24 hours about your Canadian mortgage inquiry</p>
+              <p className="form-note">We'll get back to you within 24 hours about your  mortgage inquiry</p>
               
               {submitted && (
                 <div className="success-message">
@@ -262,7 +262,7 @@ function Contact() {
                   onChange={handleChange}
                   className={errors.message ? 'error' : ''}
                   rows="5"
-                  placeholder="Please provide details about your Canadian mortgage inquiry... (e.g., property location, purchase price, down payment amount)"
+                  placeholder="Please provide details about your  mortgage inquiry... (e.g., property location, purchase price, down payment amount)"
                 ></textarea>
                 {errors.message && <span className="error-message">{errors.message}</span>}
               </div>
@@ -275,7 +275,7 @@ function Contact() {
 
         <div className="social-section fade-up">
           <h2>Connect With Oakmont Capital</h2>
-          <p>Follow us on social media for Canadian mortgage updates, tips, and news</p>
+          <p>Follow us on social media for  mortgage updates, tips, and news</p>
 
           <div className="social-links">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link facebook">
@@ -307,9 +307,9 @@ function Contact() {
 
         <div className="faq-prompt fade-up">
           <div className="faq-prompt-content">
-            <h3>Canadian Mortgage Questions?</h3>
+            <h3>Mortgage Questions?</h3>
             <p>Can't find what you're looking for? Check our FAQ page for quick answers about CMHC, stress tests, and more.</p>
-            <a href="/faqs" className="faq-link">View Canadian FAQs →</a>
+            <a href="/faqs" className="faq-link">View FAQs →</a>
           </div>
         </div>
       </div>
