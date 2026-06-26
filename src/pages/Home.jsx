@@ -36,74 +36,74 @@ const Home = () => {
 
 
   // Services data
-const services = [
-  {
-    icon: "🏠",
-    title: "First Time Home Buyer Program",
-    description:
-      "Stop renting. Start owning. We make your first mortgage simple, fast, and built entirely around you.",
-    features: [
-      "Low Down Payment Options",
-      "First-Time Home Buyer Incentives",
-      "Personalized Mortgage Guidance"
-    ]
-  },
-  {
-    icon: "🏘️",
-    title: "Self-Employed Mortgage Solutions",
-    description:
-      "Self-employed and ready to own? Access mortgage financing built specifically for Canadian business owners - no T4 required.",
-    features: [
-      "Alternative Income Verification",
-      "Mortgage Solutions for Business Owners",
-      "Flexible Qualification Requirements"
-    ]
-  },
-  {
-    icon: "🏢",
-    title: "No Down Payment Mortgage Solutions",
-    description:
-      "No down payment saved? There's still a path to homeownership, and we'll help you find it.",
-    features: [
-      "Zero Down Payment Programs",
-      "Down Payment Assistance Options",
-      "Expert Mortgage Planning"
-    ]
-  },
-  {
-    icon: "💰",
-    title: "Commercial Financing",
-    description:
-      "From small business acquisitions to large-scale developments, commercial mortgage solutions built around your goals and structured for success.",
-    features: [
-      "Commercial Property Financing",
-      "Business Expansion Loans",
-      "Customized Lending Solutions"
-    ]
-  },
-  {
-    icon: "💼",
-    title: "Primary Residence Financing",
-    description:
-      "First home or fourth - if it's your primary residence, minimum down payment options are on the table. Every time.",
-    features: [
-      "Low Minimum Down Payment",
-      "Competitive Mortgage Rates",
-      "Flexible Repayment Terms"
-    ]
-  },
-  {
-    icon: "⚡",
-    title: "Quick Pre-Approval",
-    description:
-      "Get pre-approved in 24 hours and shop with confidence knowing your financing is secure.",
-    features: [
-      "Fast 24-Hour Pre-Approval",
-      "Free Mortgage Consultation",
-      "No Obligation Application"
-    ]
-  },
-];
+  const services = [
+    {
+      icon: "🏡", // First home - matches First Time Home Buyer
+      title: "First Time Home Buyer Program",
+      description:
+        "Stop renting. Start owning. We make your first mortgage simple, fast, and built entirely around you.",
+      features: [
+        "Low Down Payment Options",
+        "First-Time Home Buyer Incentives",
+        "Personalized Mortgage Guidance"
+      ]
+    },
+    {
+      icon: "💼", // Business/self-employed - matches Self-Employed Solutions
+      title: "Self-Employed Mortgage Solutions",
+      description:
+        "Self-employed and ready to own? Access mortgage financing built specifically for Canadian business owners - no T4 required.",
+      features: [
+        "Alternative Income Verification",
+        "Mortgage Solutions for Business Owners",
+        "Flexible Qualification Requirements"
+      ]
+    },
+    {
+      icon: "💰", // Money/down payment - matches No Down Payment
+      title: "No Down Payment Mortgage Solutions",
+      description:
+        "No down payment saved? There's still a path to homeownership, and we'll help you find it.",
+      features: [
+        "Zero Down Payment Programs",
+        "Down Payment Assistance Options",
+        "Expert Mortgage Planning"
+      ]
+    },
+    {
+      icon: "🏢", // Commercial building - matches Commercial Financing
+      title: "Commercial Financing",
+      description:
+        "From small business acquisitions to large-scale developments, commercial mortgage solutions built around your goals and structured for success.",
+      features: [
+        "Commercial Property Financing",
+        "Business Expansion Loans",
+        "Customized Lending Solutions"
+      ]
+    },
+    {
+      icon: "🏘️", // Primary residence/home - matches Primary Residence Financing
+      title: "Primary Residence Financing",
+      description:
+        "First home or fourth - if it's your primary residence, minimum down payment options are on the table. Every time.",
+      features: [
+        "Low Minimum Down Payment",
+        "Competitive Mortgage Rates",
+        "Flexible Repayment Terms"
+      ]
+    },
+    {
+      icon: "✅", // Approval/checkmark - matches Quick Pre-Approval
+      title: "Quick Pre-Approval",
+      description:
+        "Get pre-approved in 24 hours and shop with confidence knowing your financing is secure.",
+      features: [
+        "Fast 24-Hour Pre-Approval",
+        "Free Mortgage Consultation",
+        "No Obligation Application"
+      ]
+    },
+  ];
 
   // FAQ data
   const faqs = [

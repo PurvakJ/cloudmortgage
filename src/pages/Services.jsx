@@ -11,6 +11,7 @@ function Services() {
     {
       id: 1,
       title: "Refinance & Equity Take-Out (ETO)",
+      logo: "🏠", // Home/equity icon
       description: "Your home has built-up equity, put it to work with a refinance solution tailored to your financial goals.",
       detailedDescription: "Refinancing isn't just about lowering your rate, it's about unlocking the financial potential already sitting in your home. From debt consolidation and renovations to secondary suite additions and investment opportunities, our equity take-out solutions give Canadian homeowners the flexibility to access their equity on their terms.",
       keyBenefits: [
@@ -37,6 +38,7 @@ function Services() {
     {
       id: 2,
       title: "Investment Property Financing",
+      logo: "📈", // Investment/growth icon
       description: "Grow your real estate portfolio with specialized financing designed for Canadian investors, starting with as little as 20% down",
       detailedDescription: "Real estate is one of Canada's most powerful wealth-building tools, and the right financing strategy makes all the difference. Whether you're purchasing your first investment property or expanding an existing portfolio, our investment property program gives qualified Canadian borrowers access to competitive rates, flexible terms, and expert guidance to maximize long-term returns.",
       keyBenefits: [
@@ -63,6 +65,7 @@ function Services() {
     {
       id: 3,
       title: "Commercial Financing",
+      logo: "🏢", // Commercial building icon
       description: "From small business acquisitions to large-scale developments, commercial mortgage solutions built around your goals and structured for success.",
       detailedDescription: "Commercial financing is complex, but it doesn't have to be complicated. At Oakmont Capital, we specialize in structuring commercial mortgage solutions that align with your business objectives, whether you're acquiring a new property, breaking ground on a development, or refinancing an existing commercial asset to improve cash flow. With access to multiple lenders and deep knowledge of the Canadian commercial lending landscape, we find the right solution every time.",
       keyBenefits: [
@@ -89,6 +92,7 @@ function Services() {
     {
       id: 4,
       title: "First Time Home Buyer Program",
+      logo: "🏡", // First home icon
       description: "Stop renting. Start owning. We make your first mortgage simple, fast, and built entirely around you.",
       detailedDescription: "The Canadian mortgage market can feel overwhelming, especially the first time. That's exactly why we're here. We cut through the complexity, match you with the right program, and fight for the best rate across 50+ lenders so your first home purchase is something to celebrate, not stress over.",
       keyBenefits: [
@@ -115,6 +119,7 @@ function Services() {
     {
       id: 5,
       title: "Self-Employed Mortgage Solutions",
+      logo: "💼", // Business/self-employed icon
       description: "Self-employed and ready to own? Access mortgage financing built specifically for Canadian business owners - no T4 required.",
       detailedDescription: "Being self-employed shouldn't stand between you and homeownership. Throug Business for Self program, self-employed Canadians with a minimum 2-year business history and responsible credit management can access insured mortgage financing without traditional income documentation, just a stated income and proof of your business.",
       keyBenefits: [
@@ -141,6 +146,7 @@ function Services() {
     {
       id: 6,
       title: "No Down Payment Mortgage Solutions",
+      logo: "💰", // Money/down payment icon
       description: "No down payment saved? There's still a path to homeownership, and we'll help you find it.",
       detailedDescription: "There are more ways to fund a down payment than most buyers realize. Gifts, RRSP funds, FHSA contributions, and even borrowed funds from a Line of Credit or Credit Card are all eligible — provided the borrowed amount fits within your GDS and TDS debt servicing ratios. We'll identify the right path and get you moving.",
       keyBenefits: [
@@ -167,6 +173,7 @@ function Services() {
     {
       id: 7,
       title: "B-side Mortgage Solutions",
+      logo: "🔑", // Key/access icon
       description: "Bruised credit. High debt. Low declared income. Whatever your situation, there's a mortgage solution built for you.",
       detailedDescription: "The big banks say no? We find lenderswho says yes. B-side mortgages are built for Canadians whose financial history doesn't fit the traditional lending box. Bruised credit, high debt, low declared income, or a recent Consumer Proposal — there's a structured path forward. Minimum 20% down required, with a portion eligible to be borrowed.",
       keyBenefits: [
@@ -193,6 +200,7 @@ function Services() {
     {
       id: 8,
       title: "Primary Residence Financing",
+      logo: "🏘️", // Primary home icon
       description: "First home or fourth - if it's your primary residence, minimum down payment options are on the table. Every time.",
       detailedDescription: "Let's bust a myth. Most Canadians believe the minimum down payment is a one-time privilege reserved for first-time buyers. It's not. The minimum down payment is tied to the property — not the buyer's history. As long as you are purchasing a primary residence, you qualify for minimum down payment options — whether it's your second home, or third. Stop letting outdated assumptions limit your options.",
       keyBenefits: [
@@ -219,6 +227,7 @@ function Services() {
     {
       id: 9,
       title: "Purchase Plus Improvements Mortgage",
+      logo: "🔨", // Renovation/improvement icon
       description: "See potential where others see problems, buy the home and fund the renovations in one smart mortgage solution.",
       detailedDescription: "Stop waiting for the perfect home,  build it. Bundle eligible renovation costs directly into your mortgage and skip the separate loan entirely. Adding a legal basement suite is one of the smartest moves available, it adds long-term rental income and increases your mortgage affordability by 3–4% by factoring projected rental income into your qualification.",
       keyBenefits: [
@@ -245,6 +254,7 @@ function Services() {
     {
       id: 10,
       title: "Mortgage Renewals & HELOC",
+      logo: "🔄", // Renewal/cycle icon
       description: "Two of the most powerful financial tools available to Canadian homeowners, and most people don't use either one to their full advantage.",
       detailedDescription: "Whether your mortgage is coming up for renewal or you're looking to access the equity you've built, both are significant financial opportunities that most Canadians underutilize. Don't auto-renew with your existing lender without shopping — it could cost you thousands. And if you've built equity in your home, a HELOC gives you flexible, low-interest access to those funds without selling or refinancing. We help you maximize both.",
       keyBenefits: [
@@ -271,6 +281,7 @@ function Services() {
     {
       id: 11,
       title: "Canada Small Business Financing Program",
+      logo: "🏦", // Bank/government program icon
       description:
         "Secure the funding your business needs through government-backed financing designed to help Canadian entrepreneurs start, expand, or modernize their businesses.",
       detailedDescription:
@@ -297,6 +308,37 @@ function Services() {
         email: "deolmortgages10@gmail.com"
       }
     },
+
+    {
+      id: 12,
+      title: "Quick Pre-Approval",
+      logo: "✅", // Approval/checkmark icon
+      description:
+        "Get pre-approved in as little as 24 hours and start shopping for your new home with confidence, knowing exactly how much you can afford.",
+      detailedDescription:
+        "A mortgage pre-approval is the first step toward buying a home. It provides an estimate of how much you can borrow based on your income, credit, and financial profile. With a quick pre-approval, you'll have a clear budget, stronger negotiating power, and greater confidence when making an offer. Our mortgage experts guide you through the entire process, ensuring a fast, accurate, and hassle-free experience.",
+      keyBenefits: [
+        "Pre-approval in as little as 24 hours",
+        "Know your maximum home buying budget",
+        "Lock in competitive interest rates for a limited time",
+        "Strengthen your offer when purchasing a home",
+        "No obligation and no hidden fees",
+        "Expert guidance from experienced mortgage professionals"
+      ],
+      process: [
+        "Complete a simple online or phone application",
+        "Submit basic income and financial documents",
+        "Credit and affordability assessment",
+        "Receive your mortgage pre-approval",
+        "Start shopping for your home with confidence"
+      ],
+      whoCanApply:
+        "Anyone planning to purchase a home in Canada, including first-time home buyers, repeat buyers, newcomers, and self-employed individuals looking to understand their borrowing capacity before house hunting.",
+      contactInfo: {
+        phone: "(780) 246 7559",
+        email: "deolmortgages10@gmail.com"
+      }
+    }
   ];
 
   // Optimized Intersection Observer for scroll animations with requestAnimationFrame
