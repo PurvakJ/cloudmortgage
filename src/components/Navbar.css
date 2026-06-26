@@ -547,3 +547,110 @@ body.menu-open::before {
   background: #5ba3d9;
   color: white;
 }
+
+/* ============================================
+   LOGO SECTION - ENHANCED SIZES
+   ============================================ */
+   .navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    position: relative;
+    min-height: 100px;  /* Increased from 80px */
+    min-width: 250px;   /* Increased from 200px */
+  }
+  
+  .navbar-logo:hover {
+    transform: scale(1.02);
+  }
+  
+  .logo-img {
+    height: 120px;      /* Increased from 80px */
+    width: auto;
+    display: block;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  /* Default logo (shown when NOT scrolled) */
+  .logo-img.logo-default {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .logo-img.logo-scrolled {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* When scrolled, show scrolled logo and hide default logo */
+  .navbar.scrolled .logo-img.logo-default {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .navbar.scrolled .logo-img.logo-scrolled {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .navbar.scrolled .logo-img {
+    height: 130px;       /* Increased from 70px */
+  }
+  
+  /* ============================================
+     RESPONSIVE ADJUSTMENTS - ENHANCED
+     ============================================ */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 15px 0;
+    }
+    
+    .navbar.scrolled {
+      padding: 10px 0;
+    }
+    
+    .navbar-container {
+      padding: 0 20px;
+    }
+    
+    .navbar-logo {
+      min-height: 65px;    /* Increased from 50px */
+      min-width: 180px;    /* Increased from 150px */
+    }
+    
+    .logo-img {
+      height: 65px;        /* Increased from 50px */
+    }
+    
+    .navbar.scrolled .logo-img {
+      height: 55px;        /* Increased from 45px */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 12px 0;
+    }
+    
+    .navbar.scrolled {
+      padding: 8px 0;
+    }
+    
+    .navbar-logo {
+      min-height: 55px;    /* Increased from 40px */
+      min-width: 150px;    /* Increased from 120px */
+    }
+    
+    .logo-img {
+      height: 55px;        /* Increased from 40px */
+    }
+    
+    .navbar.scrolled .logo-img {
+      height: 45px;        /* Increased from 36px */
+    }
+  }

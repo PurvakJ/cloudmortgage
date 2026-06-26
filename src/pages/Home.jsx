@@ -258,37 +258,37 @@ const Home = () => {
             </p>
           </div>
           <div className="features-grid">
-            <div className="feature fade-up">
-              <div className="feature-icon">📊</div>
-              <h3>Best Rates Guaranteed</h3>
-              <p>We compare rates from multiple lenders to get you the best deal</p>
-            </div>
-            <div className="feature fade-up" style={{ animationDelay: '0.1s' }}>
-              <div className="feature-icon">⚡</div>
-              <h3>Fast Approval Process</h3>
-              <p>Get approved quickly with our streamlined digital process</p>
-            </div>
-            <div className="feature fade-up" style={{ animationDelay: '0.2s' }}>
-              <div className="feature-icon">🎯</div>
-              <h3>Personalized Solutions</h3>
-              <p>Tailored mortgage options based on your unique situation</p>
-            </div>
-            <div className="feature fade-up" style={{ animationDelay: '0.3s' }}>
-              <div className="feature-icon">🔒</div>
-              <h3>Secure & Confidential</h3>
-              <p>Your data is protected with bank-level security</p>
-            </div>
-            <div className="feature fade-up" style={{ animationDelay: '0.4s' }}>
-              <div className="feature-icon">🤝</div>
-              <h3>Dedicated Support</h3>
-              <p>Personal loan officer assigned to guide you through the process</p>
-            </div>
-            <div className="feature fade-up" style={{ animationDelay: '0.5s' }}>
-              <div className="feature-icon">📱</div>
-              <h3>Digital Experience</h3>
-              <p>Upload documents and track progress from anywhere</p>
-            </div>
-          </div>
+  <div className="feature fade-up">
+    <div className="feature-icon">🏙️</div>
+    <h3>Full-Spectrum Mortgage Expertise</h3>
+    <p>Residential, commercial, self-employed, refinancing — expertise that covers every type of Canadian mortgage client.</p>
+  </div>
+  <div className="feature fade-up" style={{ animationDelay: '0.1s' }}>
+    <div className="feature-icon">🍁</div>
+    <h3>Your Advocate, Not the Bank's</h3>
+    <p>Banks work for shareholders. Oakmont Capital works for you — honest, unbiased guidance built entirely around your goals.</p>
+  </div>
+  <div className="feature fade-up" style={{ animationDelay: '0.2s' }}>
+    <div className="feature-icon">🏛️</div>
+    <h3>50+ Lenders, Better Rates</h3>
+    <p>More lenders means more competition for your business — and better rates and terms for you.</p>
+  </div>
+  <div className="feature fade-up" style={{ animationDelay: '0.3s' }}>
+    <div className="feature-icon">💡</div>
+    <h3>Creative Solutions for Every Client</h3>
+    <p>Straightforward or complex, every situation has a solution and we won't stop until we find it.</p>
+  </div>
+  <div className="feature fade-up" style={{ animationDelay: '0.4s' }}>
+    <div className="feature-icon">⚡</div>
+    <h3>Speed without Sacrifice</h3>
+    <p>Fast pre-approvals and an efficient process from start to finish — without cutting corners on finding you the best deal.</p>
+  </div>
+  <div className="feature fade-up" style={{ animationDelay: '0.5s' }}>
+    <div className="feature-icon">🤝</div>
+    <h3>Built on Trust, Not Transactions</h3>
+    <p>A mortgage is one of the biggest financial decisions of your life — you deserve an advisor who treats it that way, long after the deal is done.</p>
+  </div>
+</div>
         </div>
       </section>
 
@@ -315,15 +315,15 @@ const Home = () => {
             <p className="fade-up">Setting Standards in Service and Innovation</p>
             <div className="industry-stats fade-up">
               <div className="industry-stat">
-                <span className="stat-number">25+</span>
+                <span className="stat-number">5+</span>
                 <span className="stat-label">Years of Excellence</span>
               </div>
               <div className="industry-stat">
-                <span className="stat-number">$2B+</span>
-                <span className="stat-label">Loans Funded</span>
+                <span className="stat-number">$15M+</span>
+                <span className="stat-label">Annual Loans Funded</span>
               </div>
               <div className="industry-stat">
-                <span className="stat-number">5000+</span>
+                <span className="stat-number">1000+</span>
                 <span className="stat-label">Happy Clients</span>
               </div>
             </div>

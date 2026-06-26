@@ -8,23 +8,40 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          {/* Image logo instead of text */}
-          <div className="footer-logo">
-            <img 
-              src="https://res.cloudinary.com/dm9gg8yss/image/upload/v1782443993/WhatsApp_Image_2026-06-26_at_08.46.32_dn2hs2.jpg" 
-              alt="Oakmont Capital Logo" 
-              className="footer-logo-img"
-            />
+          {/* Both Logos Side by Side */}
+          <div className="footer-logos-container">
+            <div className="footer-logo">
+              <img 
+                src="https://res.cloudinary.com/dm9gg8yss/image/upload/v1782443492/WhatsApp_Image_2026-06-26_at_08.38.51-removebg-preview_1_szd2wk.png" 
+                alt="Oakmont Capital Logo" 
+                className="footer-logo-img"
+              />
+            </div>
+            <div className="footer-logo-divider">|</div>
+            <div className="footer-logo-secondary-wrapper">
+              <span className="powered-by-text">Powered By</span>
+              <div className="footer-logo-secondary">
+                <img 
+                  src="https://res.cloudinary.com/dm9gg8yss/image/upload/v1782443993/WhatsApp_Image_2026-06-26_at_08.46.32_dn2hs2.jpg" 
+                  alt="Oakmont Capital Secondary Logo" 
+                  className="footer-logo-img-secondary"
+                />
+              </div>
+            </div>
           </div>
+          
+          {/* Tagline line after the logos */}
+          <p className="footer-tagline">YOUR TRUSTED CANADIAN MORTGAGE PARTNER</p>
+          
           <p className="description">
             Oakmont Capital helps Canadian families achieve their dream of homeownership with expert guidance, 
             competitive rates, and personalized mortgage solutions tailored to your unique needs across Canada.
           </p>
           <div className="trust-badge">
-            <span>✓</span> 500+ Happy Canadian Clients
+            <span>✓</span> 1000+ Happy Clients
           </div>
           <div className="trust-badge">
-            <span>✓</span> $50M+ Canadian Loans Funded
+            <span>✓</span> $15M+ Annual Loans Funded
           </div>
           <div className="trust-badge">
             <span>✓</span> Trusted Mortgage Partner

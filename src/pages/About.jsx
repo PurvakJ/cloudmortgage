@@ -8,7 +8,7 @@ const About = () => {
     id: 1,
     name: "Harnoor Deol",
     position: "Founder & Mortgage Specialist",
-    image: "https://i.postimg.cc/jSZHB8hS/Whats-App-Image-2026-04-09-at-11-28-24.jpg",
+    image: "https://res.cloudinary.com/dm9gg8yss/image/upload/v1782445550/DSC05671_Large_hm1gfv.png",
     bio: "Oakmont Capital was founded on a simple belief — that every Canadian deserves expert mortgage guidance without the runaround. With a personal approach and an unwavering commitment to client success, Harnoor has become a trusted partner for families across Canada on their journey to homeownership.",
     expertise: [
       "Certified Mortgage Professional",
@@ -78,7 +78,6 @@ const About = () => {
       <section className="owner-section">
         <div className="container">
           <h2>MEET YOUR MORTGAGE EXPERT</h2>
-          <p className="owner-subtitle">Personalized attention from start to finish</p>
           
           <div className="owner-content">
             <div className="owner-image">
@@ -160,8 +159,8 @@ const About = () => {
               <span className="stat-label"> Clients Served</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">$200M+</span>
-              <span className="stat-label">Mortgages Funded</span>
+              <span className="stat-number">$15M+</span>
+              <span className="stat-label">Annual Mortgages Funded</span>
             </div>
             <div className="stat-item">
               <span className="stat-number">50+</span>
@@ -181,7 +180,7 @@ const About = () => {
           <h2>WHY CHOOSE OAKMONT CAPITAL?</h2>
           <div className="choose-grid">
             <div className="choose-item">
-              <div className="choose-icon">👤</div>
+              <div className="choose-icon">🏙️</div>
               <h3>Full-Spectrum Mortgage Expertise</h3>
               <p>Residential, commercial, self-employed, refinancing — expertise that covers every type of Canadian mortgage client.</p>
             </div>
@@ -191,17 +190,17 @@ const About = () => {
               <p>Banks work for shareholders. Oakmont Capital works for you — honest, unbiased guidance built entirely around your goals.</p>
             </div>
             <div className="choose-item">
-              <div className="choose-icon">⚡</div>
+              <div className="choose-icon">🏛️</div>
               <h3>50+ Lenders, Better Rates</h3>
               <p>More lenders means more competition for your business — and better rates and terms for you.</p>
             </div>
             <div className="choose-item">
-              <div className="choose-icon">🏠</div>
+              <div className="choose-icon">💡</div>
               <h3>Creative Solutions for Every Client</h3>
               <p>Straightforward or complex, every situation has a solution and we won't stop until we find it.</p>
             </div>
             <div className="choose-item">
-              <div className="choose-icon">💻</div>
+              <div className="choose-icon">⚡</div>
               <h3>Speed without Sacrifice</h3>
               <p>Fast pre-approvals and an efficient process from start to finish — without cutting corners on finding you the best deal.</p>
             </div>

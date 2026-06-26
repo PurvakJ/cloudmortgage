@@ -551,3 +551,603 @@ a:focus-visible,
       max-width: 150px;
     }
   }
+
+  /* ============================================
+   FOOTER LOGO IMAGES
+   ============================================ */
+.footer-logo {
+  margin-bottom: 8px;
+}
+
+.footer-logo-img {
+  max-width: 180px;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.03);
+}
+
+.footer-logo-secondary {
+  margin-bottom: 12px;
+}
+
+.footer-logo-img-secondary {
+  max-width: 180px;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-img-secondary:hover {
+  transform: scale(1.03);
+}
+
+/* ============================================
+   FOOTER TAGLINE
+   ============================================ */
+.footer-tagline {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #5ba3d9;
+  margin-bottom: 18px;
+  font-weight: 600;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-tagline:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
+  border-radius: 2px;
+}
+
+/* Remove old text logo styles */
+.footer-section h3 {
+  display: none;
+}
+
+.footer-section .tagline {
+  display: none;
+}
+
+/* Adjust description margin */
+.footer-section .description {
+  margin-top: 5px;
+}
+
+/* ============================================
+   RESPONSIVE LOGOS
+   ============================================ */
+@media (max-width: 768px) {
+  .footer-logo-img {
+    max-width: 160px;
+  }
+  
+  .footer-logo-img-secondary {
+    max-width: 140px;
+  }
+  
+  .footer-tagline {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo-img {
+    max-width: 130px;
+  }
+  
+  .footer-logo-img-secondary {
+    max-width: 120px;
+  }
+  
+  .footer-tagline {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+  
+  .footer-tagline:after {
+    width: 35px;
+  }
+}
+
+/* ============================================
+   FOOTER LOGOS - SIDE BY SIDE
+   ============================================ */
+   .footer-logos-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-logo-img {
+    max-width: 180px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-logo-img:hover {
+    transform: scale(1.05);
+  }
+  
+  .footer-logo-divider {
+    color: #5ba3d9;
+    font-size: 28px;
+    font-weight: 300;
+    opacity: 0.6;
+    padding: 0 5px;
+  }
+  
+  .footer-logo-secondary {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-logo-img-secondary {
+    max-width: 160px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-logo-img-secondary:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ============================================
+     FOOTER TAGLINE
+     ============================================ */
+  .footer-tagline {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #5ba3d9;
+    margin-bottom: 18px;
+    font-weight: 600;
+    font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+    position: relative;
+    padding-bottom: 12px;
+  }
+  
+  .footer-tagline:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
+    border-radius: 2px;
+  }
+  
+  /* Remove old text logo styles */
+  .footer-section h3 {
+    display: none;
+  }
+  
+  .footer-section .tagline {
+    display: none;
+  }
+  
+  /* Adjust description margin */
+  .footer-section .description {
+    margin-top: 5px;
+  }
+  
+  /* ============================================
+     RESPONSIVE LOGOS
+     ============================================ */
+  @media (max-width: 768px) {
+    .footer-logos-container {
+      gap: 10px;
+    }
+    
+    .footer-logo-img {
+      max-width: 140px;
+    }
+    
+    .footer-logo-img-secondary {
+      max-width: 120px;
+    }
+    
+    .footer-logo-divider {
+      font-size: 22px;
+    }
+    
+    .footer-tagline {
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-logos-container {
+      gap: 8px;
+      justify-content: flex-start;
+    }
+    
+    .footer-logo-img {
+      max-width: 110px;
+    }
+    
+    .footer-logo-img-secondary {
+      max-width: 95px;
+    }
+    
+    .footer-logo-divider {
+      font-size: 18px;
+    }
+    
+    .footer-tagline {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+    }
+    
+    .footer-tagline:after {
+      width: 35px;
+    }
+  }
+
+  /* ============================================
+   FOOTER LOGOS - SIDE BY SIDE
+   ============================================ */
+.footer-logos-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-img {
+  max-width: 220px; /* Increased size for logo 1 */
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.05);
+}
+
+.footer-logo-divider {
+  color: #5ba3d9;
+  font-size: 28px;
+  font-weight: 300;
+  opacity: 0.6;
+  padding: 0 5px;
+}
+
+/* Logo 2 with Powered By text */
+.footer-logo-secondary-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.powered-by-text {
+  font-size: 10px;
+  color: #999999;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.footer-logo-secondary {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-img-secondary {
+  max-width: 100px; /* Smaller size for logo 2 */
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-img-secondary:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   FOOTER TAGLINE
+   ============================================ */
+.footer-tagline {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #5ba3d9;
+  margin-bottom: 18px;
+  font-weight: 600;
+  font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-tagline:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
+  border-radius: 2px;
+}
+
+/* Remove old text logo styles */
+.footer-section h3 {
+  display: none;
+}
+
+.footer-section .tagline {
+  display: none;
+}
+
+/* Adjust description margin */
+.footer-section .description {
+  margin-top: 5px;
+}
+
+/* ============================================
+   RESPONSIVE LOGOS
+   ============================================ */
+@media (max-width: 768px) {
+  .footer-logos-container {
+    gap: 10px;
+  }
+  
+  .footer-logo-img {
+    max-width: 170px; /* Slightly smaller on tablet */
+  }
+  
+  .footer-logo-img-secondary {
+    max-width: 80px; /* Smaller on tablet */
+  }
+  
+  .footer-logo-divider {
+    font-size: 22px;
+  }
+  
+  .footer-tagline {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  
+  .powered-by-text {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logos-container {
+    gap: 8px;
+    justify-content: flex-start;
+  }
+  
+  .footer-logo-img {
+    max-width: 130px; /* Smaller on mobile */
+  }
+  
+  .footer-logo-img-secondary {
+    max-width: 65px; /* Smaller on mobile */
+  }
+  
+  .footer-logo-divider {
+    font-size: 18px;
+  }
+  
+  .footer-tagline {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+  
+  .footer-tagline:after {
+    width: 35px;
+  }
+  
+  .powered-by-text {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* ============================================
+   FOOTER LOGOS - SIDE BY SIDE
+   ============================================ */
+   .footer-logos-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-logo-img {
+    max-width: 220px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-logo-img:hover {
+    transform: scale(1.05);
+  }
+  
+  .footer-logo-divider {
+    color: #000000; /* Changed to black */
+    font-size: 80px; /* Increased size */
+    font-weight: 300;
+    opacity: 0.8; /* Slightly increased opacity for better visibility */
+    padding: 0 10px; /* Added more padding */
+    line-height: 1;
+  }
+  
+  .footer-logo-divider:hover {
+    opacity: 1; /* Full opacity on hover */
+  }
+  
+  /* Logo 2 with Powered By text */
+  .footer-logo-secondary-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  
+  .powered-by-text {
+    font-size: 10px;
+    color: #999999;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+  }
+  
+  .footer-logo-secondary {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-logo-img-secondary {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-logo-img-secondary:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ============================================
+     FOOTER TAGLINE
+     ============================================ */
+  .footer-tagline {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #5ba3d9;
+    margin-bottom: 18px;
+    font-weight: 600;
+    font-family: 'Rasputin', 'Rasputin Regular', cursive, 'Poppins', 'Segoe UI', sans-serif;
+    position: relative;
+    padding-bottom: 12px;
+  }
+  
+  .footer-tagline:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #5ba3d9, #2c6e9e);
+    border-radius: 2px;
+  }
+  
+  /* Remove old text logo styles */
+  .footer-section h3 {
+    display: none;
+  }
+  
+  .footer-section .tagline {
+    display: none;
+  }
+  
+  /* Adjust description margin */
+  .footer-section .description {
+    margin-top: 5px;
+  }
+  
+  /* ============================================
+     RESPONSIVE LOGOS
+     ============================================ */
+  @media (max-width: 768px) {
+    .footer-logos-container {
+      gap: 10px;
+    }
+    
+    .footer-logo-img {
+      max-width: 170px;
+    }
+    
+    .footer-logo-img-secondary {
+      max-width: 80px;
+    }
+    
+    .footer-logo-divider {
+      font-size: 32px; /* Slightly smaller on tablet */
+      padding: 0 8px;
+    }
+    
+    .footer-tagline {
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+    
+    .powered-by-text {
+      font-size: 9px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-logos-container {
+      gap: 8px;
+      justify-content: flex-start;
+    }
+    
+    .footer-logo-img {
+      max-width: 130px;
+    }
+    
+    .footer-logo-img-secondary {
+      max-width: 65px;
+    }
+    
+    .footer-logo-divider {
+      font-size: 24px; /* Smaller on mobile */
+      padding: 0 5px;
+    }
+    
+    .footer-tagline {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+    }
+    
+    .footer-tagline:after {
+      width: 35px;
+    }
+    
+    .powered-by-text {
+      font-size: 8px;
+      letter-spacing: 1.5px;
+    }
+  }
