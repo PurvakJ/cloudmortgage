@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
           
           {/* Tagline line after the logos */}
-          <p className="footer-tagline">YOUR TRUSTED CANADIAN MORTGAGE PARTNER</p>
+          <p className="footer-tagline">YOUR TRUSTED MORTGAGE PARTNER</p>
       
         </div>
 
@@ -73,7 +73,7 @@ const Footer = () => {
             <p><strong>Saturday:</strong><br />10:00 AM - 2:00 PM</p>
             <p><strong>Sunday:</strong><br />Closed</p>
             <div className="emergency-support">
-              <span>⚠️</span> Emergency Mortgage Support Available 24/7 for Canadian Clients
+              <span>⚠️</span> Emergency Mortgage Support Available 24/7 for Clients
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p>&copy; 2024 Oakmont Capital. All rights reserved. | Canadian Mortgage Provider</p>
+          <p>&copy; 2024 Oakmont Capital. All rights reserved. | Mortgage Provider</p>
           <div className="social-icons">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebook size={22} />
