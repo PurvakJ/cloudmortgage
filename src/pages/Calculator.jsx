@@ -322,7 +322,7 @@ function Calculator() {
         <div className="calculator-hero-image" aria-label="Mortgage calculator hero background"></div>
         <div className="calculator-hero-container">
           <div className="calculator-hero-content">
-            <h1 className="fade-up">Oakmont Capital Mortgage Calculator</h1>
+            <h1 className="fade-up">Mortgage Calculator</h1>
             <p className="fade-up">Plan your mortgage with confidence using our interactive tools</p>
             <div className="hero-stats fade-up">
               <div className="hero-stat">
