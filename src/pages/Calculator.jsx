@@ -1,6 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Calculator.css';
 
+// Bankers rounding function (round half to even)
+const bankersRound = (num, decimals = 2) => {
+  const factor = Math.pow(10, decimals);
+  const n = num * factor;
+  const rounded = Math.round(n);
+  // Check if it's exactly at .5
+  const diff = n - Math.floor(n);
+  if (diff === 0.5) {
+    // Round to even
+    return (Math.floor(n) % 2 === 0 ? Math.floor(n) : Math.ceil(n)) / factor;
+  }
+  return rounded / factor;
+};
+
 function Calculator() {
   const [activeTab, setActiveTab] = useState('payment');
   const observerRef = useRef(null);
@@ -31,9 +45,9 @@ function Calculator() {
   const [gdsRatio, setGdsRatio] = useState(0);
   const [tdsRatio, setTdsRatio] = useState(0);
 
-  // New constants for GDS and TDS limits
-  const MAX_GDS = 39; // Updated from 32 to 39
-  const MAX_TDS = 44; // Updated from 40 to 44
+  // Constants for GDS and TDS limits (updated based on provided file)
+  const MAX_GDS = 39;
+  const MAX_TDS = 44;
 
   // Frequency Calculator State
   const [freqMortgageAmount, setFreqMortgageAmount] = useState(400000);
@@ -99,7 +113,7 @@ function Calculator() {
     };
   }, [activeTab]);
 
-  // Calculate Payment Calculator
+  // Payment Calculator - Calculate
   useEffect(() => {
     const principal = paymentLoanAmount - paymentDownPayment;
     const monthlyRate = paymentInterestRate / 100 / 12;
@@ -117,9 +131,9 @@ function Calculator() {
     const total = payment * numberOfPayments;
     const interest = total - principal;
     
-    setMonthlyPayment(payment);
-    setTotalInterest(interest);
-    setTotalPayment(total);
+    setMonthlyPayment(bankersRound(payment, 2));
+    setTotalInterest(bankersRound(interest, 2));
+    setTotalPayment(bankersRound(total, 2));
     setPrincipalAmount(principal);
     
     // Calculate amortization schedule (yearly)
@@ -135,14 +149,14 @@ function Calculator() {
     setAmortizationData(yearlyData);
   }, [paymentLoanAmount, paymentDownPayment, paymentInterestRate, paymentLoanTerm]);
 
-  // Calculate Affordability with updated GDS (39%) and TDS (44%)
+  // Affordability Calculator
   useEffect(() => {
     const monthlyIncome = annualIncome / 12;
     const monthlyPropertyTax = propertyTax / 12;
     const monthlyHeating = heatingCost;
     const monthlyCondoFees50 = condoFees * 0.5;
     
-    // Calculate max affordable payment (MAX_GDS% of gross income for GDS)
+    // Calculate max affordable payment (MAX_GDS% of gross income)
     const maxGDSPayment = monthlyIncome * (MAX_GDS / 100);
     const housingCostsWithoutMortgage = monthlyPropertyTax + monthlyHeating + monthlyCondoFees50;
     const maxMortgagePayment = Math.max(0, maxGDSPayment - housingCostsWithoutMortgage);
@@ -159,10 +173,10 @@ function Calculator() {
     }
     
     const maxPrice = maxMortgageAmount + affordabilityDownPayment;
-    setMaxHomePrice(Math.max(0, maxPrice));
-    setAffordablePayment(Math.max(0, maxMortgagePayment));
+    setMaxHomePrice(Math.max(0, bankersRound(maxPrice, 0)));
+    setAffordablePayment(Math.max(0, bankersRound(maxMortgagePayment, 2)));
     
-    // Calculate comfortable price (28% GDS) - keeping this as is for reference
+    // Calculate comfortable price (28% GDS)
     const comfortableGDSPayment = monthlyIncome * 0.28;
     const comfortableMortgagePayment = Math.max(0, comfortableGDSPayment - housingCostsWithoutMortgage);
     let comfortableMortgageAmount = 0;
@@ -174,18 +188,18 @@ function Calculator() {
     }
     
     const comfortablePrice = comfortableMortgageAmount + affordabilityDownPayment;
-    setComfortableHomePrice(Math.max(0, comfortablePrice));
+    setComfortableHomePrice(Math.max(0, bankersRound(comfortablePrice, 0)));
     
-    // Calculate actual GDS and TDS for the max scenario with new limits
+    // Calculate actual GDS and TDS for the max scenario
     const actualMortgagePayment = maxMortgagePayment;
     const actualGDS = monthlyIncome > 0 ? ((actualMortgagePayment + monthlyPropertyTax + monthlyHeating + monthlyCondoFees50) / monthlyIncome) * 100 : 0;
     const actualTDS = monthlyIncome > 0 ? ((actualMortgagePayment + monthlyPropertyTax + monthlyHeating + monthlyCondoFees50 + monthlyDebts) / monthlyIncome) * 100 : 0;
     
-    setGdsRatio(actualGDS);
-    setTdsRatio(actualTDS);
-  }, [annualIncome, monthlyDebts, affordabilityDownPayment, affordabilityInterestRate, amortizationYears, propertyTax, heatingCost, condoFees, MAX_GDS]);
+    setGdsRatio(bankersRound(actualGDS, 1));
+    setTdsRatio(bankersRound(actualTDS, 1));
+  }, [annualIncome, monthlyDebts, affordabilityDownPayment, affordabilityInterestRate, amortizationYears, propertyTax, heatingCost, condoFees]);
 
-  // Calculate Frequency Calculator
+  // Frequency Calculator
   useEffect(() => {
     const calculatePayment = (amount, rate, years, paymentsPerYear, isAccelerated = false) => {
       const periodicRate = rate / 100 / paymentsPerYear;
@@ -208,7 +222,12 @@ function Calculator() {
       const totalInterestPaid = totalPaid - amount;
       const yearsToPayoff = totalPayments / paymentsPerYear;
       
-      return { payment, totalInterest: totalInterestPaid, years: yearsToPayoff, payments: totalPayments };
+      return { 
+        payment: bankersRound(payment, 2), 
+        totalInterest: bankersRound(totalInterestPaid, 2), 
+        years: yearsToPayoff, 
+        payments: totalPayments 
+      };
     };
     
     const monthly = calculatePayment(freqMortgageAmount, freqInterestRate, freqAmortizationYears, 12);
@@ -226,7 +245,7 @@ function Calculator() {
     });
   }, [freqMortgageAmount, freqInterestRate, freqAmortizationYears]);
 
-  // Calculate Rent vs Buy
+  // Rent vs Buy
   useEffect(() => {
     // Rent calculation
     let rentCost = 0;
@@ -235,7 +254,7 @@ function Calculator() {
       rentCost += currentRent * 12;
       currentRent *= (1 + rentIncrease / 100);
     }
-    setRentTotalCost(rentCost);
+    setRentTotalCost(bankersRound(rentCost, 2));
     
     // Buy calculation
     const loanAmount = buyHomePrice - buyDownPayment;
@@ -266,10 +285,10 @@ function Calculator() {
     
     const totalBuyCost = (mortgagePayment * timePeriod * 12) + (buyPropertyTax * timePeriod) + (buyMaintenance * timePeriod) + buyDownPayment;
     
-    setBuyTotalCost(totalBuyCost);
-    setEquityBuilt(equity);
-    setFinalHomeValue(homeValueAtEnd);
-    setNetPosition(equity - rentCost);
+    setBuyTotalCost(bankersRound(totalBuyCost, 2));
+    setEquityBuilt(bankersRound(equity, 2));
+    setFinalHomeValue(bankersRound(homeValueAtEnd, 0));
+    setNetPosition(bankersRound(equity - rentCost, 2));
   }, [rentMonthly, rentIncrease, buyHomePrice, buyDownPayment, buyInterestRate, buyPropertyTax, buyMaintenance, homeAppreciation, timePeriod]);
 
   const addScenario = () => {
@@ -303,7 +322,11 @@ function Calculator() {
     const totalPaymentAmount = payment * numberOfPayments;
     const totalInterestAmount = totalPaymentAmount - amount;
     
-    return { payment, totalPayment: totalPaymentAmount, totalInterest: totalInterestAmount };
+    return { 
+      payment: bankersRound(payment, 2), 
+      totalPayment: bankersRound(totalPaymentAmount, 2), 
+      totalInterest: bankersRound(totalInterestAmount, 2) 
+    };
   };
 
   const handleContactClick = () => {
@@ -437,16 +460,9 @@ function Calculator() {
                   onChange={(e) => setPaymentLoanTerm(Number(e.target.value))}
                 />
                 <select value={paymentLoanTerm} onChange={(e) => setPaymentLoanTerm(Number(e.target.value))}>
-                  <option value={1}>1 year</option>
-                  <option value={2}>2 years</option>
-                  <option value={3}>3 years</option>
-                  <option value={4}>4 years</option>
-                  <option value={5}>5 years</option>
-                  <option value={10}>10 years</option>
-                  <option value={15}>15 years</option>
-                  <option value={20}>20 years</option>
-                  <option value={25}>25 years</option>
-                  <option value={30}>30 years</option>
+                  {[1,2,3,4,5,10,15,20,25,30].map(term => (
+                    <option key={term} value={term}>{term} year{term > 1 ? 's' : ''}</option>
+                  ))}
                 </select>
               </div>
 
@@ -590,12 +606,9 @@ function Calculator() {
                   <div className="input-group">
                     <label>Amortization (Years)</label>
                     <select value={amortizationYears} onChange={(e) => setAmortizationYears(Number(e.target.value))}>
-                      <option value={5}>5 years</option>
-                      <option value={10}>10 years</option>
-                      <option value={15}>15 years</option>
-                      <option value={20}>20 years</option>
-                      <option value={25}>25 years</option>
-                      <option value={30}>30 years</option>
+                      {[5,10,15,20,25,30].map(year => (
+                        <option key={year} value={year}>{year} years</option>
+                      ))}
                     </select>
                     <input
                       type="range"
@@ -707,12 +720,9 @@ function Calculator() {
               <div className="input-group">
                 <label>Amortization (Years)</label>
                 <select value={freqAmortizationYears} onChange={(e) => setFreqAmortizationYears(Number(e.target.value))}>
-                  <option value={5}>5 years</option>
-                  <option value={10}>10 years</option>
-                  <option value={15}>15 years</option>
-                  <option value={20}>20 years</option>
-                  <option value={25}>25 years</option>
-                  <option value={30}>30 years</option>
+                  {[5,10,15,20,25,30].map(year => (
+                    <option key={year} value={year}>{year} years</option>
+                  ))}
                 </select>
                 <input
                   type="range"
@@ -726,141 +736,58 @@ function Calculator() {
             </div>
 
             <div className="frequency-results">
-              <div className="frequency-card">
-                <h3>Monthly</h3>
-                <p className="payment-amount">
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{frequencyData.monthly.payment.toFixed(0)}</span>
-                </p>
-                <p className="payment-detail">Payment Amount</p>
-                <p className="interest-total">Total Interest Paid: 
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{frequencyData.monthly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
-                </p>
-                <p className="time-info">Time to Pay Off: {frequencyData.monthly.years.toFixed(2)} years ({Math.round(frequencyData.monthly.payments)} payments)</p>
-              </div>
-
-              <div className="frequency-card">
-                <h3>Bi-Weekly</h3>
-                <p className="payment-amount">
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{frequencyData.biWeekly.payment.toFixed(0)}</span>
-                </p>
-                <p className="payment-detail">Payment Amount</p>
-                <p className="interest-total">Total Interest Paid: 
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{frequencyData.biWeekly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
-                </p>
-                <p className="time-info">Time to Pay Off: {frequencyData.biWeekly.years.toFixed(2)} years ({Math.round(frequencyData.biWeekly.payments)} payments)</p>
-                <p className="savings">Interest Savings: 
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{(frequencyData.monthly.totalInterest - frequencyData.biWeekly.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
-                </p>
-              </div>
-
-              <div className="frequency-card recommended">
-                <h3>Accelerated Bi-Weekly <span className="recommended-badge">Recommended</span></h3>
-                <p className="payment-amount">
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{frequencyData.accBiWeekly.payment.toFixed(0)}</span>
-                </p>
-                <p className="payment-detail">Payment Amount</p>
-                <p className="interest-total">Total Interest Paid: 
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{frequencyData.accBiWeekly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
-                </p>
-                <p className="time-info">Time to Pay Off: {frequencyData.accBiWeekly.years.toFixed(2)} years ({Math.round(frequencyData.accBiWeekly.payments)} payments)</p>
-                <p className="savings">Interest Savings: 
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{(frequencyData.monthly.totalInterest - frequencyData.accBiWeekly.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
-                </p>
-              </div>
-
-              <div className="frequency-card">
-                <h3>Weekly</h3>
-                <p className="payment-amount">
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{frequencyData.weekly.payment.toFixed(0)}</span>
-                </p>
-                <p className="payment-detail">Payment Amount</p>
-                <p className="interest-total">Total Interest Paid: 
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{frequencyData.weekly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
-                </p>
-                <p className="time-info">Time to Pay Off: {frequencyData.weekly.years.toFixed(2)} years ({Math.round(frequencyData.weekly.payments)} payments)</p>
-                <p className="savings">Interest Savings: 
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{(frequencyData.monthly.totalInterest - frequencyData.weekly.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
-                </p>
-              </div>
-
-              <div className="frequency-card">
-                <h3>Accelerated Weekly</h3>
-                <p className="payment-amount">
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{frequencyData.accWeekly.payment.toFixed(0)}</span>
-                </p>
-                <p className="payment-detail">Payment Amount</p>
-                <p className="interest-total">Total Interest Paid: 
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{frequencyData.accWeekly.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
-                </p>
-                <p className="time-info">Time to Pay Off: {frequencyData.accWeekly.years.toFixed(2)} years ({Math.round(frequencyData.accWeekly.payments)} payments)</p>
-                <p className="savings">Interest Savings: 
-                  <span className="currency-symbol">$</span>
-                  <span className="amount-value">{(frequencyData.monthly.totalInterest - frequencyData.accWeekly.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
-                </p>
-              </div>
+              {[
+                { key: 'monthly', label: 'Monthly', data: frequencyData.monthly },
+                { key: 'biWeekly', label: 'Bi-Weekly', data: frequencyData.biWeekly },
+                { key: 'accBiWeekly', label: 'Accelerated Bi-Weekly', data: frequencyData.accBiWeekly, recommended: true },
+                { key: 'weekly', label: 'Weekly', data: frequencyData.weekly },
+                { key: 'accWeekly', label: 'Accelerated Weekly', data: frequencyData.accWeekly }
+              ].map(({ key, label, data, recommended }) => (
+                <div key={key} className={`frequency-card ${recommended ? 'recommended' : ''}`}>
+                  <h3>{label} {recommended && <span className="recommended-badge">Recommended</span>}</h3>
+                  <p className="payment-amount">
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{data.payment.toFixed(0)}</span>
+                  </p>
+                  <p className="payment-detail">Payment Amount</p>
+                  <p className="interest-total">Total Interest Paid: 
+                    <span className="currency-symbol">$</span>
+                    <span className="amount-value">{data.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                  </p>
+                  <p className="time-info">Time to Pay Off: {data.years.toFixed(2)} years ({Math.round(data.payments)} payments)</p>
+                  {key !== 'monthly' && (
+                    <p className="savings">Interest Savings: 
+                      <span className="currency-symbol">$</span>
+                      <span className="amount-value">{(frequencyData.monthly.totalInterest - data.totalInterest).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
 
             <div className="chart-section">
               <h3>Total Interest Comparison</h3>
               <div className="interest-comparison-chart">
-                <div className="interest-bar-container">
-                  <div className="interest-bar" style={{ height: `${Math.min((frequencyData.monthly.totalInterest / Math.max(frequencyData.monthly.totalInterest, 1)) * 200, 200)}px` }}>
-                    <span className="interest-value">
-                      <span className="currency-symbol">$</span>
-                      <span className="amount-value">{(frequencyData.monthly.totalInterest / 1000).toFixed(0)}k</span>
-                    </span>
-                  </div>
-                  <p>Monthly</p>
-                </div>
-                <div className="interest-bar-container">
-                  <div className="interest-bar" style={{ height: `${Math.min((frequencyData.biWeekly.totalInterest / Math.max(frequencyData.monthly.totalInterest, 1)) * 200, 200)}px` }}>
-                    <span className="interest-value">
-                      <span className="currency-symbol">$</span>
-                      <span className="amount-value">{(frequencyData.biWeekly.totalInterest / 1000).toFixed(0)}k</span>
-                    </span>
-                  </div>
-                  <p>Bi-Weekly</p>
-                </div>
-                <div className="interest-bar-container">
-                  <div className="interest-bar" style={{ height: `${Math.min((frequencyData.accBiWeekly.totalInterest / Math.max(frequencyData.monthly.totalInterest, 1)) * 200, 200)}px` }}>
-                    <span className="interest-value">
-                      <span className="currency-symbol">$</span>
-                      <span className="amount-value">{(frequencyData.accBiWeekly.totalInterest / 1000).toFixed(0)}k</span>
-                    </span>
-                  </div>
-                  <p>Acc. Bi-Weekly</p>
-                </div>
-                <div className="interest-bar-container">
-                  <div className="interest-bar" style={{ height: `${Math.min((frequencyData.weekly.totalInterest / Math.max(frequencyData.monthly.totalInterest, 1)) * 200, 200)}px` }}>
-                    <span className="interest-value">
-                      <span className="currency-symbol">$</span>
-                      <span className="amount-value">{(frequencyData.weekly.totalInterest / 1000).toFixed(0)}k</span>
-                    </span>
-                  </div>
-                  <p>Weekly</p>
-                </div>
-                <div className="interest-bar-container">
-                  <div className="interest-bar" style={{ height: `${Math.min((frequencyData.accWeekly.totalInterest / Math.max(frequencyData.monthly.totalInterest, 1)) * 200, 200)}px` }}>
-                    <span className="interest-value">
-                      <span className="currency-symbol">$</span>
-                      <span className="amount-value">{(frequencyData.accWeekly.totalInterest / 1000).toFixed(0)}k</span>
-                    </span>
-                  </div>
-                  <p>Acc. Weekly</p>
-                </div>
+                {['monthly', 'biWeekly', 'accBiWeekly', 'weekly', 'accWeekly'].map(key => {
+                  const data = frequencyData[key];
+                  const maxInterest = frequencyData.monthly.totalInterest || 1;
+                  const height = Math.max(20, Math.min((data.totalInterest / maxInterest) * 200, 200));
+                  const label = key === 'accBiWeekly' ? 'Acc. Bi-Weekly' : 
+                               key === 'accWeekly' ? 'Acc. Weekly' :
+                               key === 'biWeekly' ? 'Bi-Weekly' :
+                               key === 'weekly' ? 'Weekly' : 'Monthly';
+                  return (
+                    <div key={key} className="interest-bar-container">
+                      <div className="interest-bar" style={{ height: `${height}px` }}>
+                        <span className="interest-value">
+                          <span className="currency-symbol">$</span>
+                          <span className="amount-value">{(data.totalInterest / 1000).toFixed(0)}k</span>
+                        </span>
+                      </div>
+                      <p>{label}</p>
+                    </div>
+                  );
+                })}
               </div>
               <p className="chart-note">Lower bars = lower total interest</p>
             </div>
@@ -910,12 +837,9 @@ function Calculator() {
                     <div className="input-group">
                       <label>Amortization (Years)</label>
                       <select value={scenario.years} onChange={(e) => updateScenario(scenario.id, 'years', Number(e.target.value))}>
-                        <option value={5}>5 years</option>
-                        <option value={10}>10 years</option>
-                        <option value={15}>15 years</option>
-                        <option value={20}>20 years</option>
-                        <option value={25}>25 years</option>
-                        <option value={30}>30 years</option>
+                        {[5,10,15,20,25,30].map(year => (
+                          <option key={year} value={year}>{year} years</option>
+                        ))}
                       </select>
                     </div>
                     <div className="scenario-results">
@@ -1002,7 +926,6 @@ function Calculator() {
                   </tbody>
                 </table>
               </div>
-              <button className="export-pdf">Export to PDF</button>
             </div>
 
             <div className="cta-section">
@@ -1086,16 +1009,9 @@ function Calculator() {
                     <label>Time Period (Years)</label>
                     <input type="range" min="1" max="30" step="1" value={timePeriod} onChange={(e) => setTimePeriod(Number(e.target.value))} />
                     <select value={timePeriod} onChange={(e) => setTimePeriod(Number(e.target.value))}>
-                      <option value={1}>1 year</option>
-                      <option value={2}>2 years</option>
-                      <option value={3}>3 years</option>
-                      <option value={4}>4 years</option>
-                      <option value={5}>5 years</option>
-                      <option value={10}>10 years</option>
-                      <option value={15}>15 years</option>
-                      <option value={20}>20 years</option>
-                      <option value={25}>25 years</option>
-                      <option value={30}>30 years</option>
+                      {[1,2,3,4,5,10,15,20,25,30].map(year => (
+                        <option key={year} value={year}>{year} year{year > 1 ? 's' : ''}</option>
+                      ))}
                     </select>
                   </div>
                 </div>
